@@ -29,5 +29,6 @@ export default Home
 
 const Wrapper = styled.div`
   height: 100vh;
-  max-width: 100vw;
+  width: 100vw;
+  z-index: 1;
 `

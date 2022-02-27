@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+    overflow: hidden;
   }
 `
 const theme = {
@@ -32,7 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Head>
-          <title>KH's Portofolio</title>
+          <title>KH&apo;s Portofolio</title>
           <meta
             name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width"

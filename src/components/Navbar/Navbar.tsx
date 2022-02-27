@@ -2,153 +2,168 @@ import { useState } from "react";
 import styled from "styled-components"
 import { HiMenuAlt4, HiX } from "react-icons/hi/index";
 import { motion } from "framer-motion";
+import LangButtons from "./LangButtons";
+
+const navItems = ['projects', 'about', 'skills']
 
 const Navbar = () => {
   const [toggle, setToggle] = useState<boolean>(false)
 
   return (
-    <Nav>
-      <Container>
+    <nav>
+      <Topbar>
         <Title>
-          KH&apos;s Portofolio
+          KH&apos;s <span style={{ color: "darkblue" }}>Portofolio</span>
         </Title>
         <Ul>
-          {['projects', 'about', 'skills'].map((item) => (
-            <li key={`link-${item}`}>
-              <a href="#">
-                {item}
-              </a>
-            </li>
+          {navItems.map((item) => (
+            <Li key={`link-${item}`}>
+              <a href="#">{item}</a>
+            </Li>
           ))}
+          <LangButtons />
         </Ul>
 
         <Menu>
           <HiMenuAlt4 onClick={() => setToggle(true)} />
-
-          {toggle && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              // initial={{ width: 0 }}
-              // animate={{ width: [100, 0] }}
-              animate={{ x: [300, 0], opacity: 1 }}
-              transition={{ duration: 0.85, ease: 'easeOut' }}
-            >
-              <MenuSubContainer>
-                <div>
-                  <HiX onClick={() => setToggle(false)} />
-                </div>
-                <MenuUl>
-                  {['projects', 'about', 'skills'].map((item) => (
-                    <li key={`link-menu-${item}`}>
-                      <a href="#">{item}</a>
-                    </li>
-                  ))}
-                </MenuUl>
-              </MenuSubContainer>
-            </motion.div>
-          )}
         </Menu>
-      </Container>
-    </Nav >
+      </Topbar >
+
+      {toggle && (
+        <SideBar>
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "50vw" }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+          >
+            <HiX onClick={() => setToggle(false)} />
+            <UlMenu>
+              {navItems.map((item) => (
+                <Li key={`link-menu-${item}`}>
+                  <a href="#">{item}</a>
+                </Li>
+              ))}
+              <LangButtons />
+            </UlMenu>
+          </motion.div>
+        </SideBar>
+      )}
+    </nav>
   )
 }
 
 export default Navbar
 
-const Nav = styled.div`
+const Topbar = styled.div`
+  position: fixed;
+  z-index: 2;
   width: 100vw;
-  background-color: lightblue;
+  height: 3rem;
+  padding: 0.25rem 0;
+
+  background-color: rgba(173, 216, 230, 0.5);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  padding: 0.25rem 0;
-  z-index: 2;
-`
-const Container = styled.div`
+  box-shadow: 0 4px 5px rgba(168, 168, 168, 0.5);
+
   display: flex;
   justify-content: space-between;
   align-items:center;
- `
+`
 
 const Title = styled.div`
   font-family: 'Alex Brush';
   font-weight: 600;
   font-size: 2rem;
-  padding: 0 2rem ;
-
-  @media screen and (max-width: 600px) {
-    display: none;
-    padding: 0 2.0rem;
-  }
+  padding: 0 2rem;
 `
 
-const Ul = styled.div`
+const Ul = styled.ul`
   flex:1;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  padding: 0.5rem 1rem;
 
-  li {
-    list-style: none;
+  @media screen and (max-width: 650px) {
+    display: none;
+    padding:  0 2.0rem;
+  }
+`
 
+const Li = styled.li`
+  list-style: none;
+  padding: 0.25rem 0;
+
+  a {
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    padding: 0.5rem;
+    border-radius: 40%;
+  }
+
+  &:hover {
     a {
-      text-transform: uppercase;
-       transition: all 0.3s ease-in-out;
-
-      &:hover {
-        cursor: pointer;
-         color: purple;
-      }
+      background-color: rgba(255, 182, 193, 0.3);
+      cursor: pointer;
     }
   }
 `
 
-const MenuUl = styled(Ul)`
-  margin-top: 2rem;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  li {
-    padding: 0.5rem 0;
-  }
-`
-
-const MenuSubContainer = styled.div`
+const UlMenu = styled.ul`
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  height: 10rem;
 `
 
 const Menu = styled.div`
-  width: 35px;
-  height: 35px;
-  /* position: relative; */
+  width: 40px;
+  height: 40px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  svg{
-    color: navy;
+  &:hover {
+    cursor: pointer;
   }
 
-  div {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 5;
-    background-color: white;
+  @media screen and (min-width: 650px) {
+    display: none;
+  }
 
-    padding: 1rem;
-    width: 80%;
-    height: 100vh;
+  svg{
+    width: 70%;
+    height: 70%;
+    color: darkblue;
+    margin-right: 10px;
+  }
+`
 
-    box-shadow: 0 0 20px rgba(168, 168, 168, 0.15)
+const SideBar = styled.aside`
+  /* min-width: 0; */
+  /* max-width: 80%; */
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 5;
 
-    svg{
-      color: navy;
+  padding: 1rem;
+  background-color: rgba(245, 245, 245, 0.8);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: -4px 0 5px rgba(168, 168, 168, 0.5);
+
+  svg {
+    width: 10%;
+    height: 10%;
+    color: darkblue;
+    
+    &:hover {
+      cursor: pointer;
     }
   }
 `
