@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav>
       <Topbar>
         <Title>
-          KH&apos;s <span style={{ color: "darkblue" }}>Portofolio</span>
+          <span>KH&apos;s</span> Portofolio
         </Title>
         <Ul>
           {navItems.map((item) => (
@@ -76,6 +76,10 @@ const Title = styled.div`
   font-weight: 600;
   font-size: 2rem;
   padding: 0 2rem;
+  
+  span {
+    color: rgb(0,0,139);
+  }
 `
 
 const Ul = styled.ul`
