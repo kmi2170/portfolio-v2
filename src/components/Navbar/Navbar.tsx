@@ -1,10 +1,11 @@
+import Link from "next/link";
 import { useState } from "react";
 import styled from "styled-components"
 import { HiMenuAlt4, HiX } from "react-icons/hi/index";
 import { motion } from "framer-motion";
 import LangButtons from "./LangButtons";
 
-const navItems = ['projects', 'about', 'skills']
+export const navItems = ['projects', 'about', 'skills']
 
 const Navbar = () => {
   const [toggle, setToggle] = useState<boolean>(false)
@@ -18,7 +19,9 @@ const Navbar = () => {
         <Ul>
           {navItems.map((item) => (
             <Li key={`link-${item}`}>
-              <a href="#">{item}</a>
+              <Link href={`#${item}`}>
+                <a>{item}</a>
+              </Link>
             </Li>
           ))}
           <LangButtons />
@@ -29,26 +32,30 @@ const Navbar = () => {
         </Menu>
       </Topbar >
 
-      {toggle && (
-        <SideBar>
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: "50vw" }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-          >
-            <HiX onClick={() => setToggle(false)} />
-            <UlMenu>
-              {navItems.map((item) => (
-                <Li key={`link-menu-${item}`}>
-                  <a href="#">{item}</a>
-                </Li>
-              ))}
-              <LangButtons />
-            </UlMenu>
-          </motion.div>
-        </SideBar>
-      )}
-    </nav>
+      {
+        toggle && (
+          <SideBar>
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "50vw" }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+            >
+              <HiX onClick={() => setToggle(false)} />
+              <UlMenu>
+                {navItems.map((item) => (
+                  <Li key={`link-menu-${item}`}>
+                    <Link href={`#${item}`}>
+                      <a>{item}</a>
+                    </Link>
+                  </Li>
+                ))}
+                <LangButtons />
+              </UlMenu>
+            </motion.div>
+          </SideBar>
+        )
+      }
+    </nav >
   )
 }
 
@@ -101,6 +108,7 @@ const Li = styled.li`
   padding: 0.25rem 0;
 
   a {
+    font-family: 'M PLUS Rounded 1c';
     text-transform: uppercase;
     transition: all 0.3s ease-in-out;
     padding: 0.5rem;

@@ -1,7 +1,20 @@
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
+import { AppWrapper } from "../../wrapper";
 
 const Header = () => {
+  const mounted = useRef(false)
+
+  useEffect(() => {
+    mounted.current = true
+
+    return () => {
+      mounted.current = false
+    }
+  })
+  console.log("Header mounted:", mounted.current);
+
   return (
     <Wrapper>
       <motion.div
@@ -32,21 +45,36 @@ const Header = () => {
       >
         <Description>
           <p>I create awesome apps!</p>
-          <p>Wellcome to my portofolio.</p>
         </Description>
       </motion.div>
+
+      <Welcome>
+        <h2>Wellcome to my portofolio.</h2>
+      </Welcome>
     </Wrapper>
   )
 }
 
-export default Header
+export default AppWrapper(Header, 'home')
 
 const Wrapper = styled.div`
+  height: 400px;
+  font-family: 'M PLUS Rounded 1c';
   margin-top: 3rem;
   padding: 3rem 3rem;
 
   background-color: rgba(173, 216, 230, 1.0);
-  background-image: linear-gradient(rgba(0, 0, 139, 0.4), rgba(11, 11, 69, 1.0), rgba(0, 0, 139, 0.5));
+
+  background-image: radial-gradient(
+    rgba(0, 0, 139, 1.0),
+    rgba(11, 11, 69, 1.0),
+    rgba(11, 11, 69, 1.0)
+  );
+  /* background-image: linear-gradient( */
+  /*   rgba(0, 0, 139, 0.5),  */
+  /*   rgba(11, 11, 69, 1.0),  */
+  /*   rgba(0, 0, 139, 0.7) */
+  /* ); */
 
   display: flex;
   flex-direction: column;
@@ -96,3 +124,7 @@ const Description = styled.div`
     font-weight: 700;
   }
 `
+
+const Welcome = styled.div`
+`
+

@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
-    overflow: hidden;
+    scroll-behavior: smooth;
   }
 `
 const theme = {
