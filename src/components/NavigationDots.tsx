@@ -38,7 +38,7 @@ const Dot = styled.a<{ isActive: boolean }>`
       }
 
       background-color: ${({ isActive }) => isActive ? 'rgba(168, 101, 201, 0.8)' : '#fff'};
-      `
+`
 
 const Wrapper = styled.div`
       width: 1.5rem;
@@ -51,7 +51,7 @@ const Wrapper = styled.div`
       justify-content: space-around;
       align-items: center;
 
-      /* position: relative; */
+      position: sticky;
       /* top: calc(50vh - 4rem); */
       /* right: 0.75rem; */
       z-index: 10;

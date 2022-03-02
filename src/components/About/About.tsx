@@ -18,22 +18,23 @@ const About = () => {
       .then((data) => { setAbout(data) })
   }, [])
 
-  console.log(about);
-
+  // console.log(about);
 
   return (
     <Wrapper>
-      <Title>
-        About
-      </Title>
+      <Card>
+        <Title>
+          About
+        </Title>
 
-      <Description>
-        {about?.length && about[0]['en']}
-      </Description>
+        <Description>
+          {about?.length && about[0]['en']}
+        </Description>
 
-      <Description>
-        {about?.length && about[0]['jp']}
-      </Description>
+        <Description>
+          {about?.length && about[0]['jp']}
+        </Description>
+      </Card>
     </Wrapper>
   )
 }
@@ -41,8 +42,18 @@ const About = () => {
 export default AppWrapper(MotionWrapper(About), 'about')
 
 const Wrapper = styled.div`
-  padding: 3rem;
+  padding: 1.5rem;
+  padding-left: 2rem;
   font-family: 'M PLUS Rounded 1c';
+  /* width: 100vw; */
+  /* height: 100vh; */
+`
+
+const Card = styled.div`
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 10px rgba(168, 168, 168, 0.5);
 `
 
 const Title = styled.h2`
