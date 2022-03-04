@@ -37,7 +37,7 @@ const Wrapper = styled.div`
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: 0.25;
+    opacity: 0.5;
     background-image: linear-gradient(to right top, #d16ba5, #c085c8, #aa9edf, #9ab3e9, #98c5ea, #96cfed, #97d8ef, #9ce1ef, #8de8f3, #7eeef5, #6ef5f4, #5ffbf1);
   }
 `

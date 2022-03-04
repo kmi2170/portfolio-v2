@@ -1,20 +1,8 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { AppWrapper } from "../../wrapper";
 
 const Header = () => {
-  const mounted = useRef(false)
-
-  useEffect(() => {
-    mounted.current = true
-
-    return () => {
-      mounted.current = false
-    }
-  })
-  console.log("Header mounted:", mounted.current);
-
   return (
     <Wrapper>
       <motion.div

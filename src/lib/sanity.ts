@@ -11,4 +11,20 @@ export const client = sanityCliet({
 
 const builder = ImageUrlBuilder(client)
 
-export const urlFor = (source: string) => builder.image(source)
+export interface ImageSource {
+  type: string;
+  asset: {
+    ref: string;
+    type: string;
+  }
+}
+
+export interface DataBase {
+  createdAt: string;
+  id: string;
+  rev: string;
+  type: string;
+  updatedAt: string;
+}
+
+export const urlFor = (source: ImageSource) => builder.image(source).url()

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components"
-import { client, urlFor } from "../../lib/sanity";
+import { client, DataBase } from "../../lib/sanity";
 import { AppWrapper, MotionWrapper } from "../../wrapper";
 
-interface DataAbout {
+interface DataAbout extends DataBase {
   en: string,
   jp: string,
+  createdAt: string;
 }
 
 const About = () => {
@@ -16,6 +17,7 @@ const About = () => {
 
     client.fetch(query)
       .then((data) => { setAbout(data) })
+      .catch((error) => console.error(error))
   }, [])
 
   // console.log(about);
@@ -24,7 +26,7 @@ const About = () => {
     <Wrapper>
       <Card>
         <Title>
-          About
+          About <span>Me</span>
         </Title>
 
         <Description>
@@ -57,6 +59,9 @@ const Card = styled.div`
 `
 
 const Title = styled.h2`
+  span {
+    color: rgb(0,0,139);
+  }
 `
 
 const Description = styled.p`
