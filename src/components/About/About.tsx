@@ -1,24 +1,20 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components"
-import { client, DataBase } from "../../lib/sanity";
+import { client } from "../../lib/sanity";
 import { AppWrapper, MotionWrapper } from "../../wrapper";
+import { DataAbout } from "../../lib/types";
 
-interface DataAbout extends DataBase {
-  en: string,
-  jp: string,
-  createdAt: string;
-}
+const About = ({ data: about }: { data: DataAbout[] }) => {
+  // const [about, setAbout] = useState<DataAbout[]>([])
 
-const About = () => {
-  const [about, setAbout] = useState<DataAbout[]>([])
+  // useEffect(() => {
+  //   setAbout(data)
+  // const query = '*[_type == "about"]'
 
-  useEffect(() => {
-    const query = '*[_type == "about"]'
-
-    client.fetch(query)
-      .then((data) => { setAbout(data) })
-      .catch((error) => console.error(error))
-  }, [])
+  // client.fetch(query)
+  //   .then((data) => { setAbout(data) })
+  //   .catch((error) => console.error(error))
+  // }, [data])
 
   // console.log(about);
 
@@ -42,6 +38,7 @@ const About = () => {
 }
 
 export default AppWrapper(MotionWrapper(About), 'about')
+
 
 const Wrapper = styled.div`
   padding: 1.5rem;

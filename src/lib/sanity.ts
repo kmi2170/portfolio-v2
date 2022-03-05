@@ -1,5 +1,6 @@
 import sanityCliet from "@sanity/client";
 import ImageUrlBuilder from "@sanity/image-url";
+import { ImageSource } from "./types";
 
 export const client = sanityCliet({
   projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
@@ -10,21 +11,5 @@ export const client = sanityCliet({
 })
 
 const builder = ImageUrlBuilder(client)
-
-export interface ImageSource {
-  type: string;
-  asset: {
-    ref: string;
-    type: string;
-  }
-}
-
-export interface DataBase {
-  createdAt: string;
-  id: string;
-  rev: string;
-  type: string;
-  updatedAt: string;
-}
 
 export const urlFor = (source: ImageSource) => builder.image(source).url()

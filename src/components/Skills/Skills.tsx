@@ -1,31 +1,21 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components"
 import { motion } from "framer-motion";
-import { client, urlFor, DataBase, ImageSource } from "../../lib/sanity";
-
+import { client, urlFor } from "../../lib/sanity";
 import { AppWrapper, MotionWrapper } from "../../wrapper";
 import { skillSet } from "../../assets/skillSet";
+import { DataSkills } from "../../lib/types";
 
+const Skills = ({ data: skills }: { data: DataSkills[] }) => {
+  // const [skills, setSkills] = useState<DataSkills[]>([])
 
-interface DataSkills extends DataBase {
-  name: string;
-  iconName: string;
-  icons: {
-    original: ImageSource;
-    originalWordmark: ImageSource;
-  };
-}
+  // useEffect(() => {
+  // const query = '*[_type == "skills"]'
 
-const Skills = () => {
-  const [skills, setSkills] = useState<DataSkills[]>([])
-
-  useEffect(() => {
-    const query = '*[_type == "skills"]'
-
-    client.fetch(query)
-      .then((data) => { setSkills(data) })
-      .catch((error) => console.error(error))
-  }, [])
+  // client.fetch(query)
+  //   .then((data) => { setSkills(data) })
+  //   .catch((error) => console.error(error))
+  // }, [])
 
   // console.log(skills);
 

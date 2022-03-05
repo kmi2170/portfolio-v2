@@ -1,24 +1,20 @@
 import styled from "styled-components";
 import { NavigationDots } from "../components/";
 
-const AppWrapper = (
-  Component: React.ComponentType<{}>,
+const AppWrapper = <P extends object>(
+  Component: React.ComponentType<P>,
   idName: string,
-  // bgImage?: string
-) => function HOC() {
+) => (props: P) => (
+  <Wrapper id={idName}>
+    <SubWrapper>
+      <Container>
+        <Component {...props as P} />
+      </Container>
 
-  return (
-    <Wrapper id={idName}>
-      <SubWrapper>
-        <Container>
-          <Component />
-        </Container>
-
-        <NavigationDots activeItem={idName} />
-      </SubWrapper>
-    </Wrapper>
-  )
-}
+      <NavigationDots activeItem={idName} />
+    </SubWrapper>
+  </Wrapper>
+)
 
 export default AppWrapper
 
