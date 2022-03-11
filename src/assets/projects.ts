@@ -1,0 +1,1 @@
+../../../../myportofolio/src/assets/projects.ts

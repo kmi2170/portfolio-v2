@@ -19,6 +19,7 @@ export const skillSet = {
     { name: 'MySQL', iconName: 'mysql' },
     { name: 'PostgreSQL', iconName: 'postgresql' },
     { name: 'MongoDB', iconName: 'mongodb' },
+    { name: 'Firebase', iconName: 'firebase' },
     { name: 'Sanity', iconName: 'sanity' },
   ],
   others: [
@@ -33,5 +34,7 @@ export const skillSet = {
     { name: 'Linux ', iconName: 'linux' },
     { name: 'Bash', iconName: 'bash' },
     { name: 'Chrome Extension', iconName: '' },
+    { name: 'Vercel', iconName: '' },
+    { name: 'Netlify', iconName: '' },
   ]
 }

@@ -9,50 +9,60 @@
 // import  FaCheck  from "react-icons/fa/index";
 
 // import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
-import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next'
-import { client } from "../lib/sanity";
+import type {
+  GetServerSideProps,
+  InferGetServerSidePropsType,
+  NextPage,
+} from 'next';
+import { client } from '../lib/sanity';
 import styled from 'styled-components';
-import { Navbar, Header, Projects, About, Skills, Footer }
-  from "../components";
-import { DataAbout, DataSkills } from '../lib/types';
+
+import { Navbar, Header, Projects, About, Skills, Footer } from '../components';
+import { DataAbout, DataProject, DataSkills } from '../lib/types';
+import { data } from '../assets/projects';
 
 // const Home: NextPage = ({ dataAbout, dataSkills }: InferGetStaticPropsType<typeof getStaticProps>) => {
-const Home: NextPage = ({ dataAbout, dataSkills }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Home: NextPage = ({
+  dataAbout,
+  dataProjects,
+  dataSkills,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <Wrapper>
       <Navbar />
       <Header />
-      <Projects />
-      <About data={dataAbout} />
-      <Skills data={dataSkills} />
+      <About about={dataAbout} />
+      <Projects projects={dataProjects} />
+      <Skills skills={dataSkills} />
       <Footer />
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
   // export const getStaticProps: GetStaticProps = async () => {
-  const query_about = '*[_type == "about"]'
-  const query_skills = '*[_type == "skills"]'
+  const query_about = '*[_type == "about"]';
+  const query_skills = '*[_type == "skills"]';
 
-  // const data: DataAbout[] = await client.fetch(query_about)
-  const [dataAbout, dataSkills] =
-    await Promise.all<[DataAbout[], DataSkills[]]>([
-      client.fetch(query_about),
-      client.fetch(query_skills),
-    ])
+  // const [dataAbout, dataSkills] = await Promise.all<
+  //   [DataAbout[], DataSkills[]]
+  // >([client.fetch(query_about), client.fetch(query_skills)]);
+
+  const dataAbout = null;
+  const dataSkills = [];
+  const dataProjects: DataProject[] = data;
 
   return {
-    props: { dataAbout, dataSkills },
+    props: { dataAbout, dataProjects, dataSkills },
     // revalidate: 3600,
     // revalidate: 86400,
-  }
-}
+  };
+};
 
 const Wrapper = styled.div`
   height: 100vh;
   width: 100vw;
   overflow: auto;
-`
+`;

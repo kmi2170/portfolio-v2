@@ -3,7 +3,7 @@ export interface ImageSource {
   asset: {
     ref: string;
     type: string;
-  }
+  };
 }
 
 export interface DataBase {
@@ -15,8 +15,8 @@ export interface DataBase {
 }
 
 export interface DataAbout extends DataBase {
-  en: string,
-  jp: string,
+  en: string;
+  jp: string;
   createdAt: string;
 }
 
@@ -29,3 +29,23 @@ export interface DataSkills extends DataBase {
   };
 }
 
+export interface DataProject {
+  id: number;
+  name: { en: string; jp: string };
+  description: {
+    en: string;
+    jp: string;
+  };
+  features: {
+    en: string[];
+    jp: string[];
+  };
+  details: {
+    en: string[];
+    jp: string[];
+  };
+  tags: string[];
+  url: string;
+  imageUrls: string[];
+  repo: string;
+}

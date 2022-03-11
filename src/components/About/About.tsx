@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import styled from "styled-components"
-import { client } from "../../lib/sanity";
-import { AppWrapper, MotionWrapper } from "../../wrapper";
-import { DataAbout } from "../../lib/types";
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+// import { client } from "../../lib/sanity";
+import { AppWrapper, MotionWrapper } from '../../wrapper';
+import { DataAbout } from '../../lib/types';
 
-const About = ({ data: about }: { data: DataAbout[] }) => {
+const About = ({ about }: { about: DataAbout[] }) => {
   // const [about, setAbout] = useState<DataAbout[]>([])
 
   // useEffect(() => {
@@ -22,23 +22,18 @@ const About = ({ data: about }: { data: DataAbout[] }) => {
     <Wrapper>
       <Card>
         <Title>
-          About <span>Me</span>
+          About <span>Myself</span>
         </Title>
 
-        <Description>
-          {about?.length && about[0]['en']}
-        </Description>
+        <Description>{about?.length && about[0]['en']}</Description>
 
-        <Description>
-          {about?.length && about[0]['jp']}
-        </Description>
+        <Description>{about?.length && about[0]['jp']}</Description>
       </Card>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default AppWrapper(MotionWrapper(About), 'about')
-
+export default AppWrapper(MotionWrapper(About), 'about');
 
 const Wrapper = styled.div`
   padding: 1.5rem;
@@ -46,22 +41,22 @@ const Wrapper = styled.div`
   font-family: 'M PLUS Rounded 1c';
   /* width: 100vw; */
   /* height: 100vh; */
-`
+`;
 
 const Card = styled.div`
   padding: 2rem;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.75);
   box-shadow: 0 0 10px rgba(168, 168, 168, 0.5);
-`
+`;
 
 const Title = styled.h2`
   span {
-    color: rgb(0,0,139);
+    color: rgb(0, 0, 139);
   }
-`
+`;
 
 const Description = styled.p`
   margin: 1rem 0;
   font-size: 1.3rem;
-`
+`;
