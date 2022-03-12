@@ -1,30 +1,83 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-import { DataProject } from '../../../../lib/types';
+import {
+  AiFillCloseCircle,
+  AiFillCheckCircle,
+  AiOutlineCheck,
+  AiFillGithub,
+} from 'react-icons/ai/index';
+import { GiSmartphone } from 'react-icons/gi/index';
 
-const ModalContent = ({ project }: { project: DataProject }) => {
+import { DataProject, Lang } from '../../../../lib/types';
+import Carousel from './Carousel/Carousel';
+
+interface ModalContentProps {
+  project: DataProject;
+  closeModal: () => void;
+  lang: Lang;
+}
+
+const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
   return (
-    <Wrapper>
-      <AppName>{project?.name['jp']}</AppName>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: [0, 1] }}
+      transition={{ duration: 1.0, ease: 'easeInOut', staggerChildren: 0.5 }}
+    >
+      <Wrapper>
+        <ButtonContainer>
+          <Close onClick={closeModal}>
+            <AiFillCloseCircle />
+          </Close>
+        </ButtonContainer>
+        <AppName>{project?.name[lang]}</AppName>
 
-      <AppImg>
-        <img src={project?.imageUrls[0]} alt={project?.name['en']} />
-      </AppImg>
+        <AppImg>
+          <Carousel imageUrls={project?.imageUrls} />
+          {/* <img src={project?.imageUrls[0]} alt={project?.name['en']} /> */}
+        </AppImg>
 
-      <div>{project.tags}</div>
-      <div>{project.description['jp']}</div>
-      <div>{project.features['jp']}</div>
-      <div>{project.details['jp']}</div>
+        <Links>
+          <a href={project?.url} target='_blank' rel='noopener noreferrer'>
+            <GiSmartphone />
+            App
+          </a>
+          <a href={project?.repo} target='_blank' rel='noopener noreferrer'>
+            <AiFillGithub />
+            Code
+          </a>
+        </Links>
 
-      <Links>
-        <a href={project?.url} target='_blank' rel='noopener noreferrer'>
-          App
-        </a>
-        <a href={project?.repo} target='_blank' rel='noopener noreferrer'>
-          Code
-        </a>
-      </Links>
-    </Wrapper>
+        <Tags>
+          {project?.tags.map((tag, i) => (
+            <span key={tag + i}>{tag}</span>
+          ))}
+        </Tags>
+
+        <Description>{project.description[lang]}</Description>
+
+        <SubTitle>Features</SubTitle>
+        <Features>
+          {project?.features[lang].map((feature, i) => (
+            <li key={i}>
+              <AiOutlineCheck />
+              {feature}
+            </li>
+          ))}
+        </Features>
+
+        <SubTitle>Details</SubTitle>
+        <Details>
+          {project?.details[lang].map((detail, i) => (
+            <li key={i}>
+              <AiFillCheckCircle />
+              {detail}
+            </li>
+          ))}
+        </Details>
+      </Wrapper>
+    </motion.div>
   );
 };
 
@@ -33,15 +86,17 @@ export default ModalContent;
 const Wrapper = styled.div`
   width: 90vw;
   height: 85vh;
-  background: whitesmoke;
+  overflow-y: auto;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(108, 122, 137, 1);
-  background-color: white;
+  padding: 0 0.5rem 0.5rem 0.5rem;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  font-family: 'M PLUS Rounded 1c';
 
   &:hover {
     box-shadow: 0 0 20px rgba(108, 122, 137, 1);
@@ -49,8 +104,25 @@ const Wrapper = styled.div`
 `;
 
 const AppName = styled.div`
-  margin-top: 0.25rem;
   font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+`;
+
+const ButtonContainer = styled.div`
+  width: 100%;
+  text-align: right;
+`;
+
+const Close = styled.span`
+  svg {
+    width: 35px;
+    height: 35px;
+    color: blue;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `;
 
 const AppImg = styled.div`
@@ -70,49 +142,88 @@ const AppImg = styled.div`
   }
 `;
 
-const Hover = styled.div`
-  width: 100%;
-  height: 190px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: all 2s ease;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  span {
-    font-size: 1.5rem;
-    color: white;
-    text-align: center;
-  }
-
-  svg {
-    color: white;
-    width: 30%;
-    height: 30%;
-  }
-
-  &:hover {
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-`;
-
 const Links = styled.div`
   width: 90%;
   padding: 0.5rem;
+  margin-bottom: 0.5rem;
 
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 
   a {
     color: blue;
+
+    display: flex;
+    align-items: center;
+
+    svg {
+      font-size: 1.25rem;
+      margin-right: 0.2rem;
+    }
   }
+`;
+
+const Tags = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  span {
+    font-size: 1.25rem;
+    padding: 0 0.5rem;
+    color: white;
+    background-color: #4b365f;
+    border-radius: 10px;
+  }
+`;
+
+const Description = styled.div`
+  margin: 1rem 0;
+  width: 80%;
+  font-size: 1.25rem;
+  text-align: center;
+`;
+
+const Features = styled.ul`
+  font-size: 1.25rem;
+
+  li {
+    list-style: none;
+    overflow-wrap: normal;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.25rem;
+  }
+
+  svg {
+    color: darkorange;
+    margin-left: 0.5rem;
+  }
+`;
+
+const Details = styled.ul`
+  font-size: 1.25rem;
+
+  li {
+    list-style: none;
+    overflow-wrap: normal;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.25rem;
+  }
+
+  svg {
+    color: green;
+    margin-right: 0.25rem;
+  }
+`;
+
+const SubTitle = styled.div`
+  font-size: 1.25rem;
+  font-weight: 600;
 `;

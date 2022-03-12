@@ -1,22 +1,23 @@
-import styled from "styled-components"
+import styled from 'styled-components';
+
+// import { AppWrapper, MotionWrapper } from '../../wrapper';
 
 const Footer = () => {
-  const year = (new Date).getFullYear()
+  const year = new Date().getFullYear();
 
   return (
     <Wrapper>
-      <p>
-        &copy;{year} Kemmei. All rights reserved.
-      </p>
+      <p>&copy;{year} Kemmei. All rights reserved.</p>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Footer
+// export default AppWrapper(MotionWrapper(Footer), 'footer');
+export default Footer;
 
 const Wrapper = styled.div`
-  margin-bottom: 1rem;
+  margin-top: 4rem;
+  padding-bottom: 2rem;
   font-family: 'M PLUS Rounded 1c';
   text-align: center;
-
-`
+`;

@@ -1,6 +1,6 @@
-import type { AppProps } from 'next/app'
-import Head from 'next/head'
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -19,13 +19,12 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     scroll-behavior: smooth;
   }
-`
+`;
 const theme = {
   // colors: {
   //   primary: '#0070f3',
   // },
-}
-
+};
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -35,16 +34,16 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Head>
           <title>KH&apos;s Portofolio</title>
           <meta
-            name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width"
+            name='viewport'
+            content='minimum-scale=1, initial-scale=1, width=device-width'
           />
-          <meta name="description" content="KH's Portofolio" />
-          <link rel="icon" href="/my_favicon.png" />
+          <meta name='description' content="KH's Portofolio" />
+          <link rel='icon' href='/my_favicon.png' />
         </Head>
         <Component {...pageProps} />
       </ThemeProvider>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

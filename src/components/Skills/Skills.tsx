@@ -5,6 +5,7 @@ import { client, urlFor } from '../../lib/sanity';
 import { AppWrapper, MotionWrapper } from '../../wrapper';
 import { skillSet } from '../../assets/skillSet';
 import { DataSkills } from '../../lib/types';
+import Footer from '../Footer/Footer';
 
 const Skills = ({ skills }: { skills: DataSkills[] }) => {
   // const [skills, setSkills] = useState<DataSkills[]>([])
@@ -121,6 +122,8 @@ const Skills = ({ skills }: { skills: DataSkills[] }) => {
             );
           })}
       </Container>
+
+      <Footer />
     </Wrapper>
   );
 };
@@ -131,8 +134,8 @@ export default AppWrapper(MotionWrapper(Skills), 'skills');
 const Wrapper = styled.div`
   padding: 2rem;
   font-family: 'M PLUS Rounded 1c';
-  /* width: 100vw; */
-  /* height: 100vh; */
+  width: 100%;
+  height: 100vh;
 `;
 
 const Title = styled.h2`
@@ -184,4 +187,5 @@ const Icon = styled.div`
 const IconName = styled.p`
   word-wrap: normal;
   text-align: center;
+  font-size: 1.25rem;
 `;

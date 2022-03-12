@@ -1,29 +1,34 @@
-import styled from "styled-components";
-import { NavigationDots } from "../components/";
+import styled from 'styled-components';
+import { NavigationDots } from '../components/';
 
-const AppWrapper = <P extends object>(
-  Component: React.ComponentType<P>,
-  idName: string,
-) => (props: P) => (
-  <Wrapper id={idName}>
-    <SubWrapper>
-      <Container>
-        <Component {...props as P} />
-      </Container>
+const AppWrapper =
+  <P extends object>(
+    Component: React.ComponentType<P>,
+    idName: string,
+    bgColor?: string
+  ) =>
+  (props: P) =>
+    (
+      <Wrapper id={idName} bgColor={bgColor}>
+        <SubWrapper>
+          <Container>
+            <Component {...(props as P)} />
+          </Container>
 
-      <NavigationDots activeItem={idName} />
-    </SubWrapper>
-  </Wrapper>
-)
+          <NavigationDots activeItem={idName} />
+        </SubWrapper>
+      </Wrapper>
+    );
 
-export default AppWrapper
+export default AppWrapper;
 
-// const Wrapper = styled.div<{ bgImage?: string }>`
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ bgColor?: string }>`
   width: 100%;
   min-height: 100vh;
   display: flex;
-  /* flex-direction: row; */
+  flex-direction: row;
+
+  background-color: ${({ bgColor }) => bgColor && bgColor};
 
   &::before {
     content: ' ';
@@ -33,10 +38,24 @@ const Wrapper = styled.div`
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: 0.5;
-    background-image: linear-gradient(to right top, #d16ba5, #c085c8, #aa9edf, #9ab3e9, #98c5ea, #96cfed, #97d8ef, #9ce1ef, #8de8f3, #7eeef5, #6ef5f4, #5ffbf1);
+    opacity: 0.3;
+    background-image: linear-gradient(
+      to right top,
+      #d16ba5,
+      #c085c8,
+      #aa9edf,
+      #9ab3e9,
+      #98c5ea,
+      #96cfed,
+      #97d8ef,
+      #9ce1ef,
+      #8de8f3,
+      #7eeef5,
+      #6ef5f4,
+      #5ffbf1
+    );
   }
-`
+`;
 /* background-image: ${({ bgImage }) => bgImage}; */
 /* display: ${({ bgImage }) => bgImage ? 'block' : 'none'}; */
 
@@ -46,8 +65,8 @@ const SubWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   /* padding: 4rem 2rem; */
-`
+`;
 
 const Container = styled.div`
   flex: 1;
-`
+`;

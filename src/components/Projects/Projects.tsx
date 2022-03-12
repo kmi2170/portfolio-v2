@@ -5,9 +5,14 @@ import { AiFillGithub } from 'react-icons/ai/index';
 
 import { AppWrapper, MotionWrapper } from '../../wrapper';
 import Project from './Project/Project';
-import { DataProject } from '../../lib/types';
+import { DataProject, Lang } from '../../lib/types';
 
-const Projects = ({ projects }: { projects: DataProject[] }) => {
+interface ProjectsProps {
+  projects: DataProject[];
+  lang: Lang;
+}
+
+const Projects = ({ projects, lang }: ProjectsProps) => {
   return (
     <Wrapper>
       <Title>
@@ -15,21 +20,19 @@ const Projects = ({ projects }: { projects: DataProject[] }) => {
       </Title>
 
       <Git>
-        Github
         <a
           href='https://github.com/kmi2170'
           target='_blank'
           rel='noopener noreferrer'
         >
-          <span>
-            <AiFillGithub />
-          </span>
+          Github
+          <AiFillGithub />
         </a>
       </Git>
 
       <Container>
         {projects?.map((project: DataProject) => (
-          <Project key={project.name.en} project={project} />
+          <Project key={project.name.en} project={project} lang={lang} />
         ))}
       </Container>
 
@@ -47,8 +50,6 @@ const Wrapper = styled.div`
   padding: 1.5rem;
   padding-left: 2rem;
   font-family: 'M PLUS Rounded 1c';
-  /* width: 100vw; */
-  /* height: 100vh; */
 `;
 
 const Title = styled.h2`
@@ -63,7 +64,7 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 2rem;
 `;
 
 const Git = styled.div`
@@ -72,13 +73,15 @@ const Git = styled.div`
   margin: 10px;
   margin-left: 20px;
 
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-  span {
-    margin-left: 0.5rem;
-    font-size: 2rem;
+    svg {
+      margin-left: 0.25rem;
+      font-size: 1.75rem;
+    }
   }
 `;
 

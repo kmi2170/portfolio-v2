@@ -1,19 +1,28 @@
-import styled from 'styled-components';
-import { AiFillEye, AiOutlineEye } from 'react-icons/ai/index';
-
-import { DataProject } from '../../../lib/types';
-import Modal from 'react-modal';
 import { useState } from 'react';
+import styled from 'styled-components';
+import { AiOutlineEye, AiFillGithub } from 'react-icons/ai/index';
+import { GiSmartphone } from 'react-icons/gi/index';
+import Modal from 'react-modal';
+import { motion } from 'framer-motion';
+
+import { DataProject, Lang } from '../../../lib/types';
 import ModalContent from './Modal/ModalContent';
+
+Modal.setAppElement('#__next');
+
+interface ProjectProps {
+  project: DataProject;
+  lang: Lang;
+}
 
 const customModalStyle = {
   content: {
     top: '10vh',
     left: '5vw',
-    right: '5vw',
-    bottom: '5vh',
+    right: 'auto',
+    bottom: 'auto',
     // transform: 'translate(-50% -50%)',
-    backgroundColor: '#0a0b0d',
+    backgroundColor: 'white',
     padding: 0,
     border: 'none',
     boxShadow: '0 0 10px white',
@@ -23,36 +32,53 @@ const customModalStyle = {
   },
 };
 
-const Project = ({ project }: { project: DataProject }) => {
+const Project = ({ project, lang }: ProjectProps) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-  const handleClick = () => {
-    setIsModalOpen((prev) => !prev);
-  };
+  const openModal = () => setIsModalOpen(true);
+
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <Wrapper>
-      <AppName>{project?.name['jp']}</AppName>
+      <AppName>{project?.name[lang]}</AppName>
 
       <AppImg>
-        <img src={project?.imageUrls[0]} alt={project?.name['en']} />
-
-        <div>{project.tags}</div>
-
-        <Hover onClick={() => handleClick()}>
-          <AiOutlineEye />
-          <span>Click to View</span>
-          <Modal isOpen={isModalOpen} style={customModalStyle}>
-            <ModalContent project={project} />
-          </Modal>
+        <img src={project?.imageUrls[0]} alt={project?.name[lang]} />
+        <Hover onClick={openModal}>
+          <motion.div
+            whileHover={{ opacity: [0, 1], scale: 1.5 }}
+            transition={{
+              duration: 0.5,
+              ease: 'easeInOut',
+            }}
+          >
+            <AiOutlineEye />
+            <span>Clic to View</span>
+          </motion.div>
         </Hover>
+        <Modal
+          isOpen={isModalOpen}
+          onRequestClose={closeModal}
+          style={customModalStyle}
+        >
+          <ModalContent project={project} closeModal={closeModal} lang={lang} />
+        </Modal>
       </AppImg>
+
+      <Tags>
+        {project?.tags.map((tag, i) => (
+          <span key={tag + i}>{tag}</span>
+        ))}
+      </Tags>
 
       <Links>
         <a href={project?.url} target='_blank' rel='noopener noreferrer'>
+          <GiSmartphone />
           App
         </a>
         <a href={project?.repo} target='_blank' rel='noopener noreferrer'>
+          <AiFillGithub />
           Code
         </a>
       </Links>
@@ -75,7 +101,7 @@ const Wrapper = styled.div`
   align-items: center;
 
   &:hover {
-    box-shadow: 0 0 20px rgba(108, 122, 137, 1);
+    box-shadow: 0 0 30px rgba(108, 122, 137, 1);
   }
 `;
 
@@ -93,11 +119,6 @@ const AppImg = styled.div`
 
   img {
     width: 100%;
-
-    &:hover {
-      scale: 0.9;
-      --webkit-filter: brightness(70%);
-    }
   }
 `;
 
@@ -107,25 +128,31 @@ const Hover = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+
   opacity: 0;
+  color: rgba(255, 255, 255, 0.8);
   background-color: rgba(0, 0, 0, 0.5);
-  transition: all 2s ease;
+  transition: all 0.5s ease-in-out;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  div {
+    color: rgba(255, 255, 255, 0.8);
 
-  span {
-    font-size: 1.5rem;
-    color: white;
-    text-align: center;
-  }
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  svg {
-    color: white;
-    width: 30%;
-    height: 30%;
+    span {
+      font-size: 1rem;
+      /* text-align: center; */
+    }
+
+    svg {
+      width: 20%;
+      height: 20%;
+    }
   }
 
   &:hover {
@@ -134,9 +161,25 @@ const Hover = styled.div`
   }
 `;
 
+const Tags = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  span {
+    padding: 0 0.5rem;
+    color: white;
+    background-color: #4b365f;
+    border-radius: 10px;
+  }
+`;
+
 const Links = styled.div`
   width: 90%;
-  padding: 0.5rem;
+  padding: 0.25rem;
 
   display: flex;
   flex-direction: row;
@@ -145,5 +188,13 @@ const Links = styled.div`
 
   a {
     color: blue;
+
+    display: flex;
+    align-items: center;
+
+    svg {
+      font-size: 1.25rem;
+      margin-right: 0.2rem;
+    }
   }
 `;

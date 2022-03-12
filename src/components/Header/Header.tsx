@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
-import styled from "styled-components";
-import { AppWrapper } from "../../wrapper";
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import { AppWrapper } from '../../wrapper';
 
 const Header = () => {
   return (
@@ -12,7 +12,9 @@ const Header = () => {
       >
         <Greetings>
           <p>Hello! I am</p>
-          <h1>Kemmei <span>Hamada.</span></h1>
+          <h1>
+            Kemmei <span>Hamada.</span>
+          </h1>
         </Greetings>
       </motion.div>
 
@@ -40,24 +42,23 @@ const Header = () => {
         <h2>Wellcome to my portofolio.</h2>
       </Welcome>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default AppWrapper(Header, 'home')
+export default AppWrapper(Header, 'home', 'white');
 
 const Wrapper = styled.div`
-  height: 400px;
   font-family: 'M PLUS Rounded 1c';
   margin-top: 3rem;
   padding: 3rem 3rem;
 
-  background-color: rgba(173, 216, 230, 1.0);
+  /* background-color: rgba(173, 216, 230, 1); */
 
-  background-image: radial-gradient(
-    rgba(0, 0, 139, 1.0),
-    rgba(11, 11, 69, 1.0),
-    rgba(11, 11, 69, 1.0)
-  );
+  /* background-image: radial-gradient( */
+  /*   rgba(0, 0, 139, 1), */
+  /*   rgba(11, 11, 69, 1), */
+  /*   rgba(11, 11, 69, 1) */
+  /* ); */
   /* background-image: linear-gradient( */
   /*   rgba(0, 0, 139, 0.5),  */
   /*   rgba(11, 11, 69, 1.0),  */
@@ -67,15 +68,15 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 
 const Greetings = styled.div`
-  p {
-    color: #e9e9e9;
-    font-size: 1.1rem;
-    font-weight: 600;
+  h2 {
+    /* color: #e9e9e9; */
+    /* font-size: 1.1rem; */
+    /* font-weight: 600; */
   }
-  
+
   h1 {
     margin-left: 2rem;
     color: #7df9ff;
@@ -84,14 +85,14 @@ const Greetings = styled.div`
       font-size: small;
     }
   }
-`
+`;
 
 const Title = styled.div`
   h3 {
     margin-left: 3em;
     color: #fff;
   }
-`
+`;
 
 const Description = styled.div`
   font-size: 1.1rem;
@@ -111,8 +112,6 @@ const Description = styled.div`
     font-size: 1.2rem;
     font-weight: 700;
   }
-`
+`;
 
-const Welcome = styled.div`
-`
-
+const Welcome = styled.div``;

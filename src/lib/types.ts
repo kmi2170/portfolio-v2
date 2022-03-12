@@ -1,3 +1,5 @@
+export type Lang = 'jp' | 'en';
+
 export interface ImageSource {
   type: string;
   asset: {

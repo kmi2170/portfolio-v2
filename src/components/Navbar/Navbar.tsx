@@ -1,20 +1,30 @@
-import Link from "next/link";
-import { useState } from "react";
-import styled from "styled-components"
-import { HiMenuAlt4, HiX } from "react-icons/hi/index";
-import { motion } from "framer-motion";
-import LangButtons from "./LangButtons";
+import Link from 'next/link';
+import { useState } from 'react';
+import styled from 'styled-components';
+import { HiMenuAlt4, HiX } from 'react-icons/hi/index';
+import { motion } from 'framer-motion';
 
-export const navItems = ['projects', 'about', 'skills']
+import LangButtons from './LangButtons/LangButtons';
+import { Lang } from '../../lib/types';
 
-const Navbar = () => {
-  const [toggle, setToggle] = useState<boolean>(false)
+export const navItems = ['projects', 'about', 'skills'];
+
+interface NavbarProps {
+  setLang: React.Dispatch<React.SetStateAction<Lang>>;
+}
+
+const Navbar = ({ setLang }: NavbarProps) => {
+  const [toggle, setToggle] = useState<boolean>(false);
 
   return (
     <nav>
       <Topbar>
         <Title>
-          <span>KH&apos;s</span> Portofolio
+          <Link href='#home'>
+            <a>
+              <span>KH&apos;s</span> Portofolio
+            </a>
+          </Link>
         </Title>
         <Ul>
           {navItems.map((item) => (
@@ -24,42 +34,40 @@ const Navbar = () => {
               </Link>
             </Li>
           ))}
-          <LangButtons />
+          <LangButtons setLang={setLang} />
         </Ul>
 
         <Menu>
           <HiMenuAlt4 onClick={() => setToggle(true)} />
         </Menu>
-      </Topbar >
+      </Topbar>
 
-      {
-        toggle && (
-          <SideBar>
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "50vw" }}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
-            >
-              <HiX onClick={() => setToggle(false)} />
-              <UlMenu>
-                {navItems.map((item) => (
-                  <Li key={`link-menu-${item}`}>
-                    <Link href={`#${item}`}>
-                      <a>{item}</a>
-                    </Link>
-                  </Li>
-                ))}
-                <LangButtons />
-              </UlMenu>
-            </motion.div>
-          </SideBar>
-        )
-      }
-    </nav >
-  )
-}
+      {toggle && (
+        <SideBar>
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: '50vw' }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+          >
+            <HiX onClick={() => setToggle(false)} />
+            <UlMenu>
+              {navItems.map((item) => (
+                <Li key={`link-menu-${item}`}>
+                  <Link href={`#${item}`}>
+                    <a>{item}</a>
+                  </Link>
+                </Li>
+              ))}
+              <LangButtons setLang={setLang} />
+            </UlMenu>
+          </motion.div>
+        </SideBar>
+      )}
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;
 
 const Topbar = styled.div`
   position: fixed;
@@ -75,22 +83,22 @@ const Topbar = styled.div`
 
   display: flex;
   justify-content: space-between;
-  align-items:center;
-`
+  align-items: center;
+`;
 
 const Title = styled.div`
   font-family: 'Alex Brush';
   font-weight: 600;
   font-size: 2rem;
   padding: 0 2rem;
-  
+
   span {
-    color: rgb(0,0,139);
+    color: rgb(0, 0, 139);
   }
-`
+`;
 
 const Ul = styled.ul`
-  flex:1;
+  flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -99,9 +107,9 @@ const Ul = styled.ul`
 
   @media screen and (max-width: 650px) {
     display: none;
-    padding:  0 2.0rem;
+    padding: 0 2rem;
   }
-`
+`;
 
 const Li = styled.li`
   list-style: none;
@@ -121,14 +129,14 @@ const Li = styled.li`
       cursor: pointer;
     }
   }
-`
+`;
 
 const UlMenu = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 10rem;
-`
+`;
 
 const Menu = styled.div`
   width: 40px;
@@ -146,13 +154,13 @@ const Menu = styled.div`
     display: none;
   }
 
-  svg{
+  svg {
     width: 70%;
     height: 70%;
     color: darkblue;
     margin-right: 10px;
   }
-`
+`;
 
 const SideBar = styled.aside`
   /* min-width: 0; */
@@ -173,9 +181,9 @@ const SideBar = styled.aside`
     width: 10%;
     height: 10%;
     color: darkblue;
-    
+
     &:hover {
       cursor: pointer;
     }
   }
-`
+`;

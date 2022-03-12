@@ -18,8 +18,9 @@ import { client } from '../lib/sanity';
 import styled from 'styled-components';
 
 import { Navbar, Header, Projects, About, Skills, Footer } from '../components';
-import { DataAbout, DataProject, DataSkills } from '../lib/types';
+import { DataAbout, DataProject, DataSkills, Lang } from '../lib/types';
 import { data } from '../assets/projects';
+import { useState } from 'react';
 
 // const Home: NextPage = ({ dataAbout, dataSkills }: InferGetStaticPropsType<typeof getStaticProps>) => {
 const Home: NextPage = ({
@@ -27,14 +28,15 @@ const Home: NextPage = ({
   dataProjects,
   dataSkills,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  const [lang, setLang] = useState<Lang>('jp');
+
   return (
     <Wrapper>
-      <Navbar />
+      <Navbar setLang={setLang} />
       <Header />
-      <About about={dataAbout} />
-      <Projects projects={dataProjects} />
+      <Projects projects={dataProjects} lang={lang} />
+      <About about={dataAbout} lang={lang} />
       <Skills skills={dataSkills} />
-      <Footer />
     </Wrapper>
   );
 };
@@ -46,12 +48,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const query_about = '*[_type == "about"]';
   const query_skills = '*[_type == "skills"]';
 
-  // const [dataAbout, dataSkills] = await Promise.all<
-  //   [DataAbout[], DataSkills[]]
-  // >([client.fetch(query_about), client.fetch(query_skills)]);
+  const [dataAbout, dataSkills] = await Promise.all<
+    [DataAbout[], DataSkills[]]
+  >([client.fetch(query_about), client.fetch(query_skills)]);
 
-  const dataAbout = null;
-  const dataSkills = [];
+  // const dataAbout = null;
+  // const dataSkills = [];
   const dataProjects: DataProject[] = data;
 
   return {
