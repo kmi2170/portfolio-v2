@@ -20,6 +20,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
       </Title>
 
       <Git>
+        My
         <a
           href='https://github.com/kmi2170'
           target='_blank'
@@ -37,8 +38,17 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
       </Container>
 
       <Description>
-        This site is built with Next.js, styled-componets, Sanity (CMS) and
-        Framer Motion (animation).
+        This site is built with
+        <span>
+          {[
+            'Next.js',
+            'styled-components',
+            'SANITY (CMS)',
+            'Framer Motion (animaton)',
+          ].map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </span>
       </Description>
     </Wrapper>
   );
@@ -73,10 +83,16 @@ const Git = styled.div`
   margin: 10px;
   margin-left: 20px;
 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.25rem;
+
   a {
     display: flex;
     flex-direction: row;
     align-items: center;
+    color: blue;
 
     svg {
       margin-left: 0.25rem;
@@ -89,4 +105,20 @@ const Description = styled.p`
   text-align: center;
   margin-top: 2rem;
   font-size: 1.25rem;
+
+  span {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    span {
+      padding: 0 0.5rem;
+      color: white;
+      background-color: #4b365f;
+      border-radius: 10px;
+    }
+  }
 `;

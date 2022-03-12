@@ -135,7 +135,8 @@ const UlMenu = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 10rem;
+  gap: 3rem;
+  /* height: 50vh; */
 `;
 
 const Menu = styled.div`

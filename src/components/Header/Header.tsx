@@ -1,58 +1,53 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { AppWrapper } from '../../wrapper';
+import Card from './Card/Card';
 
 const Header = () => {
   return (
-    <Wrapper>
-      <motion.div
-        initial={{ x: -300 }}
-        animate={{ x: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <Greetings>
-          <p>Hello! I am</p>
-          <h1>
-            Kemmei <span>Hamada.</span>
-          </h1>
-        </Greetings>
-      </motion.div>
+    <motion.div
+      whileInView={{ scale: [0.95, 1.05, 1], opacity: [0, 1] }}
+      transition={{ duration: 1.5, ease: 'easeInOut' }}
+    >
+      <Wrapper>
+        <Welcome>
+          Wellcome to{' '}
+          <span>
+            <span>KH&apos; </span>
+            Portofolio
+          </span>
+        </Welcome>
 
-      <motion.div
-        initial={{ x: 300 }}
-        animate={{ x: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+        <div>
+          I&apos;m <span>Kemmei</span> Hamada
+        </div>
+
         <Title>
-          <h3>Freelance Web Developer/Programmer.</h3>
+          Freelance <span>Programmer</span>/<span>Web Developer</span>
         </Title>
-      </motion.div>
 
-      <motion.div
-        initial={{ y: 0, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1.0 }}
-      >
-        <Description>
-          <p>I create awesome apps!</p>
-        </Description>
-      </motion.div>
-
-      <Welcome>
-        <h2>Wellcome to my portofolio.</h2>
-      </Welcome>
-    </Wrapper>
+        <Description>I create Awesome Apps!</Description>
+      </Wrapper>
+      {/* <Card /> */}
+    </motion.div>
   );
 };
 
 export default AppWrapper(Header, 'home', 'white');
 
 const Wrapper = styled.div`
+  font-size: 1rem;
   font-family: 'M PLUS Rounded 1c';
-  margin-top: 3rem;
-  padding: 3rem 3rem;
+  margin-top: 3em;
+  /* padding: 3em 3em; */
 
-  /* background-color: rgba(173, 216, 230, 1); */
+  @media screen and (max-width: 750px) {
+    font-size: 0.75rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.5rem;
+  }
 
   /* background-image: radial-gradient( */
   /*   rgba(0, 0, 139, 1), */
@@ -65,53 +60,55 @@ const Wrapper = styled.div`
   /*   rgba(0, 0, 139, 0.7) */
   /* ); */
 
+  /* height: 100vh; */
+
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+
+  div {
+    font-size: 1.75em;
+    font-weight: 600;
+
+    span {
+      font-size: 1.75em;
+      color: darkblue;
+    }
+  }
 `;
 
-const Greetings = styled.div`
-  h2 {
-    /* color: #e9e9e9; */
-    /* font-size: 1.1rem; */
-    /* font-weight: 600; */
-  }
+const Welcome = styled.h1`
+  text-align: center;
 
-  h1 {
-    margin-left: 2rem;
-    color: #7df9ff;
+  span {
+    font-family: 'Alex Brush';
+    font-size: 1.5em;
+
     span {
-      color: #fff;
-      font-size: small;
+      color: darkblue;
     }
   }
 `;
 
 const Title = styled.div`
-  h3 {
-    margin-left: 3em;
-    color: #fff;
+  font-size: 1.5em;
+  font-weight: 600;
+
+  span:first-child {
+    font-size: 1.25em;
+    color: green;
+  }
+
+  span:nth-child(2) {
+    font-size: 1.25em;
+    color: orangered;
   }
 `;
 
 const Description = styled.div`
-  font-size: 1.1rem;
-
-  p:nth-child(1) {
-    color: #ffb6c1;
-    font-weight: 700;
-    margin-left: 2rem;
-    font-size: 1.2rem;
-  }
-
-  p:nth-child(2) {
-    color: pink;
-    color: #f1e5ac;
-    margin-top: 2rem;
-    margin-left: 3rem;
-    font-size: 1.2rem;
-    font-weight: 700;
-  }
+  margin-top: 1em;
+  font-size: 1.75em;
+  font-style: italic;
+  color: darkgoldenrod;
 `;
-
-const Welcome = styled.div``;

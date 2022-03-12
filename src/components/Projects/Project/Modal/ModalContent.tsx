@@ -23,7 +23,7 @@ const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: [0, 1] }}
-      transition={{ duration: 1.0, ease: 'easeInOut', staggerChildren: 0.5 }}
+      transition={{ duration: 1.0, ease: 'easeInOut' }}
     >
       <Wrapper>
         <ButtonContainer>
@@ -85,7 +85,7 @@ export default ModalContent;
 
 const Wrapper = styled.div`
   width: 90vw;
-  height: 85vh;
+  /* height: 85vh; */
   overflow-y: auto;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(108, 122, 137, 1);
