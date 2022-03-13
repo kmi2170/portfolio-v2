@@ -41,21 +41,27 @@ const Wrapper = styled.div<{ bgColor?: string }>`
     height: 100%;
     z-index: -5;
     opacity: 0.2;
-    background-image: linear-gradient(
-      to right top,
-      #d16ba5,
-      #c085c8,
-      #aa9edf,
-      #9ab3e9,
-      #98c5ea,
-      #96cfed,
-      #97d8ef,
-      #9ce1ef,
-      #8de8f3,
-      #7eeef5,
-      #6ef5f4,
-      #5ffbf1
+    background: rgb(238, 174, 202);
+    background: radial-gradient(
+      circle,
+      rgba(238, 174, 202, 1) 0%,
+      rgba(148, 187, 233, 1) 100%
     );
+    /* background-image: linear-gradient( */
+    /*   to right top, */
+    /*   #d16ba5, */
+    /*   #c085c8, */
+    /*   #aa9edf, */
+    /*   #9ab3e9, */
+    /*   #98c5ea, */
+    /*   #96cfed, */
+    /*   #97d8ef, */
+    /*   #9ce1ef, */
+    /*   #8de8f3, */
+    /*   #7eeef5, */
+    /*   #6ef5f4, */
+    /*   #5ffbf1 */
+    /* ); */
   }
 `;
 /* background-image: ${({ bgImage }) => bgImage}; */
