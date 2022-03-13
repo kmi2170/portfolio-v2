@@ -44,6 +44,7 @@ const Header = () => {
         >
           {images.map((image, i) => (
             <motion.div
+              key={`tool-icon-${i}`}
               // whileInView={{ scale: [0.95, 1.05, 1], opacity: [0, 0.5, 1] }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -52,7 +53,7 @@ const Header = () => {
               <BackgroundIcon
                 key={`bgicon-${i}`}
                 src={image.url}
-                alt='tool-logo'
+                alt={image.url}
                 top={image.top}
                 left={image.left}
               />
