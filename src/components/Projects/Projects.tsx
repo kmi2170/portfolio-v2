@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { AiFillGithub } from 'react-icons/ai/index';
-// import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 // import { client, urlFor } from '../../lib/sanity';
 
 import { AppWrapper, MotionWrapper } from '../../wrapper';
@@ -33,7 +33,13 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
 
       <Container>
         {projects?.map((project: DataProject) => (
-          <Project key={project.name.en} project={project} lang={lang} />
+          <motion.div
+            key={project.name.en}
+            whileInView={{ opacity: [0, 1] }}
+            transition={{ duration: 1.25, ease: 'easeInOut' }}
+          >
+            <Project key={project.name.en} project={project} lang={lang} />
+          </motion.div>
         ))}
       </Container>
 

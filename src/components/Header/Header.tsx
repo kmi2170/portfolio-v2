@@ -25,23 +25,41 @@ const Header = () => {
   return (
     <motion.div
       whileInView={{ scale: [0.95, 1.05, 1], opacity: [0, 0.5, 1] }}
-      transition={{ duration: 1.5, ease: 'easeInOut' }}
+      // animate={{ scale: [0.95, 1.05, 1], opacity: [0, 0.5, 1] }}
+      transition={{
+        duration: 1,
+        ease: 'easeInOut',
+      }}
     >
       <Wrapper>
         <motion.div
           whileInView={{ scale: [0.95, 1.05, 1], opacity: [0, 0.5, 1] }}
-          transition={{ duration: 1.5, ease: 'easeInOut' }}
+          // animate={{ scale: [0.95, 1.05, 1], opacity: [0, 0.5, 1] }}
+          transition={{
+            duration: 1,
+            ease: 'easeInOut',
+            delayChildren: 1,
+            staggerChildren: 1,
+          }}
         >
           {images.map((image, i) => (
-            <BackgroundIcon
-              key={`bgicon-${i}`}
-              src={image.url}
-              alt='tool-logo'
-              top={image.top}
-              left={image.left}
-            />
+            <motion.div
+              // whileInView={{ scale: [0.95, 1.05, 1], opacity: [0, 0.5, 1] }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.0, ease: 'easeInOut' }}
+            >
+              <BackgroundIcon
+                key={`bgicon-${i}`}
+                src={image.url}
+                alt='tool-logo'
+                top={image.top}
+                left={image.left}
+              />
+            </motion.div>
           ))}
         </motion.div>
+
         <Welcome>
           Wellcome to{' '}
           <span>
@@ -60,12 +78,11 @@ const Header = () => {
 
         <Description>I create Awesome Apps!</Description>
       </Wrapper>
-      {/* <Card /> */}
     </motion.div>
   );
 };
 
-export default AppWrapper(Header, 'home', 'lightgreen');
+export default AppWrapper(Header, 'home', 'rgba(144,238,144,0.25)');
 
 const Wrapper = styled.div`
   font-size: 1rem;

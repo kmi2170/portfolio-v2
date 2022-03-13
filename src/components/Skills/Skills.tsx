@@ -36,9 +36,9 @@ const Skills = ({ skills }: { skills: DataSkills[] }) => {
 
             return (
               <motion.div
-                key={iconName}
+                key={lang.name}
                 whileInView={{ opacity: [0, 1] }}
-                transition={{ duration: 1.25 }}
+                transition={{ duration: 1.25, ease: 'easeInOut' }}
               >
                 <Skill>
                   <Icon>
@@ -63,9 +63,9 @@ const Skills = ({ skills }: { skills: DataSkills[] }) => {
 
             return (
               <motion.div
-                key={iconName}
+                key={tool.name}
                 whileInView={{ opacity: [0, 1] }}
-                transition={{ duration: 1.25 }}
+                transition={{ duration: 1.25, ease: 'easeInOut' }}
               >
                 <Skill key={iconName}>
                   <Icon>
@@ -90,9 +90,9 @@ const Skills = ({ skills }: { skills: DataSkills[] }) => {
 
             return (
               <motion.div
-                key={iconName}
+                key={database.name}
                 whileInView={{ opacity: [0, 1] }}
-                transition={{ duration: 1.25 }}
+                transition={{ duration: 1.25, ease: 'easeInOut' }}
               >
                 <Skill key={iconName}>
                   <Icon>
@@ -113,7 +113,7 @@ const Skills = ({ skills }: { skills: DataSkills[] }) => {
               <motion.div
                 key={other.name}
                 whileInView={{ opacity: [0, 1] }}
-                transition={{ duration: 1.25 }}
+                transition={{ duration: 1.25, ease: 'easeInOut' }}
               >
                 <Skill key={other.name}>
                   <IconName>{other.name}</IconName>
@@ -129,7 +129,8 @@ const Skills = ({ skills }: { skills: DataSkills[] }) => {
 };
 // console.log(urlFor(skill.icons.original));
 
-export default AppWrapper(MotionWrapper(Skills), 'skills');
+export default AppWrapper(Skills, 'skills');
+// export default AppWrapper(MotionWrapper(Skills), 'skills');
 
 const Wrapper = styled.div`
   padding: 2rem;

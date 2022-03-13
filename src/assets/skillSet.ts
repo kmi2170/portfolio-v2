@@ -23,6 +23,9 @@ export const skillSet = {
     { name: 'Sanity', iconName: 'sanity' },
   ],
   others: [
+    { name: 'Vercel', iconName: '' },
+    { name: 'Netlify', iconName: '' },
+    { name: 'Framer Motion', iconName: '' },
     { name: 'Node.js', iconName: 'nodejs' },
     { name: 'Express', iconName: 'express' },
     { name: 'Django', iconName: 'django' },
@@ -34,7 +37,5 @@ export const skillSet = {
     { name: 'Linux ', iconName: 'linux' },
     { name: 'Bash', iconName: 'bash' },
     { name: 'Chrome Extension', iconName: '' },
-    { name: 'Vercel', iconName: '' },
-    { name: 'Netlify', iconName: '' },
-  ]
-}
+  ],
+};

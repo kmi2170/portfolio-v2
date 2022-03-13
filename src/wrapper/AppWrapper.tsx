@@ -25,6 +25,7 @@ export default AppWrapper;
 const Wrapper = styled.div<{ bgColor?: string }>`
   margin-top: 3rem;
   width: 100%;
+  /* min-height: 100vh; */
   min-height: 75vh;
   display: flex;
   flex-direction: row;
