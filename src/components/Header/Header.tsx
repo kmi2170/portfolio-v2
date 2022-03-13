@@ -33,6 +33,7 @@ const Header = () => {
       <Wrapper>
         {images.map((image, i) => (
           <motion.div
+            key={`bgicon-${i}`}
             animate={{ scale: [0.95, 1.05, 1], opacity: [0, 0.5, 1] }}
             transition={{
               duration: 1,
@@ -40,7 +41,7 @@ const Header = () => {
             }}
           >
             <BackgroundIcon
-              key={`bgicon-${i}`}
+              // key={`bgicon-${i}`}
               src={image.url}
               alt={image.url}
               top={image.top}
