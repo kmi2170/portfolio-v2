@@ -19,6 +19,8 @@ const customModalStyle = {
   content: {
     top: '10vh',
     left: '5vw',
+    // top: '50%',
+    // left: '50%',
     right: 'auto',
     bottom: 'auto',
     // transform: 'translate(-50% -50%)',

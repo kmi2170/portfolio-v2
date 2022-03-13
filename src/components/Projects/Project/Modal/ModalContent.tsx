@@ -84,12 +84,11 @@ const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
 export default ModalContent;
 
 const Wrapper = styled.div`
-  width: 90vw;
-  /* height: 85vh; */
-  overflow-y: auto;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(108, 122, 137, 1);
   padding: 0 0.5rem 0.5rem 0.5rem;
+  width: 85vw;
+  overflow-y: auto;
 
   display: flex;
   flex-direction: column;
