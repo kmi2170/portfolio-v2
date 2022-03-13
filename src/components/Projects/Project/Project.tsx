@@ -28,6 +28,9 @@ const customModalStyle = {
     padding: 0,
     border: 'none',
     boxShadow: '0 0 10px white',
+    // width: '85vw',
+    // height: '90vh',
+    // overflow: 'auto',
   },
   overlay: {
     backgroundColor: 'rgba(10, 11, 13, 0.75)',

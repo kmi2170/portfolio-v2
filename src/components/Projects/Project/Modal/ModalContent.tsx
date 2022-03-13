@@ -88,6 +88,7 @@ const Wrapper = styled.div`
   box-shadow: 0 0 5px rgba(108, 122, 137, 1);
   padding: 0 0.5rem 0.5rem 0.5rem;
   width: 85vw;
+  height: 85vh;
   overflow-y: auto;
 
   display: flex;

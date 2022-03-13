@@ -39,7 +39,7 @@ const Wrapper = styled.div<{ bgColor?: string }>`
     width: 100%;
     height: 100%;
     z-index: -5;
-    opacity: 0.3;
+    opacity: 0.2;
     background-image: linear-gradient(
       to right top,
       #d16ba5,
