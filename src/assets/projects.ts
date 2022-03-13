@@ -6,21 +6,21 @@ export const data = [
       jp: '地震情報追跡アプリ',
     },
     description: {
-      en: 'An App to display earthquake event information (up tp 30 days ago) on Map and Table',
+      en: 'An App to display earthquake event information (up tp 30 days old) on Map and Table',
       jp: '地震情報（最大過去３０日）を地図と表で表示するアプリ',
     },
     features: {
       en: [
-        'USGS (U.S. Geological Survey) API',
-        'React-Query for fetching the earth quake data and the state manegement',
-        'Material UI',
-        'React-Leaflet for Map',
+        'API call: USGS (U.S. Geological Survey)',
+        'React-Query: fetching the earth quake data and the state manegement',
+        'UI library: Material UI',
+        'Map: React-Leaflet',
       ],
       jp: [
-        '米国地質調査所(USGS) API',
-        'React-Queryを使用してデータ・フェッチングとステート管理',
-        'Material UI',
-        'React-Leafletを使用して地図表示',
+        'APIコール：　米国地質調査所(USGS)',
+        'データ・フェッチング&ステート管理：　React-Query',
+        'UIライブラリ：　Material UI',
+        '地図：　React-Leaflet',
       ],
     },
     details: {
@@ -68,9 +68,9 @@ export const data = [
         'Redux-Toolkit for state manegement',
       ],
       jp: [
-        'Advice Slip JSON API (アドバイス),  quotable API (名言)',
-        'Material UI',
-        'Redux-Toolkitを使用してステート管理',
+        'APIコール：　Advice Slip JSON API (アドバイス),  quotable(名言)',
+        'UIライブラリ：　Material UI',
+        'ステート管理：　Redux-Toolkit',
       ],
     },
     details: {
@@ -109,10 +109,9 @@ export const data = [
         'RTK-Query for data fetching ',
       ],
       jp: [
-        'NewsCatcher API',
-        'Material UI',
-        'Redux-Toolkit （RTK）を使用してステート管理',
-        'データフェッチングにはRTK-Queryを使用',
+        'APIコール：　NewsCatcher API',
+        'UIライブラリ：　Material UI',
+        'ステート管理＆データフェッチング：　Redux-Toolkit （RTK）, RTK-Query',
       ],
     },
     details: {
@@ -140,7 +139,7 @@ export const data = [
     name: { en: 'Weather App', jp: '天気情報アプリ' },
     description: {
       en: 'Weather app, desigined to be simple, lightweight and yet to have suffient information: Current weather, Minutely rain, 7 days forecast, and houryly forecast',
-      jp: 'シンプル・軽量で、手早く必要にして十分な天気情報を確認できるアプリ（英語表記のみ）: 現在の天気、１分毎の降水予報、７日間予報、１時間毎の予報',
+      jp: 'シンプル・軽量で必要十分な天気情報を確認できるアプリ（英語表記のみ）: 現在の天気、１分毎の降水予報、７日間予報、１時間毎の降水量予報',
     },
     features: {
       en: [
@@ -149,9 +148,9 @@ export const data = [
         'Chart.js for hourly forecast',
       ],
       jp: [
-        'OpenWeather API (天気情報), IP-API (IPアドレスから現在地を取得)',
-        'Material UI',
-        'Chart.jsを使用して１時間毎の予報を表示',
+        'APIコール：　OpenWeather(天気情報), IP-API(IPアドレスから現在地を取得)',
+        'UIライブラリ：　Material UI',
+        'Chart.js：　１時間毎の予報、１分毎の降水量予報',
       ],
     },
     details: {
@@ -194,9 +193,9 @@ export const data = [
         'Leaflet.js for Map',
       ],
       jp: [
-        'Travel Advisor API, OpenWeather API（地図で表示された場所の現在の天気）',
-        'Material UI',
-        'Leaflet.jsを使用して地図表示',
+        'APIコール: Travel Advisor, OpenWeather（地図上の現在の天気）',
+        'UIライブライ：　Material UI',
+        '地図:　Leaflet.js',
       ],
     },
     details: {
@@ -263,10 +262,10 @@ export const data = [
         'Firebase for Watchlist of your favorite cryptos',
       ],
       jp: [
-        'CoinGecko API',
-        'Material UI',
-        'Chart.jsを使用して各暗号通貨のヒストリカル・チャートを表示',
-        'お気に入りの暗号通貨をウオッチリスに登録（Firebase使用',
+        'APUコール：　CoinGecko',
+        'UIライブライ：　Material UI',
+        'Chart.js：　各暗号通貨のヒストリカル・チャート',
+        'Firebase：　お気に入りの暗号通貨をウオッチリストに登録',
       ],
     },
     details: {
