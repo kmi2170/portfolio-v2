@@ -48,12 +48,13 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const query_about = '*[_type == "about"]';
   const query_skills = '*[_type == "skills"]';
 
-  // const [dataAbout, dataSkills] = await Promise.all<
-  //   [DataAbout[], DataSkills[]]
-  // >([client.fetch(query_about), client.fetch(query_skills)]);
+  const [dataAbout, dataSkills] = await Promise.all<
+    [DataAbout[], DataSkills[]]
+  >([client.fetch(query_about), client.fetch(query_skills)]);
 
-  const dataAbout = null;
-  const dataSkills = [];
+  // const dataAbout = null;
+  // const dataSkills = [];
+
   const dataProjects: DataProject[] = data;
 
   return {

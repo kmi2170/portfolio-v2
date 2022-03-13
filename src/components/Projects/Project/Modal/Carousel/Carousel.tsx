@@ -12,7 +12,7 @@ const responsive = {
 
 const Carousel = ({ imageUrls }: { imageUrls: string[] }) => {
   const items = imageUrls?.map((imageUrl, i) => (
-    <img src={imageUrl} alt={imageUrl} />
+    <img key={`image-${i}`} src={imageUrl} alt={imageUrl} />
   ));
 
   return (
