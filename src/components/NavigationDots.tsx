@@ -43,7 +43,7 @@ const Wrapper = styled.div`
   align-items: center;
 
   position: sticky;
-  /* top: calc(50vh - 4rem); */
+  /* top: calc(50vh - 5rem); */
   /* right: 0.75rem; */
   z-index: 10;
 

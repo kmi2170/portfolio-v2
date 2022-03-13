@@ -3,13 +3,45 @@ import styled from 'styled-components';
 import { AppWrapper } from '../../wrapper';
 import Card from './Card/Card';
 
+const images = [
+  {
+    url: '/images/react-original_nocolor.svg',
+    top: '0%',
+    left: '10%',
+  },
+  {
+    url: '/images/redux-original_nocolor.svg',
+    top: '20%',
+    left: '50%',
+  },
+  {
+    url: '/images/firebase-plain_nocolor.svg',
+    top: '60%',
+    left: '30%',
+  },
+];
+
 const Header = () => {
   return (
     <motion.div
-      whileInView={{ scale: [0.95, 1.05, 1], opacity: [0, 1] }}
+      whileInView={{ scale: [0.95, 1.05, 1], opacity: [0, 0.5, 1] }}
       transition={{ duration: 1.5, ease: 'easeInOut' }}
     >
       <Wrapper>
+        <motion.div
+          whileInView={{ scale: [0.95, 1.05, 1], opacity: [0, 0.5, 1] }}
+          transition={{ duration: 1.5, ease: 'easeInOut' }}
+        >
+          {images.map((image, i) => (
+            <BackgroundIcon
+              key={`bgicon-${i}`}
+              src={image.url}
+              alt='tool-logo'
+              top={image.top}
+              left={image.left}
+            />
+          ))}
+        </motion.div>
         <Welcome>
           Wellcome to{' '}
           <span>
@@ -33,13 +65,14 @@ const Header = () => {
   );
 };
 
-export default AppWrapper(Header, 'home', 'white');
+export default AppWrapper(Header, 'home', 'lightgreen');
 
 const Wrapper = styled.div`
   font-size: 1rem;
   font-family: 'M PLUS Rounded 1c';
-  margin-top: 3em;
   /* padding: 3em 3em; */
+  z-index: 2;
+  position: relative;
 
   @media screen and (max-width: 750px) {
     font-size: 0.75rem;
@@ -80,6 +113,7 @@ const Wrapper = styled.div`
 
 const Welcome = styled.h1`
   text-align: center;
+  z-index: 2;
 
   span {
     font-family: 'Alex Brush';
@@ -94,6 +128,7 @@ const Welcome = styled.h1`
 const Title = styled.div`
   font-size: 1.5em;
   font-weight: 600;
+  z-index: 2;
 
   span:first-child {
     font-size: 1.25em;
@@ -111,4 +146,29 @@ const Description = styled.div`
   font-size: 1.75em;
   font-style: italic;
   color: darkgoldenrod;
+  z-index: 2;
+`;
+
+const BackgroundIcons = styled.div`
+  /* height: 500px; */
+  /* background-color: lightgoldenrodyellow; */
+  /* position: relative; */
+  /* display: grid; */
+  /* justify-items: center; */
+  /* align-items: center; */
+`;
+
+const BackgroundIcon = styled.img<{ top: string; left: string }>`
+  /* display: inline-grid; */
+  /* grid-column-start: 1; */
+  /* grid-row-start: 1; */
+
+  height: 40%;
+  width: 40%;
+  z-index: 2;
+  opacity: 0.15;
+
+  position: absolute;
+  top: ${({ top }) => top};
+  left: ${({ left }) => left};
 `;
