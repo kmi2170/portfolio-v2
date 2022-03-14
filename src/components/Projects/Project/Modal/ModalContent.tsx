@@ -201,7 +201,7 @@ const Features = styled.ul`
   }
 
   svg {
-    color: darkorange;
+    color: ${({ theme }) => theme.colors.blue};
     margin-left: 0.5rem;
   }
 `;
@@ -218,7 +218,7 @@ const Details = styled.ul`
   }
 
   svg {
-    color: green;
+    color: ${({ theme }) => theme.colors.green};
     margin-right: 0.25rem;
   }
 `;

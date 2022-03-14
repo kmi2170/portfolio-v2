@@ -106,7 +106,8 @@ const Wrapper = styled.div`
   align-items: center;
 
   &:hover {
-    box-shadow: 0 0 30px rgba(108, 122, 137, 1);
+    /* box-shadow: 0 0 30px rgba(108, 122, 137, 1); */
+    box-shadow: 0 0 15px ${({ theme }) => theme.colors.blue};
   }
 `;
 
