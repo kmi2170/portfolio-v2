@@ -76,7 +76,8 @@ const Topbar = styled.div`
   height: 3rem;
   padding: 0.25rem 0;
 
-  background-color: rgba(173, 216, 230, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
+  /* background-color: rgba(173, 216, 230, 0.5); */
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   box-shadow: 0 4px 5px rgba(168, 168, 168, 0.5);
@@ -93,8 +94,11 @@ const Title = styled.div`
   padding: 0 2rem;
 
   span {
-    color: rgb(0, 0, 139);
+    color: ${({ theme }) => theme.colors.blue};
   }
+  /* span { */
+  /*   color: rgb(0, 0, 139); */
+  /* } */
 `;
 
 const Ul = styled.ul`
@@ -125,7 +129,9 @@ const Li = styled.li`
 
   &:hover {
     a {
-      background-color: rgba(255, 182, 193, 0.3);
+      /* background-color: rgba(255, 182, 193, 0.3); */
+      /* background-color: rgba(255, 182, 193, 0.3); */
+      background-color: rgba(51, 153, 255, 0.2);
       cursor: pointer;
     }
   }

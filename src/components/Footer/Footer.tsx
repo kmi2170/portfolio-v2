@@ -7,7 +7,9 @@ const Footer = () => {
 
   return (
     <Wrapper>
-      <p>&copy;{year} Kemmei. All rights reserved.</p>
+      <p>
+        &copy;{year} <span>Kemmei</span>. All rights reserved.
+      </p>
     </Wrapper>
   );
 };
@@ -20,4 +22,8 @@ const Wrapper = styled.div`
   padding-bottom: 2rem;
   font-family: 'M PLUS Rounded 1c';
   text-align: center;
+
+  span {
+    color: ${({ theme }) => theme.colors.blue};
+  }
 `;

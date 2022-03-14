@@ -70,8 +70,11 @@ const Wrapper = styled.div`
 
 const Title = styled.h2`
   span {
-    color: rgb(0, 0, 139);
+    color: ${({ theme }) => theme.colors.blue};
   }
+  /* span { */
+  /*   color: rgb(0, 0, 139); */
+  /* } */
 `;
 
 const Container = styled.div`

@@ -3,8 +3,9 @@ import { AppWrapper } from '../../wrapper';
 import {
   Wrapper,
   Card,
-  Welcome,
   Title,
+  Welcome,
+  About,
   Intro,
   Description,
   BackgroundIcon,
@@ -66,23 +67,21 @@ const Header = () => {
         ))}
 
         <Card>
-          <Welcome>
-            Wellcome to{' '}
-            <span>
-              <span>KH&apos; </span>
-              Portofolio
-            </span>
-          </Welcome>
+          <Title>
+            <span>KH&apos;s</span>&nbsp; Portofolio
+          </Title>
 
           <Intro>
             I&apos;m <span>Kemmei</span> Hamada
           </Intro>
 
-          <Title>
+          <About>
             Freelance &nbsp; <span>Programmer</span>/<span>Web Developer</span>
-          </Title>
+          </About>
 
-          <Description>I create Awesome Apps!</Description>
+          {/* <Description>I create Awesome Apps!</Description> */}
+
+          <Welcome>Wellcome to My Portofolio</Welcome>
         </Card>
       </Wrapper>
     </motion.div>
@@ -90,6 +89,6 @@ const Header = () => {
 };
 
 // const bgColor = 'rgba(144,238,144,0.25)';
-const bgColor = 'rgba(211,211,211,0.6)';
+// const bgColor = 'rgba(211,211,211,0.6)';
 
-export default AppWrapper(Header, 'home', bgColor);
+export default AppWrapper(Header, 'home');

@@ -22,7 +22,21 @@ export const Card = styled.div`
   }
 `;
 
+export const Title = styled.h1`
+  text-align: left;
+  width: 80%;
+  z-index: 2;
+
+  font-family: 'Alex Brush';
+  font-size: 4em;
+
+  span {
+    color: ${({ theme }) => theme.colors.blue};
+  }
+`;
+
 export const Welcome = styled.h1`
+  margin-top: 2em;
   text-align: center;
   z-index: 2;
 
@@ -37,18 +51,23 @@ export const Welcome = styled.h1`
 `;
 
 export const Intro = styled.div`
-  margin-top: 1em;
+  width: 80%;
+  text-align: right;
+  margin-top: 0em;
   font-size: 1.75em;
   font-weight: 600;
 
   span {
     margin-left: 0.25em;
     font-size: 1.75em;
-    color: darkblue;
+    color: ${({ theme }) => theme.colors.blue};
   }
 `;
 
-export const Title = styled.div`
+export const About = styled.div`
+  width: 80%;
+  text-align: right;
+
   margin-top: 0.75em;
   font-size: 1.75em;
   font-weight: 600;
@@ -56,12 +75,12 @@ export const Title = styled.div`
 
   span:first-child {
     font-size: 1.25em;
-    color: green;
+    color: ${({ theme }) => theme.colors.blue};
   }
 
   span:nth-child(2) {
     font-size: 1.25em;
-    color: orangered;
+    color: ${({ theme }) => theme.colors.green};
   }
 `;
 
@@ -81,7 +100,7 @@ export const BackgroundIcon = styled.img<{ top: string; left: string }>`
   height: 50%;
   width: 50%;
   z-index: 1;
-  opacity: 0.05;
+  opacity: 0.03;
 
   position: absolute;
   top: ${({ top }) => top};

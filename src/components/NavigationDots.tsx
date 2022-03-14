@@ -27,8 +27,9 @@ const Dot = styled.a<{ isActive: boolean }>`
     cursor: pointer;
   }
 
-  background-color: ${({ isActive }) =>
-    isActive ? 'rgba(168, 101, 201, 1.0)' : 'rgba(144, 238, 144, 1.9)'};
+  /*   isActive ? 'rgba(168, 101, 201, 1.0)' : 'rgba(144, 238, 144, 1.9)'}; */
+  background-color: ${({ isActive, theme }) =>
+    isActive ? theme.colors.blue : theme.colors.green};
 `;
 
 const Wrapper = styled.div`

@@ -1,30 +1,8 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    padding: 0;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif, Alex Brush;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  * {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-  }
-`;
-const theme = {
-  // colors: {
-  //   primary: '#0070f3',
-  // },
-};
+import { GlobalStyle, theme } from '../styles/styles';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

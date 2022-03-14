@@ -63,8 +63,12 @@ const Title = styled.h2`
   margin-bottom: 2rem;
 
   span {
-    color: rgb(0, 0, 139);
+    color: ${({ theme }) => theme.colors.blue};
   }
+
+  /* span { */
+  /*   color: rgb(0, 0, 139); */
+  /* } */
 `;
 
 const Description = styled.p`
