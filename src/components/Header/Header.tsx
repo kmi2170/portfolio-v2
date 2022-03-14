@@ -14,23 +14,28 @@ import {
 const images = [
   {
     url: '/images/react-original_nocolor.svg',
-    top: '0%',
-    left: '5%',
+    top: '10%',
+    left: '15%',
   },
   {
-    url: '/images/firebase-plain_nocolor.svg',
+    url: '/images/typescript-original_nocolor.svg',
     top: '65%',
-    left: '25%',
+    left: '55%',
   },
   {
     url: '/images/redux-original_nocolor.svg',
-    top: '25%',
+    top: '70%',
+    left: '25%',
+  },
+  {
+    url: '/images/nextjs-original.svg',
+    top: '10%',
     left: '45%',
   },
   // {
-  //   url: '/images/typescript-original.svg',
-  //   top: '75%',
-  //   left: '0%',
+  //   url: '/images/firebase-plain_nocolor.svg',
+  //   top: '65%',
+  //   left: '25%',
   // },
 ];
 

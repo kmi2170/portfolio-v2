@@ -97,8 +97,8 @@ export const BackgroundIcon = styled.img<{ top: string; left: string }>`
   /* grid-column-start: 1; */
   /* grid-row-start: 1; */
 
-  height: 50%;
-  width: 50%;
+  height: 40%;
+  width: 40%;
   z-index: 1;
   opacity: 0.03;
 
