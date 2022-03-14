@@ -36,7 +36,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
           <motion.div
             key={project.name.en}
             whileInView={{ opacity: [0, 1] }}
-            transition={{ duration: 1.25, ease: 'easeInOut' }}
+            transition={{ duration: 1, ease: 'easeInOut' }}
           >
             <Project key={project.name.en} project={project} lang={lang} />
           </motion.div>
@@ -50,7 +50,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
             'Next.js',
             'styled-components',
             'SANITY (CMS)',
-            'Framer Motion (animaton)',
+            'Framer Motion (animation)',
           ].map((item) => (
             <span key={item}>{item}</span>
           ))}
@@ -112,10 +112,11 @@ const Git = styled.div`
 
 const Description = styled.p`
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
   font-size: 1.25rem;
 
   span {
+    margin-top: 0.5rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

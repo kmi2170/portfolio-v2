@@ -6,7 +6,7 @@ const MotionWrapper =
     (
       <motion.div
         whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
-        transition={{ duration: 1.5, ease: 'easeInOut' }}
+        transition={{ duration: 0.75, ease: 'easeInOut' }}
       >
         <Component {...(props as P)} />
       </motion.div>
