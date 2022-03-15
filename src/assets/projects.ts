@@ -264,6 +264,7 @@ export const data = [
       jp: [
         'APUコール：　CoinGecko',
         'UIライブライ：　Material UI',
+        'データ・フェッチング&ステート管理：　React-Query (SSR対応)',
         'Chart.js：　各暗号通貨のヒストリカル・チャート',
         'Firebase：　お気に入りの暗号通貨をウオッチリストに登録',
       ],
