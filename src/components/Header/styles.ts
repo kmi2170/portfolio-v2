@@ -36,18 +36,20 @@ export const Title = styled.h1`
 `;
 
 export const Welcome = styled.h1`
-  margin-top: 3em;
+  margin-top: 2.5em;
   text-align: center;
   z-index: 2;
+  color: #555;
+  font-size: 2.5em;
 
-  span {
-    font-family: 'Alex Brush';
-    font-size: 1.5em;
+  /* span { */
+  /*   font-family: 'Alex Brush'; */
+  /*   font-size: 1.5em; */
 
-    span {
-      color: darkblue;
-    }
-  }
+  /*   span { */
+  /*     color: darkblue; */
+  /*   } */
+  /* } */
 `;
 
 export const Intro = styled.div`
@@ -56,6 +58,7 @@ export const Intro = styled.div`
   margin-top: 0em;
   font-size: 1.75em;
   font-weight: 600;
+  color: #555;
 
   span {
     margin-left: 0.25em;
@@ -72,6 +75,7 @@ export const About = styled.div`
   font-size: 1.75em;
   font-weight: 600;
   z-index: 2;
+  color: #555;
 
   span:first-child {
     font-size: 1.25em;
