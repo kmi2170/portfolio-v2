@@ -1,14 +1,3 @@
-// import FaFacebookSquare from 'react-icons/lib/fa/facebook-square';
-// import FaLinkedin from 'react-icons/lib/fa/linkedin';
-// import FaTwitter from 'react-icons/lib/fa/twitter';
-// import FaPinterest from 'react-icons/lib/fa/pinterest-square';
-// import FaInstagram from 'react-icons/lib/fa/instagram';
-
-// import FaCheck from "react-icons/lib/fa/FaCheck";
-// import { FaCheck } from "react-icons/fa/index";
-// import  FaCheck  from "react-icons/fa/index";
-
-// import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
 import type {
   GetServerSideProps,
   InferGetServerSidePropsType,
@@ -22,7 +11,6 @@ import { DataAbout, DataProject, DataSkills, Lang } from '../lib/types';
 import { data } from '../assets/projects';
 import { useState } from 'react';
 
-// const Home: NextPage = ({ dataAbout, dataSkills }: InferGetStaticPropsType<typeof getStaticProps>) => {
 const Home: NextPage = ({
   dataAbout,
   dataProjects,
@@ -59,7 +47,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   return {
     props: { dataAbout, dataProjects, dataSkills },
-    // revalidate: 3600,
     // revalidate: 86400,
   };
 };

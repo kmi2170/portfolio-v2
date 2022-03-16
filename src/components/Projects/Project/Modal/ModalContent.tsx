@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 import {
@@ -11,6 +10,19 @@ import { GiSmartphone } from 'react-icons/gi/index';
 
 import { DataProject, Lang } from '../../../../lib/types';
 import Carousel from './Carousel/Carousel';
+import {
+  Wrapper,
+  ButtonContainer,
+  Close,
+  AppName,
+  AppImg,
+  Links,
+  Tags,
+  Description,
+  SubTitle,
+  Features,
+  Details,
+} from './styles';
 
 interface ModalContentProps {
   project: DataProject;
@@ -82,148 +94,3 @@ const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
 };
 
 export default ModalContent;
-
-const Wrapper = styled.div`
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(108, 122, 137, 1);
-  padding: 0 0.5rem 0.5rem 0.5rem;
-  width: 85vw;
-  height: 85vh;
-  overflow-y: auto;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  font-family: 'M PLUS Rounded 1c';
-
-  &:hover {
-    box-shadow: 0 0 20px rgba(108, 122, 137, 1);
-  }
-`;
-
-const AppName = styled.div`
-  font-size: 1.5rem;
-  margin-bottom: 0.25rem;
-`;
-
-const ButtonContainer = styled.div`
-  width: 100%;
-  text-align: right;
-`;
-
-const Close = styled.span`
-  svg {
-    width: 35px;
-    height: 35px;
-    color: blue;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-`;
-
-const AppImg = styled.div`
-  width: 50%;
-  /* height: 200px; */
-  /* object-fit: cover; */
-  cursor: pointer;
-  position: relative;
-
-  img {
-    width: 100%;
-
-    &:hover {
-      scale: 0.9;
-      --webkit-filter: brightness(70%);
-    }
-  }
-`;
-
-const Links = styled.div`
-  width: 90%;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-
-  a {
-    color: blue;
-
-    display: flex;
-    align-items: center;
-
-    svg {
-      font-size: 1.25rem;
-      margin-right: 0.2rem;
-    }
-  }
-`;
-
-const Tags = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-
-  span {
-    font-size: 1.25rem;
-    padding: 0 0.5rem;
-    color: white;
-    background-color: #4b365f;
-    border-radius: 10px;
-  }
-`;
-
-const Description = styled.div`
-  margin: 1rem 0;
-  width: 80%;
-  font-size: 1.25rem;
-  text-align: center;
-`;
-
-const Features = styled.ul`
-  font-size: 1.25rem;
-
-  li {
-    list-style: none;
-    overflow-wrap: normal;
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.25rem;
-  }
-
-  svg {
-    color: ${({ theme }) => theme.colors.blue};
-    margin-left: 0.5rem;
-  }
-`;
-
-const Details = styled.ul`
-  font-size: 1.25rem;
-
-  li {
-    list-style: none;
-    overflow-wrap: normal;
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.25rem;
-  }
-
-  svg {
-    color: ${({ theme }) => theme.colors.green};
-    margin-right: 0.25rem;
-  }
-`;
-
-const SubTitle = styled.div`
-  font-size: 1.25rem;
-  font-weight: 600;
-`;

@@ -36,7 +36,7 @@ export const Title = styled.h1`
 `;
 
 export const Welcome = styled.h1`
-  margin-top: 2em;
+  margin-top: 3em;
   text-align: center;
   z-index: 2;
 

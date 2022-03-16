@@ -41,55 +41,60 @@ const images = [
 
 const Header = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: [0, 0.5, 1] }}
-      transition={{
-        duration: 1,
-        ease: 'easeInOut',
-      }}
-    >
-      <Wrapper>
-        {images.map((image, i) => (
-          <>
-            {/* <motion.div */}
-            {/*   key={`bgicon-${i}`} */}
-            {/*   animate={{ scale: [0.95, 1.05, 1], opacity: [0, 0.5, 1] }} */}
-            {/*   transition={{ */}
-            {/*     duration: 1, */}
-            {/*     ease: 'easeInOut', */}
-            {/*   }} */}
-            {/* > */}
-            <BackgroundIcon
-              // key={`bgicon-${i}`}
-              src={image.url}
-              alt={image.url}
-              top={image.top}
-              left={image.left}
-            />
-            {/* </motion.div> */}
-          </>
-        ))}
+    <Wrapper>
+      {images.map((image, i) => (
+        <BackgroundIcon
+          key={`bgicon-${i}`}
+          src={image.url}
+          alt={image.url}
+          top={image.top}
+          left={image.left}
+        />
+      ))}
 
-        <Card>
-          <Title>
+      <Card>
+        <Title>
+          <motion.div
+            whileInView={{ x: [-50, 0] }}
+            transition={{ duration: 0.75, delay: 0.25, ease: 'easeInOut' }}
+          >
             <span>KH&apos;s</span>&nbsp; Portofolio
-          </Title>
+          </motion.div>
+        </Title>
 
-          <Intro>
+        <Intro>
+          <motion.div
+            initial={{ x: 50 }}
+            whileInView={{ x: [50, -150] }}
+            transition={{ duration: 0.75, delay: 1, ease: 'easeInOut' }}
+          >
             I&apos;m <span>Kemmei</span> Hamada
-          </Intro>
+          </motion.div>
+        </Intro>
 
-          <About>
+        <About>
+          <motion.div
+            initial={{ x: 50 }}
+            whileInView={{ x: [50, -50] }}
+            transition={{ duration: 0.75, delay: 1.25, ease: 'easeInOut' }}
+          >
             Freelance &nbsp; <span>Programmer</span>/<span>Web Developer</span>
-          </About>
+          </motion.div>
+        </About>
 
-          {/* <Description>I create Awesome Apps!</Description> */}
+        {/* <Description>I create Awesome Apps!</Description> */}
 
-          <Welcome>Wellcome to My Portofolio</Welcome>
-        </Card>
-      </Wrapper>
-    </motion.div>
+        <Welcome>
+          <motion.div
+            initial={{ y: 50 }}
+            whileInView={{ y: [50, 0] }}
+            transition={{ duration: 0.75, delay: 1.5, ease: 'easeInOut' }}
+          >
+            Wellcome to My Portofolio
+          </motion.div>
+        </Welcome>
+      </Card>
+    </Wrapper>
   );
 };
 

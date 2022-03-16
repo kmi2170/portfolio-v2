@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 // import { AppWrapper, MotionWrapper } from '../../wrapper';
 
 const Footer = () => {

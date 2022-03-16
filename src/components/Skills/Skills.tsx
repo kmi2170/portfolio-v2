@@ -1,25 +1,21 @@
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { client, urlFor } from '../../lib/sanity';
+import { urlFor } from '../../lib/sanity';
 import { AppWrapper, MotionWrapper } from '../../wrapper';
 import { skillSet } from '../../assets/skillSet';
 import { DataSkills } from '../../lib/types';
 import Footer from '../Footer/Footer';
+import {
+  Wrapper,
+  Title,
+  SubTitle,
+  Container,
+  Skill,
+  Icon,
+  Img,
+  IconName,
+} from './styles';
 
 const Skills = ({ skills }: { skills: DataSkills[] }) => {
-  // const [skills, setSkills] = useState<DataSkills[]>([])
-
-  // useEffect(() => {
-  // const query = '*[_type == "skills"]'
-
-  // client.fetch(query)
-  //   .then((data) => { setSkills(data) })
-  //   .catch((error) => console.error(error))
-  // }, [])
-
-  // console.log(skills);
-
   return (
     <Wrapper>
       <Title>Skills and Experience</Title>
@@ -127,66 +123,6 @@ const Skills = ({ skills }: { skills: DataSkills[] }) => {
     </Wrapper>
   );
 };
-// console.log(urlFor(skill.icons.original));
 
 export default AppWrapper(Skills, 'skills');
 // export default AppWrapper(MotionWrapper(Skills), 'skills');
-
-const Wrapper = styled.div`
-  padding: 2rem;
-  font-family: 'M PLUS Rounded 1c';
-  width: 100%;
-  height: 100vh;
-`;
-
-const Title = styled.h2`
-  span {
-    color: rgb(0, 0, 139);
-  }
-`;
-
-const SubTitle = styled.h3`
-  margin-left: 1rem;
-`;
-
-const Container = styled.div`
-  margin-left: 2rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: flex-start;
-`;
-
-const Skill = styled.div`
-  width: 120px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Img = styled.img`
-  width: 50px;
-  height: 50px;
-`;
-
-const Icon = styled.div`
-  padding: 0.15rem;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-
-  background-color: rgba(240, 240, 240, 0.7);
-  box-shadow: 0 4px 5px rgba(168, 168, 168, 0.5);
-  /* background-color: lightpink; */
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const IconName = styled.p`
-  word-wrap: normal;
-  text-align: center;
-  font-size: 1.25rem;
-`;
