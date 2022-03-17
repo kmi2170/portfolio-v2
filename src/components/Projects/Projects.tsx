@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { AiFillGithub } from 'react-icons/ai/index';
 import { isValidMotionProp, motion } from 'framer-motion';
 // import { client, urlFor } from '../../lib/sanity';
@@ -5,7 +6,15 @@ import { isValidMotionProp, motion } from 'framer-motion';
 import { AppWrapper, MotionWrapper } from '../../wrapper';
 import Project from './Project/Project';
 import { DataProject, Lang } from '../../lib/types';
-import { Wrapper, Title, Git, Container, Description } from './styles';
+import {
+  Wrapper,
+  Title,
+  Git,
+  Container,
+  Description,
+  SelectTags,
+  Tag,
+} from './styles';
 
 interface ProjectsProps {
   projects: DataProject[];
@@ -13,6 +22,17 @@ interface ProjectsProps {
 }
 
 const Projects = ({ projects, lang }: ProjectsProps) => {
+  const collectedTags = projects?.map(({ tags }) => tags);
+  const setTags = new Set(collectedTags.flat());
+  const tags = Array.from(setTags);
+
+  const [selectedTag, setSelectedTag] = useState<string>('all');
+
+  const filteredProjects =
+    selectedTag === 'all'
+      ? projects
+      : projects.filter((project) => project.tags.includes(selectedTag));
+
   return (
     <Wrapper>
       <Title>
@@ -31,8 +51,29 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
         </a>
       </Git>
 
+      <SelectTags>
+        <span>
+          <Tag
+            key={'all'}
+            isSelected={'all' === selectedTag}
+            onClick={() => setSelectedTag('all')}
+          >
+            All
+          </Tag>
+          {tags.map((tag) => (
+            <Tag
+              key={tag}
+              isSelected={tag === selectedTag}
+              onClick={() => setSelectedTag(tag)}
+            >
+              {tag}
+            </Tag>
+          ))}
+        </span>
+      </SelectTags>
+
       <Container>
-        {projects?.map((project: DataProject) => (
+        {filteredProjects?.map((project: DataProject) => (
           <motion.div
             key={project.name.en}
             whileInView={{ opacity: [0, 1] }}
@@ -51,8 +92,8 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
             'styled-components',
             'SANITY (CMS)',
             'Framer Motion (animation)',
-          ].map((item) => (
-            <span key={item}>{item}</span>
+          ].map((tag) => (
+            <span key={tag}>{tag}</span>
           ))}
         </span>
       </Description>

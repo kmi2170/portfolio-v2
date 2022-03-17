@@ -12,15 +12,15 @@ export const data = [
     features: {
       en: [
         'API call: USGS (U.S. Geological Survey)',
-        'React-Query: fetching the earth quake data and the state manegement',
+        'React Query: fetching the earth quake data and the state manegement',
         'UI library: Material UI',
-        'Map: React-Leaflet',
+        'Map: Leaflet',
       ],
       jp: [
         'APIコール：　米国地質調査所(USGS)',
-        'データ・フェッチング&ステート管理：　React-Query',
+        'データ・フェッチング&ステート管理：　React Query',
         'UIライブラリ：　Material UI',
-        '地図：　React-Leaflet',
+        '地図：Leaflet',
       ],
     },
     details: {
@@ -36,13 +36,7 @@ export const data = [
         '表の各イベントをクリックすると地図の表示が、その場所へと（アニメーション効果を伴って）移動・ズームインする',
       ],
     },
-    tags: [
-      'Next.js',
-      'TypeScript',
-      'Material-UI',
-      'React Query',
-      'React-Leaflet',
-    ],
+    tags: ['Next.js', 'TypeScript', 'Material UI', 'React Query', 'Leaflet'],
     url: 'https://earthquake-tracker-ten.vercel.app',
     imageUrls: [
       '/images/eq-tracker.png',
@@ -65,12 +59,12 @@ export const data = [
       en: [
         'Advice Slip JSON API, quotable API',
         'Material UI',
-        'Redux-Toolkit for state manegement',
+        'Redux Toolkit for state manegement',
       ],
       jp: [
         'APIコール：　Advice Slip JSON API (アドバイス),  quotable(名言)',
         'UIライブラリ：　Material UI',
-        'ステート管理：　Redux-Toolkit',
+        'ステート管理：　Redux Toolkit',
       ],
     },
     details: {
@@ -85,7 +79,7 @@ export const data = [
         'おまけ：２種類の壁紙（竹、花）を選択可能',
       ],
     },
-    tags: ['Next.js', 'TypeScript', 'Material-UI', 'Redux-Tookit'],
+    tags: ['Next.js', 'TypeScript', 'Material UI', 'Redux Toolkit'],
     url: 'https://advice-quote.vercel.app',
     imageUrls: [
       '/images/advice-quote.png',
@@ -105,13 +99,13 @@ export const data = [
       en: [
         'NewsCatcher API',
         'Material UI',
-        'Redux-Toolkit (RTK) for state manegement',
-        'RTK-Query for data fetching ',
+        'Redux Toolkit (RTK) for state manegement',
+        'RTK Query for data fetching ',
       ],
       jp: [
         'APIコール：　NewsCatcher API',
         'UIライブラリ：　Material UI',
-        'ステート管理＆データフェッチング：　Redux-Toolkit （RTK）, RTK-Query',
+        'ステート管理＆データフェッチング：　Redux Toolkit （RTK）, RTK Query',
       ],
     },
     details: {
@@ -122,7 +116,7 @@ export const data = [
         '検索キーワードをお気に入りとして登録し、後に呼び出すことが可能（クッキー必要）',
       ],
     },
-    tags: ['Next.js', 'TypeScript', 'Material-UI', 'Redux Tookit'],
+    tags: ['Next.js', 'TypeScript', 'Material UI', 'Redux Toolkit'],
     url: 'https://news-picker.vercel.app',
     imageUrls: [
       '/images/news-picker_jp.png',
@@ -169,7 +163,7 @@ export const data = [
         '最後に検索した場所と選択した単位が自動セーブされる（クッキー必要）',
       ],
     },
-    tags: ['Next.js', 'Redux Toolkit', 'TypeScript', 'Material-UI', 'Chart.js'],
+    tags: ['Next.js', 'Redux Toolkit', 'TypeScript', 'Material UI', 'Chart.js'],
     url: 'https://my-weather-app-beta.vercel.app',
     imageUrls: [
       '/images/weather-app.png',
@@ -190,12 +184,12 @@ export const data = [
       en: [
         'Travel Advisor API, OpenWeather API',
         'Material UI',
-        'Leaflet.js for Map',
+        'Leaflet for Map',
       ],
       jp: [
         'APIコール: Travel Advisor, OpenWeather（地図上の現在の天気）',
         'UIライブライ：　Material UI',
-        '地図:　Leaflet.js',
+        '地図:　Leaflet',
       ],
     },
     details: {
@@ -216,7 +210,7 @@ export const data = [
         '追加情報: 検索時の天気をアイコンで表示',
       ],
     },
-    tags: ['Next.js', 'TypeScript', 'Material-UI', 'Leaflet.js'],
+    tags: ['Next.js', 'TypeScript', 'Material UI', 'Leaflet'],
     url: 'https://travel-app-tau.vercel.app',
     imageUrls: [
       '/images/travel-app_searchlocation.png',
@@ -233,11 +227,11 @@ export const data = [
   /*     en: [ */
   /*       "Curent and history data of cryptocurrencies price, change, etc. Details of cryptocurrencies.", */
   /*       "Use Coinranking and Newscatcher APIs", */
-  /*       "Redux Tookit Query to fetch cryptocurrencies data and news", */
+  /*       "Redux Toolkit Query to fetch cryptocurrencies data and news", */
   /*     ], */
   /*     jp: [], */
   /*   }, */
-  /*   tags: ["Next.js", "TypeScript", "Ant Design", "Redux Tookit", "Chart.js"], */
+  /*   tags: ["Next.js", "TypeScript", "Ant Design", "Redux Toolkit", "Chart.js"], */
   /*   // url: "https://cryptocurrencies-app.vercel.app", */
   /*   url: "", */
   /*   imageUrls: [ */
@@ -264,7 +258,7 @@ export const data = [
       jp: [
         'APUコール：　CoinGecko',
         'UIライブライ：　Material UI',
-        'データ・フェッチング&ステート管理：　React-Query (SSR対応)',
+        'データ・フェッチング&ステート管理：　React Query (SSR対応)',
         'Chart.js：　各暗号通貨のヒストリカル・チャート',
         'Firebase：　お気に入りの暗号通貨をウオッチリストに登録',
       ],
@@ -283,7 +277,14 @@ export const data = [
         '２つのログイン認証方法： グーグルアカウント、メール＆パスワード',
       ],
     },
-    tags: ['Next.js', 'TypeScript', 'Material-UI', 'Chart.js', 'Firebase'],
+    tags: [
+      'Next.js',
+      'TypeScript',
+      'React Query',
+      'Material UI',
+      'Chart.js',
+      'Firebase',
+    ],
     url: 'https://crypto-currency-tracker-eight.vercel.app',
     imageUrls: [
       '/images/crypto-tracker_1.png',
@@ -301,7 +302,7 @@ export const data = [
   //   en: [],
   //   jp: [],
   // },
-  //   tags: ['Next.js', 'TypeScript', 'Material-UI'],
+  //   tags: ['Next.js', 'TypeScript', 'Material UI'],
   //   url: 'url',
   //   imageUrls: [''],
   //   repo:"repo",

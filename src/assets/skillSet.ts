@@ -23,11 +23,11 @@ export const skillSet = {
     { name: 'Sanity', iconName: 'sanity' },
   ],
   others: [
-    { name: 'Vercel', iconName: '' },
-    { name: 'Netlify', iconName: '' },
-    { name: 'Framer Motion', iconName: '' },
     { name: 'Node.js', iconName: 'nodejs' },
     { name: 'Express', iconName: 'express' },
+    { name: 'Chart.js', iconName: '' },
+    { name: 'Leaflet (map)', iconName: '' },
+    { name: 'Framer Motion (animation)', iconName: '' },
     { name: 'Django', iconName: 'django' },
     { name: 'FastAPI', iconName: '' },
     { name: 'Pandas', iconName: 'pandas' },
@@ -37,5 +37,7 @@ export const skillSet = {
     { name: 'Linux ', iconName: 'linux' },
     { name: 'Bash', iconName: 'bash' },
     { name: 'Chrome Extension', iconName: '' },
+    { name: 'Vercel', iconName: '' },
+    { name: 'Netlify', iconName: '' },
   ],
 };

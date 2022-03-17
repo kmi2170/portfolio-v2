@@ -27,8 +27,8 @@ export const Container = styled.div`
 export const Git = styled.div`
   text-align: left;
   font-size: 1.25rem;
-  margin: 10px;
-  margin-left: 20px;
+  margin: 1rem;
+  margin-left: 3rem;
 
   display: flex;
   flex-direction: row;
@@ -69,4 +69,30 @@ export const Description = styled.p`
       border-radius: 10px;
     }
   }
+`;
+
+export const SelectTags = styled.div`
+  span {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+`;
+
+export const Tag = styled.div<{ isSelected: boolean }>`
+  padding: 0 0.5rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  color: ${({ isSelected }) => (isSelected ? 'white' : '#4b365f')};
+  background-color: ${({ isSelected }) => (isSelected ? '#4b365f' : 'white')};
+  border: 1px solid ${({ isSelected }) => (isSelected ? 'none' : '#4b365f')};
 `;
