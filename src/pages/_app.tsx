@@ -10,13 +10,13 @@ function MyApp({ Component, pageProps }: AppProps) {
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Head>
-          <title>KH&apos;s Portofolio</title>
+          <title>KH&apos;s Portfolio</title>
           <meta
-            name='viewport'
-            content='minimum-scale=1, initial-scale=1, width=device-width'
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width"
           />
-          <meta name='description' content="KH's Portofolio" />
-          <link rel='icon' href='/my_favicon.png' />
+          <meta name="description" content="KH's Portofolio" />
+          <link rel="icon" href="/my_favicon.png" />
         </Head>
         <Component {...pageProps} />
       </ThemeProvider>

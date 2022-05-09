@@ -90,7 +90,7 @@ const Header = () => {
             whileInView={{ y: [50, 0] }}
             transition={{ duration: 0.75, delay: 1.5, ease: 'easeInOut' }}
           >
-            Wellcome to My Portofolio
+            Wellcome to My Portfolio
           </motion.div>
         </Welcome>
       </Card>
