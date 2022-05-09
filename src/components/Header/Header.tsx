@@ -58,7 +58,7 @@ const Header = () => {
             whileInView={{ x: [-50, 0] }}
             transition={{ duration: 0.75, delay: 0.25, ease: 'easeInOut' }}
           >
-            <span>KH&apos;s</span>&nbsp; Portofolio
+            <span>KH&apos;s</span>&nbsp; Portfolio
           </motion.div>
         </Title>
 
