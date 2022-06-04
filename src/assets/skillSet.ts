@@ -14,6 +14,7 @@ export const skillSet = {
     { name: 'Material UI', iconName: 'materialui' },
     { name: 'styled-components', iconName: 'styledcomponents' },
     { name: 'Git', iconName: 'git' },
+    { name: 'Docker', iconName: 'docker' },
   ],
   databases: [
     { name: 'MySQL', iconName: 'mysql' },
