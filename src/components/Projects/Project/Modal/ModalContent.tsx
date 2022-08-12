@@ -47,15 +47,18 @@ const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
 
         <AppImg>
           <Carousel imageUrls={project?.imageUrls} />
-          {/* <img src={project?.imageUrls[0]} alt={project?.name['en']} /> */}
         </AppImg>
 
         <Links>
-          <a href={project?.url} target='_blank' rel='noopener noreferrer'>
-            <GiSmartphone />
-            App
-          </a>
-          <a href={project?.repo} target='_blank' rel='noopener noreferrer'>
+          {project?.url ? (
+            <a href={project?.url} target="_blank" rel="noopener noreferrer">
+              <GiSmartphone />
+              App
+            </a>
+          ) : (
+            <div></div>
+          )}
+          <a href={project?.repo} target="_blank" rel="noopener noreferrer">
             <AiFillGithub />
             Code
           </a>
@@ -79,15 +82,19 @@ const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
           ))}
         </Features>
 
-        <SubTitle>Details</SubTitle>
-        <Details>
-          {project?.details[lang].map((detail, i) => (
-            <li key={i}>
-              <AiFillCheckCircle />
-              {detail}
-            </li>
-          ))}
-        </Details>
+        {project?.details[lang].length > 0 && (
+          <>
+            <SubTitle>Details</SubTitle>
+            <Details>
+              {project?.details[lang].map((detail, i) => (
+                <li key={i}>
+                  <AiFillCheckCircle />
+                  {detail}
+                </li>
+              ))}
+            </Details>
+          </>
+        )}
       </Wrapper>
     </motion.div>
   );

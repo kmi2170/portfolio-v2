@@ -293,20 +293,33 @@ export const data = [
     ],
     repo: 'https://github.com/kmi2170/crypto-tracker',
   },
-  //
-  // {
-  //   id: 4,
-  //   name: {en:'App Name',jp:'App Name'},
-  // description: { en: 'description EN', jp: 'description JP' },
-  // features: {
-  //   en: [],
-  //   jp: [],
-  // },
-  //   tags: ['Next.js', 'TypeScript', 'Material UI'],
-  //   url: 'url',
-  //   imageUrls: [''],
-  //   repo:"repo",
-  // },
+  {
+    id: 7,
+    name: {
+      en: 'YouTube Timestamp Bookmarker',
+      jp: 'YouTube タイムスタンプ　ブックマーカー',
+    },
+    description: {
+      en: 'Chrome Extension: Save YouTube timesamp and can resume the video from the time later',
+      jp: 'Chrome エクステンション： 再生途中のYouTube動画のタイムスタンプをブックマークとして保存し、後に保存した時点から動画を再開できる　',
+    },
+    features: {
+      en: ['Manifest v3', 'React.js', 'Webpack 5', 'TailwindCSS'],
+      jp: ['Manifest v3', 'React.js', 'Webpack 5', 'TailwindCSS'],
+    },
+    details: {
+      en: [],
+      jp: [],
+    },
+    tags: ['Chrome Extension', 'React.js', 'TypeScript', 'TailwindCSS'],
+    url: '',
+    imageUrls: [
+      '/images/chrome-extension_yt-bookmarker_1.png',
+      '/images/chrome-extension_yt-bookmarker_2.png',
+      '/images/chrome-extension_yt-bookmarker_3.png',
+    ],
+    repo: 'https://github.com/kmi2170/chrome-extension-youtube-bookmarker',
+  },
 ];
 
 export default data;

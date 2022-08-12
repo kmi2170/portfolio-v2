@@ -36,15 +36,15 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
   return (
     <Wrapper>
       <Title>
-        My <span>Next.js</span> Projects
+        My <span>React/Next.js</span> Projects
       </Title>
 
       <Git>
         My
         <a
-          href='https://github.com/kmi2170'
-          target='_blank'
-          rel='noopener noreferrer'
+          href="https://github.com/kmi2170"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Github
           <AiFillGithub />

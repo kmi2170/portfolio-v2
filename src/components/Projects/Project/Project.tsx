@@ -78,11 +78,15 @@ const Project = ({ project, lang }: ProjectProps) => {
       </Tags>
 
       <Links>
-        <a href={project?.url} target='_blank' rel='noopener noreferrer'>
-          <GiSmartphone />
-          App
-        </a>
-        <a href={project?.repo} target='_blank' rel='noopener noreferrer'>
+        {project?.url ? (
+          <a href={project?.url} target="_blank" rel="noopener noreferrer">
+            <GiSmartphone />
+            App
+          </a>
+        ) : (
+          <div></div>
+        )}
+        <a href={project?.repo} target="_blank" rel="noopener noreferrer">
           <AiFillGithub />
           Code
         </a>
