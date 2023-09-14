@@ -1,10 +1,10 @@
+import React from "react";
 import { AppWrapper, MotionWrapper } from "../../wrapper";
-import { DataAbout, Lang } from "../../lib/types";
-import { Wrapper, Card, Title, Description } from "./styles";
+import { Lang } from "../../lib/types";
 import { about } from "../../assets/about";
+import { Container, Card, Title, Description } from "./styles";
 
 interface AboutProps {
-  about?: DataAbout[];
   lang?: Lang;
 }
 
@@ -13,9 +13,8 @@ type ProfileType = {
   en?: string;
 };
 
-// const About = ({ about, lang }: AboutProps) => {
-const About = ({ lang }: AboutProps) => {
-  const _lang = lang || "jp";
+const About = (props: AboutProps) => {
+  const { lang } = props;
   const profile = about?.profile as ProfileType;
 
   let text;
@@ -28,7 +27,7 @@ const About = ({ lang }: AboutProps) => {
   }
 
   return (
-    <Wrapper>
+    <Container>
       <Card>
         <Title>
           About <span>Myself</span>
@@ -36,8 +35,8 @@ const About = ({ lang }: AboutProps) => {
 
         <Description>{text ? text : null}</Description>
       </Card>
-    </Wrapper>
+    </Container>
   );
 };
 
-export default AppWrapper(MotionWrapper(About), "about", "white");
+export default React.memo(AppWrapper(MotionWrapper(About), "about", "white"));
