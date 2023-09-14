@@ -4,13 +4,29 @@ import { Wrapper, Card, Title, Description } from "./styles";
 import { about } from "../../assets/about";
 
 interface AboutProps {
-  about: DataAbout[];
-  lang: Lang;
+  about?: DataAbout[];
+  lang?: Lang;
 }
+
+type ProfileType = {
+  jp?: string;
+  en?: string;
+};
 
 // const About = ({ about, lang }: AboutProps) => {
 const About = ({ lang }: AboutProps) => {
-  console.log("about", about);
+  const _lang = lang || "jp";
+  const profile = about?.profile as ProfileType;
+
+  let text;
+  switch (lang) {
+    case "jp":
+      text = profile?.jp;
+      break;
+    case "en":
+      text = profile?.en;
+  }
+
   return (
     <Wrapper>
       <Card>
@@ -18,8 +34,7 @@ const About = ({ lang }: AboutProps) => {
           About <span>Myself</span>
         </Title>
 
-        <Description>{about?.profile ? about.profile : null}</Description>
-        {/* <Description>{about?.length && about[0][lang]}</Description> */}
+        <Description>{text ? text : null}</Description>
       </Card>
     </Wrapper>
   );
