@@ -9,7 +9,7 @@ const NavigationDots = ({ activeItem }: { activeItem: string }) => {
   return (
     <Wrapper>
       {['home', ...navItems].map((item) => (
-        <Link key={item} href={`#${item}`} passHref>
+        <Link key={item} href={`#${item}`} passHref legacyBehavior>
           <Dot isActive={item === activeItem} />
         </Link>
       ))}

@@ -21,16 +21,15 @@ const Navbar = ({ setLang }: NavbarProps) => {
       <Topbar>
         <Title>
           <Link href='#home'>
-            <a>
-              <span>KH&apos;s</span> Portofolio
-            </a>
+
+            <span>KH&apos;s</span>Portofolio
           </Link>
         </Title>
         <Ul>
           {navItems.map((item) => (
             <Li key={`link-${item}`}>
               <Link href={`#${item}`}>
-                <a>{item}</a>
+                {item}
               </Link>
             </Li>
           ))}
@@ -54,7 +53,7 @@ const Navbar = ({ setLang }: NavbarProps) => {
               {navItems.map((item) => (
                 <Li key={`link-menu-${item}`}>
                   <Link href={`#${item}`}>
-                    <a>{item}</a>
+                    {item}
                   </Link>
                 </Li>
               ))}
