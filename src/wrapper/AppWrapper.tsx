@@ -1,24 +1,20 @@
-import styled from 'styled-components';
-import { NavigationDots } from '../components/';
+import styled from "styled-components";
+import { NavigationDots } from "../components/";
 
-const AppWrapper =
-  <P extends object>(
-    Component: React.ComponentType<P>,
-    idName: string,
-    bgColor?: string
-  ) =>
-  (props: P) =>
-    (
-      <Wrapper id={idName} bgColor={bgColor}>
-        <SubWrapper>
-          <Container>
-            <Component {...(props as P)} />
-          </Container>
+const AppWrapper = <P extends object>(Component: React.ComponentType<P>, idName: string, bgColor?: string) => {
+  const WrappedComponent = (props: P) => (
+    <Wrapper id={idName} bgColor={bgColor}>
+      <SubWrapper>
+        <Container>
+          <Component {...props} />
+        </Container>
+        <NavigationDots activeItem={idName} />
+      </SubWrapper>
+    </Wrapper>
+  );
 
-          <NavigationDots activeItem={idName} />
-        </SubWrapper>
-      </Wrapper>
-    );
+  return WrappedComponent;
+};
 
 export default AppWrapper;
 
@@ -33,7 +29,7 @@ const Wrapper = styled.div<{ bgColor?: string }>`
   background-color: ${({ bgColor }) => bgColor && bgColor};
 
   &::before {
-    content: ' ';
+    content: " ";
     position: absolute;
     top: 0;
     left: 0;
@@ -42,12 +38,7 @@ const Wrapper = styled.div<{ bgColor?: string }>`
     z-index: -5;
     opacity: 1;
     background: rgb(255, 255, 255);
-    background: linear-gradient(
-      150deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(247, 247, 247, 1) 50%,
-      rgba(255, 255, 255, 1) 100%
-    );
+    background: linear-gradient(150deg, rgba(255, 255, 255, 1) 0%, rgba(247, 247, 247, 1) 50%, rgba(255, 255, 255, 1) 100%);
     /* background: rgb(238, 174, 202); */
     /* background: radial-gradient( */
     /*   circle, */
