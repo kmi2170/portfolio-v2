@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { resourceUsage } from "process";
 
 const MotionWrapper = <P extends object>(Component: React.ComponentType<P>) => {
   const WrappedComponent = (props: P) => (

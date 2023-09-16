@@ -1,12 +1,12 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  position: relative;
+  // position: relative;
 `;
 
 export const Card = styled.div`
   font-size: 1rem;
-  font-family: 'M PLUS Rounded 1c';
+  font-family: "M PLUS Rounded 1c";
 
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@ export const Title = styled.h1`
   width: 80%;
   z-index: 2;
 
-  font-family: 'Alex Brush';
+  font-family: "Alex Brush";
   font-size: 4em;
 
   span {
@@ -108,5 +108,17 @@ export const BackgroundIcon = styled.img<{ top: string; left: string }>`
 
   position: absolute;
   top: ${({ top }) => top};
+  left: ${({ left }) => left};
+`;
+
+export const BackgroundImage = styled.img<{ top?: string; left?: string; bottom?: string }>`
+  height: auto;
+  width: 100%;
+  z-index: 1;
+  opacity: 0.08;
+
+  position: absolute;
+  top: ${({ top }) => top};
+  bottom: ${({ bottom }) => bottom};
   left: ${({ left }) => left};
 `;
