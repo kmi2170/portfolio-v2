@@ -33,7 +33,7 @@ const About = (props: AboutProps) => {
           About <span>Myself</span>
         </Title>
 
-        <Description>{text ? text : null}</Description>
+        <Description>{text ? text : <p>Temporary Unavailable</p>}</Description>
       </Card>
     </Container>
   );
