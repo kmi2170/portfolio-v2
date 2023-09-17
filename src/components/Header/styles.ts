@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  // position: relative;
+  position: relative;
 `;
 
 export const Card = styled.div`
@@ -111,7 +111,11 @@ export const BackgroundIcon = styled.img<{ top: string; left: string }>`
   left: ${({ left }) => left};
 `;
 
-export const BackgroundImage = styled.img<{ top?: string; left?: string; bottom?: string }>`
+export const BackgroundImage = styled.img<{
+  top?: string;
+  left?: string;
+  bottom?: string;
+}>`
   height: auto;
   width: 100%;
   z-index: 1;

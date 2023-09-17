@@ -1,7 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { AppWrapper } from "../../wrapper";
-import { Wrapper, Card, Title, Welcome, About, Intro, Description, BackgroundIcon, BackgroundImage } from "./styles";
+import {
+  Wrapper,
+  Card,
+  Title,
+  Welcome,
+  About,
+  Intro,
+  Description,
+  BackgroundIcon,
+  BackgroundImage,
+} from "./styles";
 
 const images = [
   {
@@ -35,7 +45,7 @@ const bgImage = {
   url: "/images/mountain_silhouette.png",
   top: undefined,
   left: undefined,
-  bottom: "10%",
+  bottom: undefined,
 };
 
 const Header = () => {
@@ -44,23 +54,40 @@ const Header = () => {
       {/* {images.map((image, i) => (
         <BackgroundIcon key={`bgicon-${i}`} src={image.url} alt={image.url} top={image.top} left={image.left} />
       ))} */}
-      <BackgroundImage src={bgImage.url} alt={bgImage.url} top={bgImage.top} left={bgImage.left} bottom={bgImage.bottom} />
+      <BackgroundImage
+        src={bgImage.url}
+        alt={bgImage.url}
+        top={bgImage.top}
+        left={bgImage.left}
+        bottom={bgImage.bottom}
+      />
 
       <Card>
         <Title>
-          <motion.div whileInView={{ x: [-50, 0] }} transition={{ duration: 0.75, delay: 0.25, ease: "easeInOut" }}>
+          <motion.div
+            whileInView={{ x: [-50, 0] }}
+            transition={{ duration: 0.75, delay: 0.25, ease: "easeInOut" }}
+          >
             <span>KH&apos;s</span>&nbsp; Portfolio
           </motion.div>
         </Title>
 
         <Intro>
-          <motion.div initial={{ x: 50 }} whileInView={{ x: [50, -150] }} transition={{ duration: 0.75, delay: 1, ease: "easeInOut" }}>
+          <motion.div
+            initial={{ x: 50 }}
+            whileInView={{ x: [50, -150] }}
+            transition={{ duration: 0.75, delay: 1, ease: "easeInOut" }}
+          >
             I&apos;m <span>Kemmei</span> Hamada
           </motion.div>
         </Intro>
 
         <About>
-          <motion.div initial={{ x: 50 }} whileInView={{ x: [50, -50] }} transition={{ duration: 0.75, delay: 1.25, ease: "easeInOut" }}>
+          <motion.div
+            initial={{ x: 50 }}
+            whileInView={{ x: [50, -50] }}
+            transition={{ duration: 0.75, delay: 1.25, ease: "easeInOut" }}
+          >
             Freelance &nbsp; <span>Programmer</span>/<span>Web Developer</span>
           </motion.div>
         </About>
@@ -68,7 +95,11 @@ const Header = () => {
         {/* <Description>I create Awesome Apps!</Description> */}
 
         <Welcome>
-          <motion.div initial={{ y: 50 }} whileInView={{ y: [50, 0] }} transition={{ duration: 0.75, delay: 1.5, ease: "easeInOut" }}>
+          <motion.div
+            initial={{ y: 50 }}
+            whileInView={{ y: [50, 0] }}
+            transition={{ duration: 0.75, delay: 1.5, ease: "easeInOut" }}
+          >
             Welcome to My Portfolio
           </motion.div>
         </Welcome>
