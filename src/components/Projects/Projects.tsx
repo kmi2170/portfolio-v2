@@ -1,11 +1,12 @@
-import { useState } from 'react';
-import { AiFillGithub } from 'react-icons/ai/index';
-import { isValidMotionProp, motion } from 'framer-motion';
+import React from "react";
+import { useState } from "react";
+import { AiFillGithub } from "react-icons/ai/index";
+import { isValidMotionProp, motion } from "framer-motion";
 // import { client, urlFor } from '../../lib/sanity';
 
-import { AppWrapper, MotionWrapper } from '../../wrapper';
-import Project from './Project/Project';
-import { DataProject, Lang } from '../../lib/types';
+import { AppWrapper, MotionWrapper } from "../../wrapper";
+import Project from "./Project/Project";
+import { DataProject, Lang } from "../../lib/types";
 import {
   Wrapper,
   Title,
@@ -14,7 +15,7 @@ import {
   Description,
   SelectTags,
   Tag,
-} from './styles';
+} from "./styles";
 
 interface ProjectsProps {
   projects: DataProject[];
@@ -26,10 +27,10 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
   const setTags = new Set(collectedTags.flat());
   const tags = Array.from(setTags);
 
-  const [selectedTag, setSelectedTag] = useState<string>('all');
+  const [selectedTag, setSelectedTag] = useState<string>("all");
 
   const filteredProjects =
-    selectedTag === 'all'
+    selectedTag === "all"
       ? projects
       : projects.filter((project) => project.tags.includes(selectedTag));
 
@@ -54,9 +55,9 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
       <SelectTags>
         <span>
           <Tag
-            key={'all'}
-            isSelected={'all' === selectedTag}
-            onClick={() => setSelectedTag('all')}
+            key={"all"}
+            isSelected={"all" === selectedTag}
+            onClick={() => setSelectedTag("all")}
           >
             All
           </Tag>
@@ -77,7 +78,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
           <motion.div
             key={project.name.en}
             whileInView={{ opacity: [0, 1] }}
-            transition={{ duration: 1, ease: 'easeInOut' }}
+            transition={{ duration: 1, ease: "easeInOut" }}
           >
             <Project key={project.name.en} project={project} lang={lang} />
           </motion.div>
@@ -88,10 +89,10 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
         This site is built with
         <span>
           {[
-            'Next.js',
-            'styled-components',
-            'SANITY (CMS)',
-            'Framer Motion (animation)',
+            "Next.js",
+            "styled-components",
+            "SANITY (CMS)",
+            "Framer Motion (animation)",
           ].map((tag) => (
             <span key={tag}>{tag}</span>
           ))}
@@ -101,4 +102,4 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
   );
 };
 
-export default AppWrapper(MotionWrapper(Projects), 'projects');
+export default React.memo(AppWrapper(MotionWrapper(Projects), "projects"));

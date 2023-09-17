@@ -1,9 +1,10 @@
-import { motion } from 'framer-motion';
-import { urlFor } from '../../lib/sanity';
-import { AppWrapper, MotionWrapper } from '../../wrapper';
-import { skillSet } from '../../assets/skillSet';
-import { DataSkills } from '../../lib/types';
-import Footer from '../Footer/Footer';
+import React from "react";
+import { motion } from "framer-motion";
+import { urlFor } from "../../lib/sanity";
+import { AppWrapper, MotionWrapper } from "../../wrapper";
+import { skillSet } from "../../assets/skillSet";
+import { DataSkills } from "../../lib/types";
+import Footer from "../Footer/Footer";
 import {
   Wrapper,
   Title,
@@ -13,7 +14,7 @@ import {
   Icon,
   Img,
   IconName,
-} from './styles';
+} from "./styles";
 
 const Skills = ({ skills }: { skills: DataSkills[] }) => {
   return (
@@ -34,7 +35,7 @@ const Skills = ({ skills }: { skills: DataSkills[] }) => {
               <motion.div
                 key={lang.name}
                 whileInView={{ opacity: [0, 1] }}
-                transition={{ duration: 1.25, ease: 'easeInOut' }}
+                transition={{ duration: 1.25, ease: "easeInOut" }}
               >
                 <Skill>
                   <Icon>
@@ -61,7 +62,7 @@ const Skills = ({ skills }: { skills: DataSkills[] }) => {
               <motion.div
                 key={tool.name}
                 whileInView={{ opacity: [0, 1] }}
-                transition={{ duration: 1.25, ease: 'easeInOut' }}
+                transition={{ duration: 1.25, ease: "easeInOut" }}
               >
                 <Skill key={iconName}>
                   <Icon>
@@ -88,7 +89,7 @@ const Skills = ({ skills }: { skills: DataSkills[] }) => {
               <motion.div
                 key={database.name}
                 whileInView={{ opacity: [0, 1] }}
-                transition={{ duration: 1.25, ease: 'easeInOut' }}
+                transition={{ duration: 1.25, ease: "easeInOut" }}
               >
                 <Skill key={iconName}>
                   <Icon>
@@ -109,7 +110,7 @@ const Skills = ({ skills }: { skills: DataSkills[] }) => {
               <motion.div
                 key={other.name}
                 whileInView={{ opacity: [0, 1] }}
-                transition={{ duration: 1.25, ease: 'easeInOut' }}
+                transition={{ duration: 1.25, ease: "easeInOut" }}
               >
                 <Skill key={other.name}>
                   <IconName>{other.name}</IconName>
@@ -124,5 +125,4 @@ const Skills = ({ skills }: { skills: DataSkills[] }) => {
   );
 };
 
-export default AppWrapper(Skills, 'skills');
-// export default AppWrapper(MotionWrapper(Skills), 'skills');
+export default React.memo(AppWrapper(Skills, "skills"));
