@@ -59,7 +59,7 @@ const Project = ({ project, lang }: ProjectProps) => {
             }}
           >
             <AiOutlineEye />
-            <span>Clic to View</span>
+            <span>Click to View</span>
           </motion.div>
         </Hover>
         <Modal
