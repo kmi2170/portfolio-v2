@@ -34,6 +34,7 @@ const customModalStyle = {
   },
   overlay: {
     backgroundColor: "rgba(10, 11, 13, 0.75)",
+    zIndex: 30,
   },
 };
 

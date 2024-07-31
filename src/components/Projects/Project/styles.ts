@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 300px;
@@ -41,6 +41,7 @@ export const Hover = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 10;
 
   opacity: 0;
   color: rgba(255, 255, 255, 0.8);
@@ -98,6 +99,8 @@ export const Links = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  z-index: 10;
 
   a {
     color: blue;
