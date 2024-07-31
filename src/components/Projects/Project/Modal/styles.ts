@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   border-radius: 5px;
@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  font-family: 'M PLUS Rounded 1c';
+  font-family: "M PLUS Rounded 1c";
 
   &:hover {
     box-shadow: 0 0 20px rgba(108, 122, 137, 1);
@@ -32,8 +32,10 @@ export const ButtonContainer = styled.div`
 
 export const Close = styled.span`
   svg {
-    width: 35px;
-    height: 35px;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 45px;
+    height: 45px;
     color: blue;
 
     &:hover {
@@ -52,10 +54,10 @@ export const AppImg = styled.div`
   img {
     width: 100%;
 
-    &:hover {
+    /* &:hover {
       scale: 0.9;
       --webkit-filter: brightness(70%);
-    }
+    } */
   }
 `;
 

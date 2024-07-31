@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { AiOutlineEye, AiFillGithub } from 'react-icons/ai/index';
-import { GiSmartphone } from 'react-icons/gi/index';
-import Modal from 'react-modal';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import { AiOutlineEye, AiFillGithub } from "react-icons/ai/index";
+import { GiSmartphone } from "react-icons/gi/index";
+import Modal from "react-modal";
+import { motion } from "framer-motion";
 
-import { DataProject, Lang } from '../../../lib/types';
-import ModalContent from './Modal/ModalContent';
-import { Wrapper, AppName, AppImg, Hover, Tags, Links } from './styles';
+import { DataProject, Lang } from "../../../lib/types";
+import ModalContent from "./Modal/ModalContent";
+import { Wrapper, AppName, AppImg, Hover, Tags, Links } from "./styles";
 
-Modal.setAppElement('#__next');
+Modal.setAppElement("#__next");
 
 interface ProjectProps {
   project: DataProject;
@@ -17,23 +17,23 @@ interface ProjectProps {
 
 const customModalStyle = {
   content: {
-    top: '10vh',
-    left: '5vw',
+    top: "10vh",
+    left: "5vw",
     // top: '50%',
     // left: '50%',
-    right: 'auto',
-    bottom: 'auto',
+    right: "auto",
+    bottom: "auto",
     // transform: 'translate(-50% -50%)',
-    backgroundColor: 'white',
+    backgroundColor: "white",
     padding: 0,
-    border: 'none',
-    boxShadow: '0 0 10px white',
+    border: "none",
+    boxShadow: "0 0 10px white",
     // width: '85vw',
     // height: '90vh',
     // overflow: 'auto',
   },
   overlay: {
-    backgroundColor: 'rgba(10, 11, 13, 0.75)',
+    backgroundColor: "rgba(10, 11, 13, 0.75)",
   },
 };
 
@@ -55,7 +55,7 @@ const Project = ({ project, lang }: ProjectProps) => {
             whileHover={{ opacity: [0, 1], scale: 1.5 }}
             transition={{
               duration: 0.5,
-              ease: 'easeInOut',
+              ease: "easeInOut",
             }}
           >
             <AiOutlineEye />
