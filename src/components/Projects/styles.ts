@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   padding: 1.5rem;
   padding-left: 2rem;
-  font-family: 'M PLUS Rounded 1c';
+  font-family: "M PLUS Rounded 1c";
 `;
 
 export const Title = styled.h2`
@@ -40,6 +40,7 @@ export const Git = styled.div`
     flex-direction: row;
     align-items: center;
     color: blue;
+    z-index: 10;
 
     svg {
       margin-left: 0.25rem;
@@ -92,7 +93,7 @@ export const Tag = styled.div<{ isSelected: boolean }>`
     cursor: pointer;
   }
 
-  color: ${({ isSelected }) => (isSelected ? 'white' : '#4b365f')};
-  background-color: ${({ isSelected }) => (isSelected ? '#4b365f' : 'white')};
-  border: 1px solid ${({ isSelected }) => (isSelected ? 'none' : '#4b365f')};
+  color: ${({ isSelected }) => (isSelected ? "white" : "#4b365f")};
+  background-color: ${({ isSelected }) => (isSelected ? "#4b365f" : "white")};
+  border: 1px solid ${({ isSelected }) => (isSelected ? "none" : "#4b365f")};
 `;
