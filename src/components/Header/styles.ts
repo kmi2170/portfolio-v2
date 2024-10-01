@@ -2,127 +2,87 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   position: relative;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  width: 350;
+
+  @media (min-width: 600px) {
+    width: 600px;
+  }
+  @media (min-width: 600px) {
+    width: 600px;
+  }
+  @media (min-width: 900px) {
+    width: 900px;
+  }
+  @media (min-width: 1200px) {
+    width: 1200px;
+  }
+  @media (min-width: 1500px) {
+    width: 1500px;
+  }
 `;
 
 export const Card = styled.div`
-  font-size: 1rem;
-  font-family: "M PLUS Rounded 1c";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  @media screen and (max-width: 750px) {
-    font-size: 0.75rem;
-  }
-
-  @media screen and (max-width: 500px) {
-    font-size: 0.5rem;
-  }
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
 `;
 
 export const Title = styled.h1`
+  grid-row: 1 / span 1;
+  width: 100%;
   text-align: left;
-  width: 80%;
-  z-index: 2;
-
   font-family: "Alex Brush";
-  font-size: 4em;
+  font-size: 2.5rem;
+  font-weight: 600;
 
   span {
     color: ${({ theme }) => theme.colors.blue};
   }
 `;
 
-export const Welcome = styled.h1`
-  margin-top: 2.5em;
+export const MySelf = styled.h2`
+  grid-row: 3 / span 1;
+  width: 100%;
   text-align: center;
-  z-index: 2;
-  color: #555;
-  font-size: 2.5em;
-
-  /* span { */
-  /*   font-family: 'Alex Brush'; */
-  /*   font-size: 1.5em; */
-
-  /*   span { */
-  /*     color: darkblue; */
-  /*   } */
-  /* } */
-`;
-
-export const Intro = styled.div`
-  width: 80%;
-  text-align: right;
-  margin-top: 0em;
-  font-size: 1.75em;
   font-weight: 600;
   color: #555;
 
   span {
-    margin-left: 0.25em;
-    font-size: 1.75em;
+    font-size: 1.2em;
     color: ${({ theme }) => theme.colors.blue};
   }
 `;
 
-export const About = styled.div`
-  width: 80%;
+export const Role = styled.h2`
+  grid-row: 5 / span 1;
+  width: 100%;
   text-align: right;
-
-  margin-top: 0.75em;
-  font-size: 1.75em;
   font-weight: 600;
-  z-index: 2;
   color: #555;
 
   span:first-child {
-    font-size: 1.25em;
+    font-size: 1.2em;
     color: ${({ theme }) => theme.colors.blue};
   }
 
   span:nth-child(2) {
-    font-size: 1.25em;
+    font-size: 1.2em;
     color: ${({ theme }) => theme.colors.green};
   }
 `;
 
-export const Description = styled.div`
-  margin-top: 1.5em;
-  font-size: 1.75em;
-  font-style: italic;
-  color: darkgoldenrod;
-  z-index: 2;
-`;
-
-export const BackgroundIcon = styled.img<{ top: string; left: string }>`
-  /* display: inline-grid; */
-  /* grid-column-start: 1; */
-  /* grid-row-start: 1; */
-
-  height: 40%;
-  width: 40%;
-  z-index: 1;
-  opacity: 0.03;
-
-  position: absolute;
-  top: ${({ top }) => top};
-  left: ${({ left }) => left};
-`;
-
-export const BackgroundImage = styled.img<{
-  top?: string;
-  left?: string;
-  bottom?: string;
-}>`
-  height: auto;
+export const Welcome = styled.h2`
   width: 100%;
-  z-index: 1;
-  opacity: 0.08;
-
-  position: absolute;
-  top: ${({ top }) => top};
-  bottom: ${({ bottom }) => bottom};
-  left: ${({ left }) => left};
+  grid-row: 12 / span 1;
+  text-align: center;
+  color: #555;
 `;

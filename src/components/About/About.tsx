@@ -40,3 +40,4 @@ const About = (props: AboutProps) => {
 };
 
 export default React.memo(AppWrapper(MotionWrapper(About), "about", "white"));
+// export default React.memo(AppWrapper(MotionWrapper(About), "about", "white"));

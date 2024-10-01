@@ -1,30 +1,35 @@
 import styled from "styled-components";
 import { NavigationDots } from "../components/";
 
-const AppWrapper = <P extends object>(Component: React.ComponentType<P>, idName: string, bgColor?: string) => {
-  const WrappedComponent = (props: P) => (
-    <Wrapper id={idName} bgColor={bgColor}>
-      <SubWrapper>
-        <Container>
-          <Component {...props} />
-        </Container>
-        <NavigationDots activeItem={idName} />
-      </SubWrapper>
-    </Wrapper>
-  );
-
-  return WrappedComponent;
-};
+const AppWrapper = <P extends {}>(
+  Component: React.ComponentType<P>,
+  idName: string,
+  bgColor?: string
+) =>
+  function WrapperFunction(props: P) {
+    return (
+      <Wrapper id={idName} bgColor={bgColor}>
+        <Component {...props} />
+        {/* <SubWrapper>
+          <Container>
+            <Component {...props} />
+          </Container>
+          <NavigationDots activeItem={idName} />
+        </SubWrapper> */}
+      </Wrapper>
+    );
+  };
 
 export default AppWrapper;
 
 const Wrapper = styled.div<{ bgColor?: string }>`
   margin-top: 3rem;
-  width: 100%;
+  /* width: 100%; */
   /* min-height: 100vh; */
-  min-height: 75vh;
-  display: flex;
-  flex-direction: row;
+  /* min-height: 75vh; */
+  /* display: flex; */
+  flex: 1;
+  /* flex-direction: row; */
 
   background-color: ${({ bgColor }) => bgColor && bgColor};
 
@@ -38,7 +43,12 @@ const Wrapper = styled.div<{ bgColor?: string }>`
     z-index: -5;
     opacity: 1;
     background: rgb(255, 255, 255);
-    background: linear-gradient(150deg, rgba(255, 255, 255, 1) 0%, rgba(247, 247, 247, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(
+      150deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(247, 247, 247, 1) 50%,
+      rgba(255, 255, 255, 1) 100%
+    );
     /* background: rgb(238, 174, 202); */
     /* background: radial-gradient( */
     /*   circle, */
@@ -65,14 +75,14 @@ const Wrapper = styled.div<{ bgColor?: string }>`
 /* background-image: ${({ bgImage }) => bgImage}; */
 /* display: ${({ bgImage }) => bgImage ? 'block' : 'none'}; */
 
-const SubWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  /* padding: 4rem 2rem; */
-`;
+// const SubWrapper = styled.div`
+//   width: 100%;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   /* padding: 4rem 2rem; */
+// `;
 
-const Container = styled.div`
-  flex: 1;
-`;
+// const Container = styled.div`
+//   flex: 1;
+// `;
