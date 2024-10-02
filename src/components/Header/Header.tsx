@@ -56,6 +56,3 @@ const Header = () => {
 };
 
 export default React.memo(Header);
-// const bgColor = 'rgba(144,238,144,0.25)';
-// const bgColor = 'rgba(211,211,211,0.6)';
-// export default React.memo(AppWrapper(Header, "home"));

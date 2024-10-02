@@ -102,4 +102,5 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
   );
 };
 
-export default React.memo(AppWrapper(MotionWrapper(Projects), "projects"));
+export default React.memo(Projects);
+// export default React.memo(AppWrapper(MotionWrapper(Projects), "projects"));

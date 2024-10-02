@@ -3,16 +3,12 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   padding: 1.5rem;
   padding-left: 2rem;
-  font-family: "M PLUS Rounded 1c";
 `;
 
 export const Title = styled.h2`
   span {
     color: ${({ theme }) => theme.colors.blue};
   }
-  /* span { */
-  /*   color: rgb(0, 0, 139); */
-  /* } */
 `;
 
 export const Container = styled.div`
@@ -40,7 +36,6 @@ export const Git = styled.div`
     flex-direction: row;
     align-items: center;
     color: blue;
-    z-index: 10;
 
     svg {
       margin-left: 0.25rem;

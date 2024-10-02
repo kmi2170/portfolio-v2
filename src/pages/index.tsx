@@ -6,7 +6,14 @@ import type {
 import { client } from "../lib/sanity";
 import styled from "styled-components";
 
-import { Navbar, Header, Projects, About, Skills, Footer } from "../components";
+import {
+  Navbar,
+  Header,
+  Projects,
+  About,
+  Devtools,
+  Footer,
+} from "../components";
 import { DataAbout, DataProject, DataSkills, Lang } from "../lib/types";
 import { data } from "../assets/projects";
 import { useState } from "react";
@@ -26,8 +33,9 @@ const Home: NextPage = ({
         <Header />
         <Projects projects={dataProjects} lang={lang} />
         <About lang={lang} />
-        <Skills skills={dataSkills} />
+        <Devtools />{" "}
       </Main>
+      <Footer />
     </Wrapper>
   );
 };

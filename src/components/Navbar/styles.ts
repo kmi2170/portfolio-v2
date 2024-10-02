@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Topbar = styled.div`
   position: fixed;
@@ -19,7 +19,7 @@ export const Topbar = styled.div`
 `;
 
 export const Title = styled.div`
-  font-family: 'Alex Brush';
+  font-family: "Alex Brush";
   font-weight: 600;
   font-size: 2rem;
   padding: 0 2rem;
@@ -51,7 +51,7 @@ export const Li = styled.li`
   padding: 0.25rem 0;
 
   a {
-    font-family: 'M PLUS Rounded 1c';
+    font-family: "M PLUS Rounded 1c";
     text-transform: uppercase;
     transition: all 0.3s ease-in-out;
     padding: 0.5rem;
@@ -107,7 +107,7 @@ export const SideBar = styled.aside`
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 5;
+  z-index: 50;
 
   padding: 1rem;
   background-color: rgba(245, 245, 245, 0.8);
