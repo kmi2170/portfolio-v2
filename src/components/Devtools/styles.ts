@@ -42,6 +42,7 @@ export const Tool = styled.div<{
   flex-direction: row;
   font-weight: 600;
   color: black;
+  font-size: 1.25rem;
   /* background-color: ${({ color }) => color}; */
   /* border: 1px solid ${({ color }) => color};
   color: ${({ color }) => color}; */
@@ -52,6 +53,7 @@ export const Dot = styled.div<{
 }>`
   &::before {
     content: "•";
+    font-size: 1.25rem;
     color: ${({ color }) => color};
     margin-right: 0.25rem;
   }
