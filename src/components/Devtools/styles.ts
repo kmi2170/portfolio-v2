@@ -13,7 +13,7 @@ export const Container = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.5rem;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
 `;
 
@@ -23,22 +23,33 @@ export const Tools = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
+`;
+
+export const ToolWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 export const Tool = styled.div<{
   color: string;
 }>`
-  padding: 0.6rem 0.75rem 0.5rem 0.75rem;
-  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
   font-weight: 600;
   color: black;
   /* background-color: ${({ color }) => color}; */
   /* border: 1px solid ${({ color }) => color};
   color: ${({ color }) => color}; */
+`;
 
+export const Dot = styled.div<{
+  color?: string;
+}>`
   &::before {
     content: "•";
     color: ${({ color }) => color};

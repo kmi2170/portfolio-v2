@@ -1,6 +1,15 @@
 import React from "react";
-import { Wrapper, Title, Container, Tools, Tool } from "./styles";
+import { motion, Variants } from "framer-motion";
 
+import {
+  Wrapper,
+  Title,
+  Container,
+  Tools,
+  ToolWrapper,
+  Tool,
+  Dot,
+} from "./styles";
 import { devtools } from "../../assets/devtools";
 import { theme } from "../../styles/globalStyles";
 
@@ -11,6 +20,40 @@ const devtool_colors = {
   others: theme.colors.darkgray,
 };
 type DevtoolColors = keyof typeof devtool_colors;
+
+const dotVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      delay: 0.25,
+      ease: "easeInOut",
+    },
+  },
+};
+const toolVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1.0,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.5,
+    },
+  },
+  // visible: (i = 1) => ({
+  //   opacity: 1,
+  //   transition: { staggerChildren: 0.12, delayChildren: 0.04 * i },
+  // }),
+};
+const letterVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const Devtools = () => {
   return (
@@ -27,13 +70,36 @@ const Devtools = () => {
           return (
             <Tools key={keys[0]}>
               {tools[0]?.map((tool: string) => {
-                console.log(tool);
                 const color = devtool_colors[keys[0] as DevtoolColors];
+                const letters = Array.from(tool);
 
                 return (
-                  <Tool key={tool} color={color}>
-                    {tool}
-                  </Tool>
+                  <ToolWrapper key={tool}>
+                    <Dot
+                      as={motion.div}
+                      color={color}
+                      key="dot"
+                      variants={dotVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                    />
+                    <Tool
+                      as={motion.div}
+                      color={color}
+                      key="tool"
+                      variants={toolVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                    >
+                      {letters?.map((letter, i) => {
+                        return (
+                          <motion.span key={i} variants={letterVariants}>
+                            {letter}
+                          </motion.span>
+                        );
+                      })}
+                    </Tool>
+                  </ToolWrapper>
                 );
               })}
             </Tools>
