@@ -58,7 +58,9 @@ const letterVariants: Variants = {
 const Devtools = () => {
   return (
     <Wrapper>
-      <Title>Dev Tools</Title>
+      <Title>
+        Dev <span>Tools</span>
+      </Title>
 
       <Container>
         {devtools?.map((items, i) => {
