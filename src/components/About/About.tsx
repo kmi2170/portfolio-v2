@@ -2,7 +2,7 @@ import React from "react";
 import { AppWrapper, MotionWrapper } from "../../wrapper";
 import { Lang } from "../../lib/types";
 import { about } from "../../assets/about";
-import { Container, Card, Title, Description } from "./styles";
+import { Wrapper, Card, Title, Description } from "./styles";
 
 interface AboutProps {
   lang?: Lang;
@@ -27,15 +27,14 @@ const About = (props: AboutProps) => {
   }
 
   return (
-    <Container>
+    <Wrapper>
+      <Title>
+        About <span>Myself</span>
+      </Title>
       <Card>
-        <Title>
-          About <span>Myself</span>
-        </Title>
-
         <Description>{text ? text : <p>Temporary Unavailable</p>}</Description>
       </Card>
-    </Container>
+    </Wrapper>
   );
 };
 
