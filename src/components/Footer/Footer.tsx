@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <Wrapper>
       <p>
-        <span>Kemmei</span> &copy;{year}
+        &copy;{year} <span>Kemmei</span>
       </p>
     </Wrapper>
   );
