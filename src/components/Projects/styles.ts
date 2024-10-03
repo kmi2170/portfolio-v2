@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   padding: 1.5rem;
-  padding-left: 2rem;
+  border: 1px solid olive;
 `;
 
 export const Title = styled.h2`

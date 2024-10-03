@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Wrapper, Card, Title, Welcome, Role, MySelf } from "./styles";
+import { Wrapper, Profile, Title, Welcome, Role, MySelf } from "./styles";
 import {
   ImageContainer,
   ImageGrid,
@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <Wrapper>
       <motion.div
-        whileInView={{ y: [-50, 0], opacity: [0.2, 1] }}
+        whileInView={{ y: [0, 0], opacity: [0.2, 1] }}
         transition={{ duration: 0.75, delay: 0.25, ease: "easeInOut" }}
       >
         <ImageContainer>
@@ -35,7 +35,7 @@ const Header = () => {
         whileInView={{ x: [-0, 0], opacity: [0.5, 1] }}
         transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
       >
-        <Card>
+        <Profile>
           <Title>
             <span>KH&apos;s</span>&nbsp; Portfolio
           </Title>
@@ -49,7 +49,7 @@ const Header = () => {
           </Role>
 
           <Welcome>Welcome to My Portfolio</Welcome>
-        </Card>
+        </Profile>
       </motion.div>
     </Wrapper>
   );

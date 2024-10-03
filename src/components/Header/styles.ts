@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   position: relative;
-  top: 40px;
   left: 50%;
   transform: translate(-50%, 0);
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
 
   width: 350;
 
@@ -25,7 +27,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Card = styled.div`
+export const Profile = styled.div`
   position: absolute;
   top: 0;
   right: 0;

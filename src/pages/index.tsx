@@ -29,12 +29,10 @@ const Home: NextPage = ({
   return (
     <Wrapper>
       <Navbar setLang={setLang} />
-      <Main>
-        <Header />
-        <Projects projects={dataProjects} lang={lang} />
-        <About lang={lang} />
-        <Devtools />{" "}
-      </Main>
+      <Header />
+      <Projects projects={dataProjects} lang={lang} />
+      <About lang={lang} />
+      <Devtools />
       <Footer />
     </Wrapper>
   );
@@ -63,10 +61,11 @@ export const getServerSideProps: GetServerSideProps = async () => {
 };
 
 const Wrapper = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   overflow: auto;
 `;
 
 const Main = styled.div`
+  display: grid;
   /* background-color: ${theme.colors.purple}; */
 `;
