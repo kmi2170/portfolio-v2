@@ -41,13 +41,11 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
       </Title>
 
       <Git>
-        My
         <a
           href="https://github.com/kmi2170"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Github
           <AiFillGithub />
         </a>
       </Git>

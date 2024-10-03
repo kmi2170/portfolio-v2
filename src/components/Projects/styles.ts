@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   padding: 1.5rem;
-  border: 1px solid olive;
 `;
 
 export const Title = styled.h2`
@@ -21,27 +20,10 @@ export const Container = styled.div`
 `;
 
 export const Git = styled.div`
-  text-align: left;
-  font-size: 1.25rem;
-  margin: 1rem;
-  margin-left: 3rem;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.25rem;
-
-  a {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: blue;
-
-    svg {
-      margin-left: 0.25rem;
-      font-size: 1.75rem;
-    }
-  }
+  font-size: 1.75rem;
+  margin: 0.75rem;
+  margin-left: 2rem;
+  color: ${({ theme }) => theme.colors.blue};
 `;
 
 export const Description = styled.p`
@@ -69,7 +51,8 @@ export const Description = styled.p`
 
 export const SelectTags = styled.div`
   span {
-    margin: 2rem 0;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -80,13 +63,13 @@ export const SelectTags = styled.div`
 `;
 
 export const Tag = styled.div<{ isSelected: boolean }>`
-  padding: 0 0.5rem;
+  padding: 0.4rem 0.75rem 0.2rem 0.75rem;
   border-radius: 10px;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 
-  &:hover {
+  /* &:hover {
     cursor: pointer;
-  }
+  } */
 
   color: ${({ isSelected }) => (isSelected ? "white" : "#4b365f")};
   background-color: ${({ isSelected }) => (isSelected ? "#4b365f" : "white")};
