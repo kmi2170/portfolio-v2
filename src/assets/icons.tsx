@@ -62,8 +62,8 @@ export const MenuIcon2 = ({ size = 24 }: { size?: number }) => {
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <line y1="5.5" x2="24" y2="5.5" stroke="black" stroke-width="3" />
-      <line y1="18.5" x2="24" y2="18.5" stroke="black" stroke-width="3" />
+      <line y1="5.5" x2="24" y2="5.5" stroke="black" strokeWidth="3" />
+      <line y1="18.5" x2="24" y2="18.5" stroke="black" strokeWidth="3" />
     </svg>
   );
 };
@@ -77,9 +77,9 @@ export const MenuIcon3 = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <line y1="4.5" x2="24" y2="4.5" stroke="black" stroke-width="3" />
-      <line y1="12.5" x2="24" y2="12.5" stroke="black" stroke-width="3" />
-      <line y1="20.375" x2="24" y2="20.375" stroke="black" stroke-width="3" />
+      <line y1="4.5" x2="24" y2="4.5" stroke="black" strokeWidth="3" />
+      <line y1="12.5" x2="24" y2="12.5" stroke="black" strokeWidth="3" />
+      <line y1="20.375" x2="24" y2="20.375" stroke="black" strokeWidth="3" />
     </svg>
   );
 };
