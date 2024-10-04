@@ -72,23 +72,14 @@ export const Links = styled.div`
   }
 `;
 
-export const Tags = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-
-  span {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #4b365f;
-    padding: 0.25rem 0.5rem 0.05rem 0.5rem;
-    border: 2px solid #4b365f;
-    border-radius: 5px;
-  }
-`;
+// export const Tags = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 5px;
+// `;
 
 export const Description = styled.div`
   width: 90%;

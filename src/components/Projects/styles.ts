@@ -44,20 +44,22 @@ export const SelectTags = styled.div`
   gap: 10px;
 `;
 
-export const Tag = styled.div<{ isSelected: boolean }>`
-  padding: 0.4rem 0.5rem 0.2rem 0.5rem;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
+// export const Tag = styled.div<{ isSelected?: boolean }>`
+//   padding: 0.4rem 0.5rem 0.2rem 0.5rem;
+//   border-radius: 10px;
+//   font-size: 1rem;
+//   font-weight: 600;
 
-  /* &:hover {
-    cursor: pointer;
-  } */
+//   /* &:hover {
+//     cursor: pointer;
+//   } */
 
-  color: ${({ isSelected }) => (isSelected ? "white" : "#4b365f")};
-  background-color: ${({ isSelected }) => (isSelected ? "#4b365f" : "white")};
-  border: 2px solid ${({ isSelected }) => (isSelected ? "none" : "#4b365f")};
-`;
+//   color: ${({ isSelected = false }) => (isSelected ? "white" : "#4b365f")};
+//   background-color: ${({ isSelected = false }) =>
+//     isSelected ? "#4b365f" : "white"};
+//   border: 2px solid
+//     ${({ isSelected = false }) => (isSelected ? "none" : "#4b365f")};
+// `;
 
 export const Description = styled.div`
   text-align: center;

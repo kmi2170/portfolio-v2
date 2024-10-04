@@ -5,8 +5,9 @@ import { motion, useAnimation } from "framer-motion";
 
 import { DataProject, Lang } from "../../../lib/types";
 import ModalContent from "./Modal/ModalContent";
-import { Wrapper, ProjectName, ProjectMain, Tags, Links } from "./styles";
+import { Wrapper, ProjectName, ProjectMain, Links } from "./styles";
 import { AppIcon, GithubIcon } from "../../../assets/icons";
+import { Tag, Tags } from "../../common/tag";
 
 Modal.setAppElement("#__next");
 interface ProjectProps {
@@ -78,9 +79,10 @@ const Project = ({ project, lang }: ProjectProps) => {
             alt={project?.name[lang]}
           />
         </motion.div>
-        <Tags>
+
+        <Tags marginTop="1rem">
           {project?.tags.map((tag, i) => (
-            <span key={tag + i}>{tag}</span>
+            <Tag key={tag + i}>{tag}</Tag>
           ))}
         </Tags>
       </ProjectMain>

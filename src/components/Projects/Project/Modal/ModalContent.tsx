@@ -8,7 +8,6 @@ import {
   ProjectName,
   ProjectImg,
   Links,
-  Tags,
   Description,
   SubTitle,
   Features,
@@ -17,6 +16,7 @@ import {
 import { AppIcon, CloseIcon, GithubIcon } from "../../../../assets/icons";
 import { theme } from "../../../../styles/globalStyles";
 import { Dot } from "../../../common/dot";
+import { Tags, Tag } from "../../../common/tag";
 
 interface ModalContentProps {
   project: DataProject;
@@ -59,7 +59,7 @@ const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
 
         <Tags>
           {project?.tags.map((tag, i) => (
-            <span key={tag + i}>{tag}</span>
+            <Tag key={tag + i}>{tag}</Tag>
           ))}
         </Tags>
 

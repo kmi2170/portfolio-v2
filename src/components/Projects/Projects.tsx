@@ -11,10 +11,10 @@ import {
   Container,
   Description,
   SelectTags,
-  Tag,
 } from "./styles";
 import { GithubIcon } from "../../assets/icons";
 import { MotionWrapper } from "../../wrapper";
+import { Tags, Tag } from "../common/tag";
 
 interface ProjectsProps {
   projects: DataProject[];
@@ -81,16 +81,16 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
 
       <Description>
         <p>This site is built with</p>
-        <div>
+        <Tags>
           {[
             "Next.js",
             "styled-components",
             "SANITY (CMS)",
             "Framer Motion (animation)",
           ].map((tag) => (
-            <span key={tag}>{tag}</span>
+            <Tag key={tag}>{tag}</Tag>
           ))}
-        </div>
+        </Tags>
       </Description>
     </Wrapper>
   );
