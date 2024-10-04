@@ -5,7 +5,14 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h2`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
   span {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     color: ${({ theme }) => theme.colors.blue};
   }
 `;
@@ -41,6 +48,7 @@ export const Tag = styled.div<{ isSelected: boolean }>`
   padding: 0.4rem 0.5rem 0.2rem 0.5rem;
   border-radius: 10px;
   font-size: 1rem;
+  font-weight: 600;
 
   /* &:hover {
     cursor: pointer;
@@ -48,7 +56,7 @@ export const Tag = styled.div<{ isSelected: boolean }>`
 
   color: ${({ isSelected }) => (isSelected ? "white" : "#4b365f")};
   background-color: ${({ isSelected }) => (isSelected ? "#4b365f" : "white")};
-  border: 1px solid ${({ isSelected }) => (isSelected ? "none" : "#4b365f")};
+  border: 2px solid ${({ isSelected }) => (isSelected ? "none" : "#4b365f")};
 `;
 
 export const Description = styled.p`

@@ -35,11 +35,11 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     @media (min-width: 900px) {
-      font-size: 24px;
+      font-size: 20px;
     }
 
     @media (min-width: 1200px) {
-      font-size: 36px;
+      font-size: 24px;
     }
   }
 

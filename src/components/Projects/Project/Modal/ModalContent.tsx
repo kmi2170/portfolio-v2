@@ -16,7 +16,7 @@ import {
 } from "./styles";
 import { AppIcon, CloseIcon, GithubIcon } from "../../../../assets/icons";
 import { theme } from "../../../../styles/globalStyles";
-import { Dot } from "../../../Devtools/styles";
+import { Dot } from "../../../common/dot";
 
 interface ModalContentProps {
   project: DataProject;

@@ -1,25 +1,14 @@
 import { useState } from "react";
 import Image from "next/image";
-
 import Modal from "react-modal";
 import { motion, useAnimation } from "framer-motion";
 
 import { DataProject, Lang } from "../../../lib/types";
 import ModalContent from "./Modal/ModalContent";
-import {
-  Wrapper,
-  ProjectName,
-  ProjectMain,
-  Hover,
-  Tags,
-  Links,
-} from "./styles";
-import { StyledImage } from "../../common/responsiveStyles";
-import { relative } from "path";
+import { Wrapper, ProjectName, ProjectMain, Tags, Links } from "./styles";
 import { AppIcon, GithubIcon } from "../../../assets/icons";
 
 Modal.setAppElement("#__next");
-
 interface ProjectProps {
   project: DataProject;
   lang: Lang;
@@ -63,16 +52,12 @@ const Project = ({ project, lang }: ProjectProps) => {
       <ProjectMain
         as={motion.div}
         onHoverStart={() => {
-          // control1.start({ scale: 1.2 });
-          // control2.start({ scale: 1.2 });
           control1.start({ y: -10 });
           control2.start({ y: 10 });
         }}
         onHoverEnd={() => {
           control1.start({ y: 0 });
           control2.start({ y: 0 });
-          // control1.start({ scale: 1.0 });
-          // control2.start({ scale: 1.0 });
         }}
         // whileHover={{ opacity: [1, 1], scale: 1.5 }}
         transition={{
@@ -93,19 +78,6 @@ const Project = ({ project, lang }: ProjectProps) => {
             alt={project?.name[lang]}
           />
         </motion.div>
-        {/* <Hover onClick={openModal}>
-          <motion.div
-            whileHover={{ opacity: [0, 1], scale: 1.5 }}
-            transition={{
-              duration: 0.5,
-              ease: "easeInOut",
-            }}
-          >
-            <AiOutlineEye />
-            <span>Click to View</span>
-          </motion.div>
-        </Hover> */}
-
         <Tags>
           {project?.tags.map((tag, i) => (
             <span key={tag + i}>{tag}</span>

@@ -27,8 +27,8 @@ export const AppIcon = ({ size = 20 }: { size?: number }) => {
 export const GithubIcon = ({ size = 20 }: { size?: number }) => {
   return (
     <svg
-      width="20"
-      height="20"
+      width={size}
+      height={size}
       viewBox="0 0 98 96"
       xmlns="http://www.w3.org/2000/svg"
     >

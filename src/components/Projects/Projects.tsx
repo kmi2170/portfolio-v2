@@ -37,17 +37,16 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
     <Wrapper>
       <Title>
         My <span>React/Next.js</span> Projects
+        <Git>
+          <a
+            href="https://github.com/kmi2170"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GithubIcon size={50} />
+          </a>
+        </Git>
       </Title>
-
-      <Git>
-        <a
-          href="https://github.com/kmi2170"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <GithubIcon />
-        </a>
-      </Git>
 
       <SelectTags>
         <Tag

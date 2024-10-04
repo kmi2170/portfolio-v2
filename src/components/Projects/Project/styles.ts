@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   max-width: 350px;
-  height: 375px;
+  height: auto;
+  /* height: 375px; */
   background: whitesmoke;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(108, 122, 137, 1);
@@ -19,7 +20,8 @@ export const Wrapper = styled.div`
 `;
 
 export const ProjectName = styled.h3`
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
+  padding: 0 0.5rem;
   font-size: 0.85rem;
 `;
 
@@ -92,6 +94,7 @@ export const Tags = styled.div`
 
 export const Links = styled.div`
   width: 100%;
+  margin-top: 1rem;
   margin-bottom: 0.5rem;
   font-size: 0.85rem;
 
