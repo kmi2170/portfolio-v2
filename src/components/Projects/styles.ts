@@ -59,16 +59,16 @@ export const Tag = styled.div<{ isSelected: boolean }>`
   border: 2px solid ${({ isSelected }) => (isSelected ? "none" : "#4b365f")};
 `;
 
-export const Description = styled.p`
+export const Description = styled.div`
   text-align: center;
   margin-top: 3rem;
   font-size: 1rem;
 
-  div:nth-child(1) {
+  p {
     font-size: 1.25rem;
   }
 
-  div:nth-child(2) {
+  div {
     margin-top: 0.5rem;
     display: flex;
     flex-direction: row;

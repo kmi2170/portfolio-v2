@@ -31,7 +31,7 @@ const Home: NextPage = () => {
     <Wrapper>
       <Navbar setLang={setLang} />
       <Header />
-      {/* <Projects projects={projects} lang={lang} /> */}
+      <Projects projects={projects} lang={lang} />
       <About lang={lang} />
       <Devtools />
       <Footer />

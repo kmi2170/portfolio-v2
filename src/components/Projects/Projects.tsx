@@ -80,7 +80,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
       </Container>
 
       <Description>
-        <div>This site is built with</div>
+        <p>This site is built with</p>
         <div>
           {[
             "Next.js",
