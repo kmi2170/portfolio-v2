@@ -1,4 +1,4 @@
-export const data = [
+export const projects = [
   {
     id: 1,
     name: {
@@ -319,5 +319,3 @@ export const data = [
     repo: "https://github.com/kmi2170/chrome-extension-youtube-bookmarker",
   },
 ];
-
-export default data;

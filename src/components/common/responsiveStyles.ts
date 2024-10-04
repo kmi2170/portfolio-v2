@@ -30,6 +30,7 @@ export const ImageGrid = styled.div`
 
 export const StyledImage = styled(Image)`
   position: absolute;
+  opacity: 0.25;
   top: 0;
   left: 0;
   width: 100%;

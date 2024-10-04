@@ -56,7 +56,7 @@ export const MySelf = styled.h2`
   width: 100%;
   text-align: center;
   font-weight: 600;
-  color: #555;
+  /* color: #555 */
 
   span {
     font-size: 1.2em;
@@ -69,7 +69,7 @@ export const Role = styled.h2`
   width: 100%;
   text-align: right;
   font-weight: 600;
-  color: #555;
+  /* color: #555; */
 
   span:first-child {
     font-size: 1.2em;
@@ -86,5 +86,6 @@ export const Welcome = styled.h2`
   width: 100%;
   grid-row: 12 / span 1;
   text-align: center;
-  color: #555;
+  color: ${({ theme }) => theme.colors.red};
+  /* color: #555; */
 `;

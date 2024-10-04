@@ -17,12 +17,11 @@ const Header = () => {
         <ImageContainer>
           <ImageGrid>
             <StyledImage
-              src="/images/portfolio_top_bg_image_1.png"
+              // src="/images/portfolio_top_bg_image_1.png"
               // src="/images/seattle2.jpg"
-              // src="/images/mountain_silhouette.png"
+              src="/images/mountain_silhouette.png"
               alt="background city and mountain"
               fill
-              priority
               // style={{
               //   objectFit: "cover",
               // }}
