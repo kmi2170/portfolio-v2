@@ -7,7 +7,7 @@ import { DataProject, Lang } from "../../../lib/types";
 import ModalContent from "./Modal/ModalContent";
 import { Wrapper, ProjectName, ProjectMain, Links } from "./styles";
 import { AppIcon, GithubIcon } from "../../../assets/icons";
-import { Tag, Tags } from "../../common/tag";
+import { Tags, Tag } from "../../common";
 
 Modal.setAppElement("#__next");
 interface ProjectProps {
@@ -82,7 +82,9 @@ const Project = ({ project, lang }: ProjectProps) => {
 
         <Tags marginTop="1rem">
           {project?.tags.map((tag, i) => (
-            <Tag key={tag + i}>{tag}</Tag>
+            <Tag key={tag} fontSize="0.75rem">
+              {tag}
+            </Tag>
           ))}
         </Tags>
       </ProjectMain>

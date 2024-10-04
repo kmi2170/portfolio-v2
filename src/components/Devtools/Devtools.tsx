@@ -4,9 +4,8 @@ import { motion, Variants } from "framer-motion";
 import { Wrapper, Container, Tools, ToolWrapper, Tool } from "./styles";
 import { devtools } from "../../assets/devtools";
 import { theme } from "../../styles/globalStyles";
-import { Dot } from "../common/dot";
 import { MotionWrapper } from "../../wrapper";
-import { Title } from "../common/title";
+import { Dot, Title } from "../common";
 
 const devtool_colors = {
   main: theme.colors.blue,

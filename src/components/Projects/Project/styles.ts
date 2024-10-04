@@ -36,26 +36,6 @@ export const ProjectMain = styled.div`
   align-items: center;
 `;
 
-export const Tags = styled.div`
-  margin-top: 25px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 5px;
-
-  span {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #4b365f;
-    padding: 0.1rem 0.25rem 0.05rem 0.25rem;
-    border: 2px solid #4b365f;
-    border-radius: 5px;
-  }
-`;
-
 export const Links = styled.div`
   width: 100%;
   margin-top: 1rem;

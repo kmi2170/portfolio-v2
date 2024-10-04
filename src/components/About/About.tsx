@@ -3,9 +3,9 @@ import React from "react";
 import { MotionWrapper } from "../../wrapper";
 import { Lang } from "../../lib/types";
 import { about } from "../../assets/about";
-import { Wrapper, Card, Description } from "./styles";
-import { Title } from "../common/title";
+import { Card, Description } from "./styles";
 import { theme } from "../../styles/globalStyles";
+import { ComponentWrapper, Title } from "../common";
 
 interface AboutProps {
   lang?: Lang;
@@ -31,14 +31,14 @@ const About = (props: AboutProps) => {
   }
 
   return (
-    <Wrapper id="about">
+    <ComponentWrapper id="about">
       <Title secondary={red}>
         About <span>Myself</span>
       </Title>
       <Card>
         <Description>{text ? text : <p>Temporary Unavailable</p>}</Description>
       </Card>
-    </Wrapper>
+    </ComponentWrapper>
   );
 };
 

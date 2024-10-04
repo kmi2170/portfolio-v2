@@ -7,9 +7,8 @@ import { DataProject, Lang } from "../../lib/types";
 import { Wrapper, Git, Container, Description } from "./styles";
 import { GithubIcon } from "../../assets/icons";
 import { MotionWrapper } from "../../wrapper";
-import { Tags, Tag } from "../common/tag";
-import { Title } from "../common/title";
 import { theme } from "../../styles/globalStyles";
+import { Tag, Tags, Title } from "../common";
 
 interface ProjectsProps {
   projects: DataProject[];
@@ -78,7 +77,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
 
       <Description>
         <p>This site is built with</p>
-        <Tags>
+        <Tags marginTop="1rem">
           {[
             "Next.js",
             "styled-components",

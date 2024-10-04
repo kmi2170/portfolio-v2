@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import LangButtons from "./LangButtons/LangButtons";
 import { Lang } from "../../lib/types";
-import { Topbar, Title, Ul, Li, Menu, SideBar, UlMenu } from "./styles";
+import { Wrapper, Title, Ul, Li, Menu, SideBar, UlMenu } from "./styles";
 import { CloseIcon, MenuIcon2 } from "../../assets/icons";
 
 export const navItems = ["projects", "about", "devtools"];
@@ -17,8 +17,8 @@ const Navbar = ({ setLang }: NavbarProps) => {
   const [toggle, setToggle] = useState<boolean>(false);
 
   return (
-    <nav>
-      <Topbar>
+    <>
+      <Wrapper>
         <Title>
           <Link href="#home">
             <span>KH&apos;s</span>Portfolio
@@ -36,7 +36,7 @@ const Navbar = ({ setLang }: NavbarProps) => {
         <Menu onClick={() => setToggle(true)}>
           <MenuIcon2 />
         </Menu>
-      </Topbar>
+      </Wrapper>
 
       {toggle && (
         <SideBar>
@@ -59,7 +59,7 @@ const Navbar = ({ setLang }: NavbarProps) => {
           </motion.div>
         </SideBar>
       )}
-    </nav>
+    </>
   );
 };
 

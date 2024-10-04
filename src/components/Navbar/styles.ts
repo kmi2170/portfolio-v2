@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Topbar = styled.div`
+export const Wrapper = styled.nav`
   position: fixed;
   z-index: 2;
   width: 100vw;

@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
-export const Tag = styled.div<{ isSelected?: boolean }>`
+const Tag = styled.div<{
+  isSelected?: boolean;
+  fontSize?: string;
+}>`
   padding: 0.4rem 0.5rem 0.2rem 0.5rem;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: ${({ fontSize = "1rem" }) => fontSize};
   font-weight: 600;
 
   /* &:hover {
@@ -17,16 +20,4 @@ export const Tag = styled.div<{ isSelected?: boolean }>`
     ${({ isSelected = false }) => (isSelected ? "none" : "#4b365f")};
 `;
 
-export const Tags = styled.div<{
-  marginTop?: string;
-  marginBottom?: string;
-}>`
-  margin-top: ${({ marginTop = "0rem" }) => marginTop};
-  margin-bottom: ${({ marginBottom = "0rem" }) => marginBottom};
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-`;
+export default Tag;

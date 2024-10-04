@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Title = styled.h2<{
+const Title = styled.h2<{
   primary?: string;
   secondary?: string;
 }>`
@@ -13,3 +13,5 @@ export const Title = styled.h2<{
     //     color: ${({ theme }) => theme.colors.blue};
   }
 `;
+
+export default Title;

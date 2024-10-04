@@ -1,6 +1,7 @@
+import exp from "constants";
 import styled from "styled-components";
 
-export const Dot = styled.div<{
+const Dot = styled.div<{
   color?: string;
   size?: string;
   marginRight?: string;
@@ -13,3 +14,5 @@ export const Dot = styled.div<{
     margin-right: ${({ marginRight = "0.25rem" }) => marginRight};
   }
 `;
+
+export default Dot;
