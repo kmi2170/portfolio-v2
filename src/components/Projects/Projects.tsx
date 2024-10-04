@@ -1,10 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { AiFillGithub } from "react-icons/ai/index";
-import { isValidMotionProp, motion } from "framer-motion";
-// import { client, urlFor } from '../../lib/sanity';
+import { motion } from "framer-motion";
 
-import { AppWrapper, MotionWrapper } from "../../wrapper";
 import Project from "./Project/Project";
 import { DataProject, Lang } from "../../lib/types";
 import {
@@ -16,6 +13,7 @@ import {
   SelectTags,
   Tag,
 } from "./styles";
+import { GithubIcon } from "../../assets/icons";
 
 interface ProjectsProps {
   projects: DataProject[];
@@ -46,29 +44,27 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <AiFillGithub />
+          <GithubIcon />
         </a>
       </Git>
 
       <SelectTags>
-        <span>
+        <Tag
+          key={"all"}
+          isSelected={"all" === selectedTag}
+          onClick={() => setSelectedTag("all")}
+        >
+          All
+        </Tag>
+        {tags.map((tag) => (
           <Tag
-            key={"all"}
-            isSelected={"all" === selectedTag}
-            onClick={() => setSelectedTag("all")}
+            key={tag}
+            isSelected={tag === selectedTag}
+            onClick={() => setSelectedTag(tag)}
           >
-            All
+            {tag}
           </Tag>
-          {tags.map((tag) => (
-            <Tag
-              key={tag}
-              isSelected={tag === selectedTag}
-              onClick={() => setSelectedTag(tag)}
-            >
-              {tag}
-            </Tag>
-          ))}
-        </span>
+        ))}
       </SelectTags>
 
       <Container>

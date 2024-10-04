@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  width: 300px;
-  height: 350px;
+  max-width: 350px;
+  height: 375px;
   background: whitesmoke;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(108, 122, 137, 1);
@@ -14,25 +14,19 @@ export const Wrapper = styled.div`
 
   &:hover {
     /* box-shadow: 0 0 30px rgba(108, 122, 137, 1); */
-    box-shadow: 0 0 15px ${({ theme }) => theme.colors.blue};
+    box-shadow: 0 0 10px ${({ theme }) => theme.colors.blue};
   }
 `;
 
-export const AppName = styled.div`
-  margin-top: 0.25rem;
-  font-size: 1.5rem;
+export const ProjectName = styled.h3`
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
 `;
 
-export const AppImg = styled.div`
-  width: 100%;
-  height: 200px;
-  /* object-fit: cover; */
-  cursor: pointer;
-  position: relative;
-
-  img {
-    width: 100%;
-  }
+export const ProjectMain = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Hover = styled.div`
@@ -76,41 +70,43 @@ export const Hover = styled.div`
 `;
 
 export const Tags = styled.div`
+  margin-top: 25px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
+  border-radius: 5px;
+  z-index: 10;
 
   span {
-    padding: 0 0.5rem;
-    color: white;
-    background-color: #4b365f;
-    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #4b365f;
+    padding: 0.1rem 0.25rem 0.05rem 0.25rem;
+    border: 2px solid #4b365f;
+    border-radius: 5px;
   }
 `;
 
 export const Links = styled.div`
-  width: 90%;
-  padding: 0.25rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+
+  color: ${({ theme }) => theme.colors.blue};
 
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-  z-index: 10;
+  justify-content: space-around;
 
   a {
-    color: blue;
-
     display: flex;
     align-items: center;
-
     svg {
-      font-size: 1.25rem;
-      margin-right: 0.2rem;
+      margin-right: 0.25rem;
+      margin-bottom: 0.25rem;
     }
   }
 `;

@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h2`
   span {
-    color: ${({ theme }) => theme.colors.red};
+    color: ${({ theme }) => theme.colors.green};
   }
 `;
 
@@ -54,11 +54,14 @@ export const Tool = styled.div<{
 
 export const Dot = styled.div<{
   color?: string;
+  size?: string;
+  marginRight?: string;
 }>`
   &::before {
     content: "•";
-    font-size: 1.25rem;
-    color: ${({ color }) => color};
+    font-size: ${({ size = "1.25rem" }) => size};
+    color: ${({ color = "black" }) => color};
     margin-right: 0.25rem;
+    margin-right: ${({ marginRight = "0.25rem" }) => marginRight};
   }
 `;

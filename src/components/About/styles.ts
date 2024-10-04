@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 export const Title = styled.h2`
   /* margin-bottom: 2rem; */
   span {
-    color: ${({ theme }) => theme.colors.green};
+    color: ${({ theme }) => theme.colors.red};
   }
 `;
 

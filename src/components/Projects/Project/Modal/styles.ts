@@ -3,40 +3,35 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(108, 122, 137, 1);
-  padding: 0 0.5rem 0.5rem 0.5rem;
+  padding: 0 0.5rem 1.5rem 0.5rem;
   width: 85vw;
   height: 85vh;
-  overflow-y: auto;
+  overflow: auto;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
-  font-family: "M PLUS Rounded 1c";
-
   &:hover {
     box-shadow: 0 0 20px rgba(108, 122, 137, 1);
   }
 `;
 
-export const AppName = styled.div`
+export const ProjectName = styled.div`
   font-size: 1.5rem;
-  margin-bottom: 0.25rem;
-`;
-
-export const ButtonContainer = styled.div`
-  width: 100%;
-  text-align: right;
 `;
 
 export const Close = styled.span`
+  width: 100%;
+  text-align: right;
+  margin-top: 15px;
+  margin-right: 15px;
+
   svg {
-    margin-top: 10px;
-    margin-right: 10px;
-    width: 45px;
-    height: 45px;
-    color: blue;
+    width: 50px;
+    height: 50px;
+    color: ${({ theme }) => theme.colors.blue};
 
     &:hover {
       cursor: pointer;
@@ -44,7 +39,7 @@ export const Close = styled.span`
   }
 `;
 
-export const AppImg = styled.div`
+export const ProjectImg = styled.div`
   width: 50%;
   /* height: 200px; */
   /* object-fit: cover; */
@@ -53,33 +48,26 @@ export const AppImg = styled.div`
 
   img {
     width: 100%;
-
-    /* &:hover {
-      scale: 0.9;
-      --webkit-filter: brightness(70%);
-    } */
   }
 `;
 
 export const Links = styled.div`
-  width: 90%;
-  padding: 0.5rem;
+  width: 100%;
   margin-bottom: 0.5rem;
 
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 
   a {
-    color: blue;
-
+    color: ${({ theme }) => theme.colors.blue};
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 
     svg {
       font-size: 1.25rem;
-      margin-right: 0.2rem;
+      margin-right: 0.25rem;
     }
   }
 `;
@@ -93,23 +81,24 @@ export const Tags = styled.div`
   gap: 5px;
 
   span {
-    font-size: 1.25rem;
-    padding: 0 0.5rem;
-    color: white;
-    background-color: #4b365f;
-    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4b365f;
+    padding: 0.25rem 0.5rem 0.05rem 0.5rem;
+    border: 2px solid #4b365f;
+    border-radius: 5px;
   }
 `;
 
 export const Description = styled.div`
-  margin: 1rem 0;
-  width: 80%;
-  font-size: 1.25rem;
+  width: 90%;
+  font-size: 1rem;
   text-align: center;
 `;
 
 export const Features = styled.ul`
-  font-size: 1.25rem;
+  width: 90%;
+  font-size: 0.85rem;
 
   li {
     list-style: none;
@@ -126,7 +115,8 @@ export const Features = styled.ul`
 `;
 
 export const Details = styled.ul`
-  font-size: 1.25rem;
+  width: 90%;
+  font-size: 0.85rem;
 
   li {
     list-style: none;
@@ -138,11 +128,11 @@ export const Details = styled.ul`
 
   svg {
     color: ${({ theme }) => theme.colors.green};
-    margin-right: 0.25rem;
+    margin-right: 0.5rem;
+    font-size: 1rem;
   }
 `;
 
-export const SubTitle = styled.div`
-  font-size: 1.25rem;
-  font-weight: 600;
+export const SubTitle = styled.h4`
+  font-size: 1rem;
 `;

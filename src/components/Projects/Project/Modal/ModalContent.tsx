@@ -1,21 +1,12 @@
 import { motion } from "framer-motion";
 
-import {
-  AiFillCloseCircle,
-  AiFillCheckCircle,
-  AiOutlineCheck,
-  AiFillGithub,
-} from "react-icons/ai/index";
-import { GiSmartphone } from "react-icons/gi/index";
-
 import { DataProject, Lang } from "../../../../lib/types";
 import Carousel from "./Carousel/Carousel";
 import {
   Wrapper,
-  ButtonContainer,
   Close,
-  AppName,
-  AppImg,
+  ProjectName,
+  ProjectImg,
   Links,
   Tags,
   Description,
@@ -23,6 +14,9 @@ import {
   Features,
   Details,
 } from "./styles";
+import { AppIcon, CloseIcon, GithubIcon } from "../../../../assets/icons";
+import { theme } from "../../../../styles/globalStyles";
+import { Dot } from "../../../Devtools/styles";
 
 interface ModalContentProps {
   project: DataProject;
@@ -38,28 +32,27 @@ const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
       transition={{ duration: 1.0, ease: "easeInOut" }}
     >
       <Wrapper>
-        <ButtonContainer>
-          <Close onClick={closeModal}>
-            <AiFillCloseCircle />
-          </Close>
-        </ButtonContainer>
-        <AppName>{project?.name[lang]}</AppName>
+        <Close onClick={closeModal}>
+          <CloseIcon />
+        </Close>
 
-        <AppImg>
+        <ProjectName>{project?.name[lang]}</ProjectName>
+
+        <ProjectImg>
           <Carousel imageUrls={project?.imageUrls} />
-        </AppImg>
+        </ProjectImg>
 
         <Links>
           {project?.url ? (
             <a href={project?.url} target="_blank" rel="noopener noreferrer">
-              <GiSmartphone />
+              <AppIcon />
               App
             </a>
           ) : (
             <div></div>
           )}
           <a href={project?.repo} target="_blank" rel="noopener noreferrer">
-            <AiFillGithub />
+            <GithubIcon />
             Code
           </a>
         </Links>
@@ -76,7 +69,11 @@ const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
         <Features>
           {project?.features[lang].map((feature, i) => (
             <li key={i}>
-              <AiOutlineCheck />
+              <Dot
+                color={theme.colors.blue}
+                size="1.5rem"
+                marginRight="0.5rem"
+              />
               {feature}
             </li>
           ))}
@@ -88,7 +85,11 @@ const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
             <Details>
               {project?.details[lang].map((detail, i) => (
                 <li key={i}>
-                  <AiFillCheckCircle />
+                  <Dot
+                    color={theme.colors.green}
+                    size="1.5rem"
+                    marginRight="0.5rem"
+                  />
                   {detail}
                 </li>
               ))}

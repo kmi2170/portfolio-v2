@@ -1,12 +1,22 @@
 import { useState } from "react";
-import { AiOutlineEye, AiFillGithub } from "react-icons/ai/index";
-import { GiSmartphone } from "react-icons/gi/index";
+import Image from "next/image";
+
 import Modal from "react-modal";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 import { DataProject, Lang } from "../../../lib/types";
 import ModalContent from "./Modal/ModalContent";
-import { Wrapper, AppName, AppImg, Hover, Tags, Links } from "./styles";
+import {
+  Wrapper,
+  ProjectName,
+  ProjectMain,
+  Hover,
+  Tags,
+  Links,
+} from "./styles";
+import { StyledImage } from "../../common/responsiveStyles";
+import { relative } from "path";
+import { AppIcon, GithubIcon } from "../../../assets/icons";
 
 Modal.setAppElement("#__next");
 
@@ -41,17 +51,49 @@ const customModalStyle = {
 const Project = ({ project, lang }: ProjectProps) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
+  const control1 = useAnimation();
+  const control2 = useAnimation();
+
   const openModal = () => setIsModalOpen(true);
 
   const closeModal = () => setIsModalOpen(false);
 
   return (
     <Wrapper>
-      <AppName>{project?.name[lang]}</AppName>
+      <ProjectMain
+        as={motion.div}
+        onHoverStart={() => {
+          // control1.start({ scale: 1.2 });
+          // control2.start({ scale: 1.2 });
+          control1.start({ y: -10 });
+          control2.start({ y: 10 });
+        }}
+        onHoverEnd={() => {
+          control1.start({ y: 0 });
+          control2.start({ y: 0 });
+          // control1.start({ scale: 1.0 });
+          // control2.start({ scale: 1.0 });
+        }}
+        // whileHover={{ opacity: [1, 1], scale: 1.5 }}
+        transition={{
+          duration: 0.5,
+          ease: "easeInOut",
+        }}
+        onClick={openModal}
+      >
+        <ProjectName as={motion.div} animate={control1}>
+          {project?.name[lang]}
+        </ProjectName>
 
-      <AppImg>
-        <img src={project?.imageUrls[0]} alt={project?.name[lang]} />
-        <Hover onClick={openModal}>
+        <motion.div animate={control2}>
+          <Image
+            src={project?.imageUrls[0]}
+            width={350}
+            height={200}
+            alt={project?.name[lang]}
+          />
+        </motion.div>
+        {/* <Hover onClick={openModal}>
           <motion.div
             whileHover={{ opacity: [0, 1], scale: 1.5 }}
             transition={{
@@ -62,36 +104,37 @@ const Project = ({ project, lang }: ProjectProps) => {
             <AiOutlineEye />
             <span>Click to View</span>
           </motion.div>
-        </Hover>
-        <Modal
-          isOpen={isModalOpen}
-          onRequestClose={closeModal}
-          style={customModalStyle}
-        >
-          <ModalContent project={project} closeModal={closeModal} lang={lang} />
-        </Modal>
-      </AppImg>
+        </Hover> */}
 
-      <Tags>
-        {project?.tags.map((tag, i) => (
-          <span key={tag + i}>{tag}</span>
-        ))}
-      </Tags>
+        <Tags>
+          {project?.tags.map((tag, i) => (
+            <span key={tag + i}>{tag}</span>
+          ))}
+        </Tags>
+      </ProjectMain>
 
       <Links>
         {project?.url ? (
           <a href={project?.url} target="_blank" rel="noopener noreferrer">
-            <GiSmartphone />
+            <AppIcon />
             App
           </a>
         ) : (
           <div></div>
         )}
         <a href={project?.repo} target="_blank" rel="noopener noreferrer">
-          <AiFillGithub />
+          <GithubIcon />
           Code
         </a>
       </Links>
+
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        style={customModalStyle}
+      >
+        <ModalContent project={project} closeModal={closeModal} lang={lang} />
+      </Modal>
     </Wrapper>
   );
 };

@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { useState } from "react";
-import { HiMenuAlt4, HiX } from "react-icons/hi/index";
 import { motion } from "framer-motion";
 
 import LangButtons from "./LangButtons/LangButtons";
 import { Lang } from "../../lib/types";
 import { Topbar, Title, Ul, Li, Menu, SideBar, UlMenu } from "./styles";
+import { CloseIcon, MenuIcon2 } from "../../assets/icons";
 
 export const navItems = ["projects", "about", "skills"];
 
@@ -33,8 +33,8 @@ const Navbar = ({ setLang }: NavbarProps) => {
           <LangButtons setLang={setLang} />
         </Ul>
 
-        <Menu>
-          <HiMenuAlt4 onClick={() => setToggle(true)} />
+        <Menu onClick={() => setToggle(true)}>
+          <MenuIcon2 />
         </Menu>
       </Topbar>
 
@@ -45,7 +45,9 @@ const Navbar = ({ setLang }: NavbarProps) => {
             animate={{ width: "50vw" }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <HiX onClick={() => setToggle(false)} />
+            <div onClick={() => setToggle(false)}>
+              <CloseIcon />
+            </div>
             <UlMenu>
               {navItems.map((item) => (
                 <Li key={`link-menu-${item}`}>
