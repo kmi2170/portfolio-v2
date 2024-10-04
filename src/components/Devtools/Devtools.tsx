@@ -28,8 +28,8 @@ const dotVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.5,
-      delay: 0.25,
+      duration: 1.0,
+      delay: 0.5,
       ease: "easeInOut",
     },
   },
@@ -84,6 +84,7 @@ const Devtools = () => {
                       variants={dotVariants}
                       initial="hidden"
                       whileInView="visible"
+                      // viewport={{ once: true }}
                     />
                     <Tool
                       as={motion.div}
@@ -92,6 +93,7 @@ const Devtools = () => {
                       variants={toolVariants}
                       initial="hidden"
                       whileInView="visible"
+                      // viewport={{ once: true }}
                     >
                       {letters?.map((letter, i) => {
                         return (
