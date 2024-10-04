@@ -1,17 +1,11 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
 
-import {
-  Wrapper,
-  Title,
-  Container,
-  Tools,
-  ToolWrapper,
-  Tool,
-  Dot,
-} from "./styles";
+import { Wrapper, Title, Container, Tools, ToolWrapper, Tool } from "./styles";
 import { devtools } from "../../assets/devtools";
 import { theme } from "../../styles/globalStyles";
+import { Dot } from "../common/dot";
+import { MotionWrapper } from "../../wrapper";
 
 const devtool_colors = {
   main: theme.colors.blue,
@@ -84,7 +78,7 @@ const Devtools = () => {
                       variants={dotVariants}
                       initial="hidden"
                       whileInView="visible"
-                      // viewport={{ once: true }}
+                      viewport={{ once: true }}
                     />
                     <Tool
                       as={motion.div}
@@ -93,7 +87,7 @@ const Devtools = () => {
                       variants={toolVariants}
                       initial="hidden"
                       whileInView="visible"
-                      // viewport={{ once: true }}
+                      viewport={{ once: true }}
                     >
                       {letters?.map((letter, i) => {
                         return (
@@ -114,4 +108,4 @@ const Devtools = () => {
   );
 };
 
-export default React.memo(Devtools);
+export default React.memo(MotionWrapper(Devtools));

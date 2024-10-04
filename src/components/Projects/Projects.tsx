@@ -14,6 +14,7 @@ import {
   Tag,
 } from "./styles";
 import { GithubIcon } from "../../assets/icons";
+import { MotionWrapper } from "../../wrapper";
 
 interface ProjectsProps {
   projects: DataProject[];
@@ -96,4 +97,4 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
   );
 };
 
-export default React.memo(Projects);
+export default React.memo(MotionWrapper(Projects));
