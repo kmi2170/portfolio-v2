@@ -51,7 +51,7 @@ const letterVariants: Variants = {
 
 const Devtools = () => {
   return (
-    <Wrapper>
+    <Wrapper id="devtools">
       <Title>
         Dev <span>Tools</span>
       </Title>

@@ -64,7 +64,11 @@ export const Description = styled.p`
   margin-top: 3rem;
   font-size: 1rem;
 
-  span {
+  div:nth-child(1) {
+    font-size: 1.25rem;
+  }
+
+  div:nth-child(2) {
     margin-top: 0.5rem;
     display: flex;
     flex-direction: row;
@@ -80,6 +84,7 @@ export const Description = styled.p`
       border-radius: 10px;
       border-radius: 10px;
       font-size: 1rem;
+      font-weight: 600;
     }
   }
 `;

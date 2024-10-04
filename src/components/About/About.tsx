@@ -27,7 +27,7 @@ const About = (props: AboutProps) => {
   }
 
   return (
-    <Wrapper>
+    <Wrapper id="about">
       <Title>
         About <span>Myself</span>
       </Title>

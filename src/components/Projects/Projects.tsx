@@ -34,7 +34,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
       : projects.filter((project) => project.tags.includes(selectedTag));
 
   return (
-    <Wrapper>
+    <Wrapper id="projects">
       <Title>
         My <span>React/Next.js</span> Projects
         <Git>
@@ -80,8 +80,8 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
       </Container>
 
       <Description>
-        This site is built with
-        <span>
+        <div>This site is built with</div>
+        <div>
           {[
             "Next.js",
             "styled-components",
@@ -90,7 +90,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
           ].map((tag) => (
             <span key={tag}>{tag}</span>
           ))}
-        </span>
+        </div>
       </Description>
     </Wrapper>
   );

@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   max-width: 350px;
   height: auto;
+
+  @media (min-width: 1200px) {
+    height: 20rem;
+  }
   /* height: 375px; */
   background: whitesmoke;
   border-radius: 5px;
@@ -22,53 +26,14 @@ export const Wrapper = styled.div`
 export const ProjectName = styled.h3`
   margin: 0.75rem 0;
   padding: 0 0.5rem;
-  font-size: 0.85rem;
+  font-size: 1rem;
+  font-weight: 600;
 `;
 
 export const ProjectMain = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-export const Hover = styled.div`
-  width: 100%;
-  height: 190px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-
-  opacity: 0;
-  color: rgba(255, 255, 255, 0.8);
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: all 0.5s ease-in-out;
-
-  div {
-    color: rgba(255, 255, 255, 0.8);
-
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    span {
-      font-size: 1rem;
-      /* text-align: center; */
-    }
-
-    svg {
-      width: 20%;
-      height: 20%;
-    }
-  }
-
-  &:hover {
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
 `;
 
 export const Tags = styled.div`
@@ -80,10 +45,9 @@ export const Tags = styled.div`
   align-items: center;
   gap: 10px;
   border-radius: 5px;
-  z-index: 10;
 
   span {
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #4b365f;
     padding: 0.1rem 0.25rem 0.05rem 0.25rem;
@@ -96,7 +60,7 @@ export const Links = styled.div`
   width: 100%;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
-  font-size: 0.85rem;
+  font-size: 1rem;
 
   color: ${({ theme }) => theme.colors.blue};
 

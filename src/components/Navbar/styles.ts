@@ -72,8 +72,8 @@ export const UlMenu = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-top: 5rem;
   gap: 3rem;
-  /* height: 50vh; */
 `;
 
 export const Menu = styled.div`
@@ -101,25 +101,21 @@ export const Menu = styled.div`
 `;
 
 export const SideBar = styled.aside`
-  /* min-width: 0; */
-  /* max-width: 80%; */
   height: 100vh;
   position: fixed;
   top: 0;
   right: 0;
   z-index: 50;
+  font-size: 1.5rem;
 
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: rgba(245, 245, 245, 0.8);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   box-shadow: -4px 0 5px rgba(168, 168, 168, 0.5);
 
   svg {
-    width: 10%;
-    height: 10%;
-    color: darkblue;
-
+    color: ${({ theme }) => theme.colors.blue};
     &:hover {
       cursor: pointer;
     }

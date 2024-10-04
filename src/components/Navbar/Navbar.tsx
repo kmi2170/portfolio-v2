@@ -7,7 +7,7 @@ import { Lang } from "../../lib/types";
 import { Topbar, Title, Ul, Li, Menu, SideBar, UlMenu } from "./styles";
 import { CloseIcon, MenuIcon2 } from "../../assets/icons";
 
-export const navItems = ["projects", "about", "skills"];
+export const navItems = ["projects", "about", "devtools"];
 
 interface NavbarProps {
   setLang: React.Dispatch<React.SetStateAction<Lang>>;
@@ -46,7 +46,7 @@ const Navbar = ({ setLang }: NavbarProps) => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             <div onClick={() => setToggle(false)}>
-              <CloseIcon />
+              <CloseIcon size={40} />
             </div>
             <UlMenu>
               {navItems.map((item) => (
