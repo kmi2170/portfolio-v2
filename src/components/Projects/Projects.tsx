@@ -4,17 +4,12 @@ import { motion } from "framer-motion";
 
 import Project from "./Project/Project";
 import { DataProject, Lang } from "../../lib/types";
-import {
-  Wrapper,
-  Title,
-  Git,
-  Container,
-  Description,
-  SelectTags,
-} from "./styles";
+import { Wrapper, Git, Container, Description } from "./styles";
 import { GithubIcon } from "../../assets/icons";
 import { MotionWrapper } from "../../wrapper";
 import { Tags, Tag } from "../common/tag";
+import { Title } from "../common/title";
+import { theme } from "../../styles/globalStyles";
 
 interface ProjectsProps {
   projects: DataProject[];
@@ -25,6 +20,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
   const collectedTags = projects?.map(({ tags }) => tags);
   const setTags = new Set(collectedTags.flat());
   const tags = Array.from(setTags);
+  const blue = theme.colors.blue;
 
   const [selectedTag, setSelectedTag] = useState<string>("all");
 
@@ -35,20 +31,21 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
 
   return (
     <Wrapper id="projects">
-      <Title>
+      <Title secondary={blue}>
         My <span>React/Next.js</span> Projects
-        <Git>
-          <a
-            href="https://github.com/kmi2170"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GithubIcon size={50} />
-          </a>
-        </Git>
       </Title>
 
-      <SelectTags>
+      <Git>
+        <a
+          href="https://github.com/kmi2170"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GithubIcon size={50} />
+        </a>
+      </Git>
+
+      <Tags marginTop="1rem" marginBottom="2rem">
         <Tag
           key={"all"}
           isSelected={"all" === selectedTag}
@@ -65,7 +62,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
             {tag}
           </Tag>
         ))}
-      </SelectTags>
+      </Tags>
 
       <Container>
         {filteredProjects?.map((project: DataProject) => (

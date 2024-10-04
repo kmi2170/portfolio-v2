@@ -8,13 +8,6 @@ export const Wrapper = styled.div`
   align-items: center; */
 `;
 
-export const Title = styled.h2`
-  /* margin-bottom: 2rem; */
-  span {
-    color: ${({ theme }) => theme.colors.red};
-  }
-`;
-
 export const Card = styled.div`
   padding: 1.5rem;
   /* border-radius: 10px; */

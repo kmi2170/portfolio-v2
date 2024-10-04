@@ -1,8 +1,11 @@
 import React from "react";
-import { AppWrapper, MotionWrapper } from "../../wrapper";
+
+import { MotionWrapper } from "../../wrapper";
 import { Lang } from "../../lib/types";
 import { about } from "../../assets/about";
-import { Wrapper, Card, Title, Description } from "./styles";
+import { Wrapper, Card, Description } from "./styles";
+import { Title } from "../common/title";
+import { theme } from "../../styles/globalStyles";
 
 interface AboutProps {
   lang?: Lang;
@@ -16,6 +19,7 @@ type ProfileType = {
 const About = (props: AboutProps) => {
   const { lang } = props;
   const profile = about?.profile as ProfileType;
+  const red = theme.colors.red;
 
   let text;
   switch (lang) {
@@ -28,7 +32,7 @@ const About = (props: AboutProps) => {
 
   return (
     <Wrapper id="about">
-      <Title>
+      <Title secondary={red}>
         About <span>Myself</span>
       </Title>
       <Card>

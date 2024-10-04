@@ -5,12 +5,6 @@ export const Wrapper = styled.div`
   /* background-color: ${({ theme }) => theme.colors.purple}; */
 `;
 
-export const Title = styled.h2`
-  span {
-    color: ${({ theme }) => theme.colors.green};
-  }
-`;
-
 export const Container = styled.div`
   padding: 2rem;
   display: flex;

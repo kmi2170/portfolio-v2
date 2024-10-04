@@ -4,19 +4,6 @@ export const Wrapper = styled.div`
   padding: 1.5rem;
 `;
 
-export const Title = styled.h2`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-
-  span {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    color: ${({ theme }) => theme.colors.blue};
-  }
-`;
-
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -32,34 +19,6 @@ export const Git = styled.div`
   margin-left: 2rem;
   color: ${({ theme }) => theme.colors.blue};
 `;
-
-export const SelectTags = styled.div`
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-`;
-
-// export const Tag = styled.div<{ isSelected?: boolean }>`
-//   padding: 0.4rem 0.5rem 0.2rem 0.5rem;
-//   border-radius: 10px;
-//   font-size: 1rem;
-//   font-weight: 600;
-
-//   /* &:hover {
-//     cursor: pointer;
-//   } */
-
-//   color: ${({ isSelected = false }) => (isSelected ? "white" : "#4b365f")};
-//   background-color: ${({ isSelected = false }) =>
-//     isSelected ? "#4b365f" : "white"};
-//   border: 2px solid
-//     ${({ isSelected = false }) => (isSelected ? "none" : "#4b365f")};
-// `;
 
 export const Description = styled.div`
   text-align: center;

@@ -1,11 +1,12 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
 
-import { Wrapper, Title, Container, Tools, ToolWrapper, Tool } from "./styles";
+import { Wrapper, Container, Tools, ToolWrapper, Tool } from "./styles";
 import { devtools } from "../../assets/devtools";
 import { theme } from "../../styles/globalStyles";
 import { Dot } from "../common/dot";
 import { MotionWrapper } from "../../wrapper";
+import { Title } from "../common/title";
 
 const devtool_colors = {
   main: theme.colors.blue,
@@ -50,9 +51,11 @@ const letterVariants: Variants = {
 };
 
 const Devtools = () => {
+  const green = theme.colors.green;
+
   return (
     <Wrapper id="devtools">
-      <Title>
+      <Title secondary={green}>
         Dev <span>Tools</span>
       </Title>
 
