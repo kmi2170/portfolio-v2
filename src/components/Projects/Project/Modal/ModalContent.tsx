@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 
 import { DataProject, Lang } from "../../../../lib/types";
 import Carousel from "./Carousel/Carousel";
-import { Wrapper, Close, ProjectImg, Links, Features, Details } from "./styles";
+import { Wrapper, Close, ProjectImg, Features, Details } from "./styles";
 import { AppIcon, CloseIcon, GithubIcon } from "../../../../assets/icons";
 import { theme } from "../../../../styles/globalStyles";
-import { Dot, Tag, Tags, Text } from "../../../common";
+import { Dot, Tag, Tags, Text } from "../../../common-styles";
+import Links from "../../../templates/Links";
 
 interface ModalContentProps {
   project: DataProject;
@@ -33,20 +34,7 @@ const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
           <Carousel imageUrls={project?.imageUrls} />
         </ProjectImg>
 
-        <Links>
-          {project?.url ? (
-            <a href={project?.url} target="_blank" rel="noopener noreferrer">
-              <AppIcon />
-              App
-            </a>
-          ) : (
-            <div></div>
-          )}
-          <a href={project?.repo} target="_blank" rel="noopener noreferrer">
-            <GithubIcon />
-            Code
-          </a>
-        </Links>
+        <Links project={project} />
 
         <Tags marginTop={2} marginBottom={2}>
           {project?.tags.map((tag, i) => (

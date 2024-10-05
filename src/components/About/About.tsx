@@ -5,7 +5,7 @@ import { Lang } from "../../lib/types";
 import { about } from "../../assets/about";
 import { Card, Description } from "./styles";
 import { theme } from "../../styles/globalStyles";
-import { ComponentWrapper, Text } from "../common";
+import { ComponentWrapper, Text } from "../common-styles";
 
 interface AboutProps {
   lang?: Lang;

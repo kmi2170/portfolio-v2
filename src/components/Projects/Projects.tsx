@@ -8,7 +8,7 @@ import { Wrapper, Git, Container, Description } from "./styles";
 import { GithubIcon } from "../../assets/icons";
 import { MotionWrapper } from "../../wrapper";
 import { theme } from "../../styles/globalStyles";
-import { Tag, Tags, Text } from "../common";
+import { Tag, Tags, Text } from "../common-styles";
 
 interface ProjectsProps {
   projects: DataProject[];

@@ -7,7 +7,7 @@ import {
   ImageGrid,
   StyledImage,
 } from "./styles";
-import { Text } from "../common";
+import { Text } from "../common-styles";
 import { theme } from "../../styles/globalStyles";
 
 const Header = () => {

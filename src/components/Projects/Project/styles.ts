@@ -35,25 +35,3 @@ export const ProjectMain = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-
-export const Links = styled.div`
-  width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-
-  color: ${({ theme }) => theme.colors.blue};
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-
-  a {
-    display: flex;
-    align-items: center;
-    svg {
-      margin-right: 0.25rem;
-      margin-bottom: 0.25rem;
-    }
-  }
-`;

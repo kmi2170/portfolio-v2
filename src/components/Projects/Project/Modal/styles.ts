@@ -47,27 +47,6 @@ export const ProjectImg = styled.div`
   }
 `;
 
-export const Links = styled.div`
-  width: 100%;
-  margin-bottom: 0.5rem;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-
-  a {
-    color: ${({ theme }) => theme.colors.blue};
-    display: flex;
-    align-items: flex-end;
-
-    svg {
-      font-size: 1.25rem;
-      margin-right: 0.25rem;
-    }
-  }
-`;
-
 export const Description = styled.div`
   width: 90%;
   font-size: 1rem;

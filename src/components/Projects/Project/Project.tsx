@@ -5,9 +5,10 @@ import { motion, useAnimation } from "framer-motion";
 
 import { DataProject, Lang } from "../../../lib/types";
 import ModalContent from "./Modal/ModalContent";
-import { Wrapper, ProjectName, ProjectMain, Links } from "./styles";
+import { Wrapper, ProjectName, ProjectMain } from "./styles";
 import { AppIcon, GithubIcon } from "../../../assets/icons";
-import { Tags, Tag } from "../../common";
+import { Tags, Tag } from "../../common-styles";
+import Links from "../../templates/Links";
 
 Modal.setAppElement("#__next");
 interface ProjectProps {
@@ -89,20 +90,7 @@ const Project = ({ project, lang }: ProjectProps) => {
         </Tags>
       </ProjectMain>
 
-      <Links>
-        {project?.url ? (
-          <a href={project?.url} target="_blank" rel="noopener noreferrer">
-            <AppIcon />
-            App
-          </a>
-        ) : (
-          <div></div>
-        )}
-        <a href={project?.repo} target="_blank" rel="noopener noreferrer">
-          <GithubIcon />
-          Code
-        </a>
-      </Links>
+      <Links project={project} marginTop={1.5} marginBottom={1} />
 
       <Modal
         isOpen={isModalOpen}

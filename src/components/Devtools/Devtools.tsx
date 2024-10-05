@@ -5,7 +5,7 @@ import { Wrapper, Container, Tools, ToolWrapper, Tool } from "./styles";
 import { devtools } from "../../assets/devtools";
 import { theme } from "../../styles/globalStyles";
 import { MotionWrapper } from "../../wrapper";
-import { ComponentWrapper, Dot, Text } from "../common";
+import { ComponentWrapper, Dot, Text } from "../common-styles";
 
 const devtool_colors = {
   main: theme.colors.blue,
