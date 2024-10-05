@@ -22,16 +22,3 @@ export const Wrapper = styled.div`
     box-shadow: 0 0 10px ${({ theme }) => theme.colors.blue};
   }
 `;
-
-export const ProjectName = styled.h3`
-  margin: 0.75rem 0;
-  padding: 0 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-`;
-
-export const ProjectMain = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;

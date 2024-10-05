@@ -5,8 +5,8 @@ import { motion, useAnimation } from "framer-motion";
 
 import { DataProject, Lang } from "../../../lib/types";
 import ModalContent from "./Modal/ModalContent";
-import { Wrapper, ProjectMain } from "./styles";
-import { Tags, Tag, Text } from "../../common-styles";
+import { Wrapper } from "./styles";
+import { Tags, Tag, Text, Container } from "../../common-styles";
 import Links from "../../templates/Links";
 
 Modal.setAppElement("#__next");
@@ -50,7 +50,9 @@ const Project = ({ project, lang }: ProjectProps) => {
 
   return (
     <Wrapper>
-      <ProjectMain
+      <Container
+        direction="column"
+        align="center"
         as={motion.div}
         onHoverStart={() => {
           control1.start({ y: -10 });
@@ -67,17 +69,17 @@ const Project = ({ project, lang }: ProjectProps) => {
         }}
         onClick={openModal}
       >
-        <motion.div animate={control1}>
-          <Text
-            fontSize={1}
-            marginTop={0.5}
-            marginBottom={0.5}
-            paddingLeft={0.5}
-            paddingRight={0.5}
-          >
-            {project?.name[lang]}
-          </Text>
-        </motion.div>
+        <Text
+          as={motion.h2}
+          animate={control1}
+          fontSize={1}
+          marginTop={0.5}
+          marginBottom={0.5}
+          paddingLeft={0.5}
+          paddingRight={0.5}
+        >
+          {project?.name[lang]}
+        </Text>
 
         <motion.div animate={control2}>
           <Image
@@ -95,7 +97,7 @@ const Project = ({ project, lang }: ProjectProps) => {
             </Tag>
           ))}
         </Tags>
-      </ProjectMain>
+      </Container>
 
       <Links project={project} marginTop={1.5} marginBottom={1} />
 

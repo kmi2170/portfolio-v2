@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Text = styled.h2<{
+const Text = styled.div<{
   primary?: string;
   secondary?: string;
   tertiary?: string;
