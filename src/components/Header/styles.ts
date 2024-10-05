@@ -17,8 +17,6 @@ export const Profile = styled.div`
   max-width: 1400px;
   height: 100%;
 
-  padding: 1.5rem;
-
   display: flex;
   flex-direction: column;
   justify-content: space-around;

@@ -80,7 +80,7 @@ const Project = ({ project, lang }: ProjectProps) => {
           />
         </motion.div>
 
-        <Tags marginTop="1rem">
+        <Tags marginTop={1}>
           {project?.tags.map((tag, i) => (
             <Tag key={tag} fontSize="0.75rem">
               {tag}

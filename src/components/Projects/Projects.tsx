@@ -44,7 +44,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
         </a>
       </Git>
 
-      <Tags marginTop="1rem" marginBottom="2rem">
+      <Tags marginTop={1.5} marginBottom={1.5}>
         <Tag
           key={"all"}
           isSelected={"all" === selectedTag}
@@ -77,7 +77,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
 
       <Description>
         <p>This site is built with</p>
-        <Tags marginTop="1rem">
+        <Tags marginTop={1}>
           {[
             "Next.js",
             "styled-components",

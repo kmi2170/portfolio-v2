@@ -28,7 +28,11 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${josefin.style.fontFamily}, sans-serif;
     /* font-family: ${rubik.style.fontFamily}, sans-serif; */
 
+    font-size: 14px;
+
+    @media (min-width: 400px) {
     font-size: 16px;
+    }
 
     @media (min-width: 600px) {
       font-size: 18px;

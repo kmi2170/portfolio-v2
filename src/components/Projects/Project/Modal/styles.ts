@@ -18,10 +18,6 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const ProjectName = styled.div`
-  font-size: 1.5rem;
-`;
-
 export const Close = styled.span`
   width: 100%;
   text-align: right;
@@ -71,15 +67,6 @@ export const Links = styled.div`
     }
   }
 `;
-
-// export const Tags = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   align-items: center;
-//   gap: 5px;
-// `;
 
 export const Description = styled.div`
   width: 90%;

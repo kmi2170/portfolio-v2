@@ -2,21 +2,10 @@ import { motion } from "framer-motion";
 
 import { DataProject, Lang } from "../../../../lib/types";
 import Carousel from "./Carousel/Carousel";
-import {
-  Wrapper,
-  Close,
-  ProjectName,
-  ProjectImg,
-  Links,
-  Description,
-  SubTitle,
-  Features,
-  Details,
-} from "./styles";
+import { Wrapper, Close, ProjectImg, Links, Features, Details } from "./styles";
 import { AppIcon, CloseIcon, GithubIcon } from "../../../../assets/icons";
 import { theme } from "../../../../styles/globalStyles";
-import { Dot } from "../../../common/dot";
-import { Tags, Tag } from "../../../common/tag";
+import { Dot, Tag, Tags, Text } from "../../../common";
 
 interface ModalContentProps {
   project: DataProject;
@@ -36,7 +25,9 @@ const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
           <CloseIcon />
         </Close>
 
-        <ProjectName>{project?.name[lang]}</ProjectName>
+        <Text align="center" marginTop={1} marginBottom={2}>
+          {project?.name[lang]}
+        </Text>
 
         <ProjectImg>
           <Carousel imageUrls={project?.imageUrls} />
@@ -57,15 +48,20 @@ const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
           </a>
         </Links>
 
-        <Tags>
+        <Tags marginTop={2} marginBottom={2}>
           {project?.tags.map((tag, i) => (
-            <Tag key={tag + i}>{tag}</Tag>
+            <Tag key={tag}>{tag}</Tag>
           ))}
         </Tags>
 
-        <Description>{project.description[lang]}</Description>
+        <Text as="div" fontSize={1} marginBottom={1}>
+          {project.description[lang]}
+        </Text>
 
-        <SubTitle>Features</SubTitle>
+        <Text as="h3" fontSize={1.25}>
+          Features
+        </Text>
+
         <Features>
           {project?.features[lang].map((feature, i) => (
             <li key={i}>
@@ -81,7 +77,10 @@ const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
 
         {project?.details[lang].length > 0 && (
           <>
-            <SubTitle>Details</SubTitle>
+            <Text as="h3" fontSize={1.25}>
+              Details
+            </Text>
+
             <Details>
               {project?.details[lang].map((detail, i) => (
                 <li key={i}>

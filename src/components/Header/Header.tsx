@@ -39,7 +39,13 @@ const Header = () => {
         transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
       >
         <Profile>
-          <Text as="h1" fontFamily="Alex Brush" fontSize={2.5} secondary={blue}>
+          <Text
+            as="h1"
+            fontFamily="Alex Brush"
+            fontSize={2.5}
+            secondary={blue}
+            paddingLeft={1}
+          >
             <span>KH&apos;s</span>&nbsp; Portfolio
           </Text>
 
@@ -47,7 +53,12 @@ const Header = () => {
             I&apos;m <span>Kemmei</span> Hamada
           </Text>
 
-          <Text secondary={blue} tertiary={green} align="right">
+          <Text
+            secondary={blue}
+            tertiary={green}
+            align="right"
+            paddingRight={1.5}
+          >
             Freelance <span>Programmer</span> / <span>Web Developer</span>
           </Text>
 
