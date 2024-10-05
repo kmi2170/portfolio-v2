@@ -5,9 +5,8 @@ import { motion, useAnimation } from "framer-motion";
 
 import { DataProject, Lang } from "../../../lib/types";
 import ModalContent from "./Modal/ModalContent";
-import { Wrapper, ProjectName, ProjectMain } from "./styles";
-import { AppIcon, GithubIcon } from "../../../assets/icons";
-import { Tags, Tag } from "../../common-styles";
+import { Wrapper, ProjectMain } from "./styles";
+import { Tags, Tag, Text } from "../../common-styles";
 import Links from "../../templates/Links";
 
 Modal.setAppElement("#__next");
@@ -68,9 +67,17 @@ const Project = ({ project, lang }: ProjectProps) => {
         }}
         onClick={openModal}
       >
-        <ProjectName as={motion.div} animate={control1}>
-          {project?.name[lang]}
-        </ProjectName>
+        <motion.div animate={control1}>
+          <Text
+            fontSize={1}
+            marginTop={0.5}
+            marginBottom={0.5}
+            paddingLeft={0.5}
+            paddingRight={0.5}
+          >
+            {project?.name[lang]}
+          </Text>
+        </motion.div>
 
         <motion.div animate={control2}>
           <Image
