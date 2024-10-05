@@ -1,11 +1,11 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
 
-import { Wrapper, Container, Tools, ToolWrapper, Tool } from "./styles";
+import { Tools, Tool } from "./styles";
 import { devtools } from "../../assets/devtools";
 import { theme } from "../../styles/globalStyles";
 import { MotionWrapper } from "../../wrapper";
-import { ComponentWrapper, Dot, Text } from "../common-styles";
+import { ComponentWrapper, Container, Dot, Text } from "../common-styles";
 
 const devtool_colors = {
   main: theme.colors.blue,
@@ -53,12 +53,18 @@ const Devtools = () => {
   const green = theme.colors.green;
 
   return (
-    <ComponentWrapper id="devtools">
-      <Text secondary={green}>
+    <ComponentWrapper id="devtools" padding={1.5}>
+      <Text as="h2" fontSize={1.5} secondary={green}>
         Dev <span>Tools</span>
       </Text>
 
-      <Container>
+      <Container
+        direction="row"
+        justify="start"
+        align="start"
+        gap={5}
+        padding={1}
+      >
         {devtools?.map((items, i) => {
           const keys = Object.keys(items);
           const tools = Object.values(items);
@@ -72,7 +78,14 @@ const Devtools = () => {
                 const letters = Array.from(tool);
 
                 return (
-                  <ToolWrapper key={tool}>
+                  <Container
+                    key={tool}
+                    direction="row"
+                    justify="start"
+                    align="start"
+                    gap={0.25}
+                    wrap={false}
+                  >
                     <Dot
                       as={motion.div}
                       color={color}
@@ -84,6 +97,8 @@ const Devtools = () => {
                     />
                     <Tool
                       as={motion.div}
+                      fontSize={1.25}
+                      fontWeight={600}
                       color={color}
                       key="tool"
                       variants={toolVariants}
@@ -99,7 +114,7 @@ const Devtools = () => {
                         );
                       })}
                     </Tool>
-                  </ToolWrapper>
+                  </Container>
                 );
               })}
             </Tools>

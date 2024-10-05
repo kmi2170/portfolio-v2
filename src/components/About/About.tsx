@@ -1,11 +1,11 @@
 import React from "react";
+import styled from "styled-components";
 
 import { MotionWrapper } from "../../wrapper";
 import { Lang } from "../../lib/types";
 import { about } from "../../assets/about";
-import { Card, Description } from "./styles";
 import { theme } from "../../styles/globalStyles";
-import { ComponentWrapper, Text } from "../common-styles";
+import { ComponentWrapper, Pad, Text } from "../common-styles";
 
 interface AboutProps {
   lang?: Lang;
@@ -31,13 +31,13 @@ const About = (props: AboutProps) => {
   }
 
   return (
-    <ComponentWrapper id="about">
-      <Text secondary={red}>
+    <ComponentWrapper id="about" padding={1.5}>
+      <Text as="h2" fontSize={1.5} secondary={red}>
         About <span>Myself</span>
       </Text>
-      <Card>
-        <Description>{text ? text : <p>Temporary Unavailable</p>}</Description>
-      </Card>
+      <Text as="p" fontSize={1.25} marginTop={1} marginBottom={2}>
+        {text ? text : "Temporary Unavailable"}
+      </Text>
     </ComponentWrapper>
   );
 };

@@ -4,3 +4,4 @@ export { default as Tags } from "./tags";
 export { default as Text } from "./text";
 export { default as ComponentWrapper } from "./component-wrapper";
 export { default as Container } from "./container";
+export { default as Pad } from "./pad";

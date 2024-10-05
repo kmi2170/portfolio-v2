@@ -49,11 +49,12 @@ const Header = () => {
             <span>KH&apos;s</span>&nbsp; Portfolio
           </Text>
 
-          <Text secondary={blue} align="center">
+          <Text as="h2" secondary={blue} align="center">
             I&apos;m <span>Kemmei</span> Hamada
           </Text>
 
           <Text
+            as="h2"
             secondary={blue}
             tertiary={green}
             align="right"
@@ -62,7 +63,7 @@ const Header = () => {
             Freelance <span>Programmer</span> / <span>Web Developer</span>
           </Text>
 
-          <Text secondary={red} align="center">
+          <Text as="h2" secondary={red} align="center">
             <span>Welcome to My Portfolio</span>
           </Text>
         </Profile>

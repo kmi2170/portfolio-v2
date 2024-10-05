@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 
 import Project from "./Project/Project";
 import { DataProject, Lang } from "../../lib/types";
-import { Wrapper, Git, Container, Description } from "./styles";
+import { Git } from "./styles";
 import { GithubIcon } from "../../assets/icons";
 import { MotionWrapper } from "../../wrapper";
 import { theme } from "../../styles/globalStyles";
-import { Tag, Tags, Text } from "../common-styles";
+import { ComponentWrapper, Container, Tag, Tags, Text } from "../common-styles";
 
 interface ProjectsProps {
   projects: DataProject[];
@@ -29,8 +29,8 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
       : projects.filter((project) => project.tags.includes(selectedTag));
 
   return (
-    <Wrapper id="projects">
-      <Text secondary={blue}>
+    <ComponentWrapper id="projects">
+      <Text as="h2" fontSize={1.5} secondary={blue}>
         My <span>React/Next.js</span> Projects
       </Text>
 
@@ -63,7 +63,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
         ))}
       </Tags>
 
-      <Container>
+      <Container direction="row" justify="center" align="center" gap={0.75}>
         {filteredProjects?.map((project: DataProject) => (
           <motion.div
             key={project.name.en}
@@ -75,20 +75,21 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
         ))}
       </Container>
 
-      <Description>
-        <p>This site is built with</p>
-        <Tags marginTop={1}>
-          {[
-            "Next.js",
-            "styled-components",
-            "SANITY (CMS)",
-            "Framer Motion (animation)",
-          ].map((tag) => (
-            <Tag key={tag}>{tag}</Tag>
-          ))}
-        </Tags>
-      </Description>
-    </Wrapper>
+      <Text as="h4" fontSize={1.25} align="center" marginTop={2}>
+        This app is built with
+      </Text>
+
+      <Tags marginTop={1} marginBottom={2}>
+        {[
+          "Next.js",
+          "styled-components",
+          "SANITY (CMS)",
+          "Framer Motion (animation)",
+        ].map((tag) => (
+          <Tag key={tag}>{tag}</Tag>
+        ))}
+      </Tags>
+    </ComponentWrapper>
   );
 };
 

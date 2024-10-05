@@ -6,6 +6,7 @@ const Text = styled.div<{
   tertiary?: string;
   fontFamily?: string;
   fontSize?: number;
+  fontWeight?: number;
   unit?: string;
   align?: "left" | "center" | "right";
   marginTop?: number;
@@ -15,7 +16,8 @@ const Text = styled.div<{
 }>`
   color: ${({ primary = "black" }) => primary};
   font-family: ${({ fontFamily }) => fontFamily};
-  font-size: ${({ fontSize = 1.5 }) => fontSize + "rem"};
+  font-size: ${({ fontSize = 1 }) => fontSize + "rem"};
+  font-weight: ${({ fontWeight = 1 }) => fontWeight};
   text-align: ${({ align }) => align};
 
   width: 100%;

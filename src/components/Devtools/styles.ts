@@ -1,19 +1,5 @@
 import styled from "styled-components";
-
-export const Wrapper = styled.div`
-  padding: 2rem;
-  /* background-color: ${({ theme }) => theme.colors.purple}; */
-`;
-
-export const Container = styled.div`
-  padding: 2rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: flex-start;
-  justify-content: flex-start;
-`;
+import { Text } from "../common-styles";
 
 export const Tools = styled.div`
   margin-top: 0.5rem;
@@ -25,23 +11,18 @@ export const Tools = styled.div`
   align-items: flex-start;
 `;
 
-export const ToolWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 0.25rem;
-  justify-content: flex-start;
-  align-items: center;
-`;
+// export const ToolWrapper = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   gap: 0.25rem;
+//   justify-content: flex-start;
+//   align-items: center;
+// `;
 
-export const Tool = styled.div<{
+export const Tool = styled(Text)<{
   color: string;
 }>`
-  display: flex;
-  flex-direction: row;
-  font-weight: 600;
+  /* font-weight: 600;
   color: black;
-  font-size: 1.25rem;
-  /* background-color: ${({ color }) => color}; */
-  /* border: 1px solid ${({ color }) => color};
-  color: ${({ color }) => color}; */
+  font-size: 1.25rem; */
 `;

@@ -9,7 +9,7 @@ const Dot = styled.div<{
     content: "•";
     font-size: ${({ size = "1.25rem" }) => size};
     color: ${({ color = "black" }) => color};
-    margin-right: 0.25rem;
+    margin-right: 0.5rem;
     margin-right: ${({ marginRight = "0.25rem" }) => marginRight};
   }
 `;
