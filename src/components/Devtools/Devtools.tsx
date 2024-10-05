@@ -5,7 +5,7 @@ import { Wrapper, Container, Tools, ToolWrapper, Tool } from "./styles";
 import { devtools } from "../../assets/devtools";
 import { theme } from "../../styles/globalStyles";
 import { MotionWrapper } from "../../wrapper";
-import { Dot, Title } from "../common";
+import { ComponentWrapper, Dot, Text } from "../common";
 
 const devtool_colors = {
   main: theme.colors.blue,
@@ -53,10 +53,10 @@ const Devtools = () => {
   const green = theme.colors.green;
 
   return (
-    <Wrapper id="devtools">
-      <Title secondary={green}>
+    <ComponentWrapper id="devtools">
+      <Text secondary={green}>
         Dev <span>Tools</span>
-      </Title>
+      </Text>
 
       <Container>
         {devtools?.map((items, i) => {
@@ -106,7 +106,7 @@ const Devtools = () => {
           );
         })}
       </Container>
-    </Wrapper>
+    </ComponentWrapper>
   );
 };
 

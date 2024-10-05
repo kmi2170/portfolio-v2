@@ -8,7 +8,7 @@ import { Wrapper, Git, Container, Description } from "./styles";
 import { GithubIcon } from "../../assets/icons";
 import { MotionWrapper } from "../../wrapper";
 import { theme } from "../../styles/globalStyles";
-import { Tag, Tags, Title } from "../common";
+import { Tag, Tags, Text } from "../common";
 
 interface ProjectsProps {
   projects: DataProject[];
@@ -30,9 +30,9 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
 
   return (
     <Wrapper id="projects">
-      <Title secondary={blue}>
+      <Text secondary={blue}>
         My <span>React/Next.js</span> Projects
-      </Title>
+      </Text>
 
       <Git>
         <a

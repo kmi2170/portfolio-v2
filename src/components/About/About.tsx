@@ -5,7 +5,7 @@ import { Lang } from "../../lib/types";
 import { about } from "../../assets/about";
 import { Card, Description } from "./styles";
 import { theme } from "../../styles/globalStyles";
-import { ComponentWrapper, Title } from "../common";
+import { ComponentWrapper, Text } from "../common";
 
 interface AboutProps {
   lang?: Lang;
@@ -32,9 +32,9 @@ const About = (props: AboutProps) => {
 
   return (
     <ComponentWrapper id="about">
-      <Title secondary={red}>
+      <Text secondary={red}>
         About <span>Myself</span>
-      </Title>
+      </Text>
       <Card>
         <Description>{text ? text : <p>Temporary Unavailable</p>}</Description>
       </Card>

@@ -1,42 +1,4 @@
-import Image from "next/image";
 import styled from "styled-components";
-
-export const ImageContainer = styled.div`
-  display: grid;
-  gap: 0;
-  grid-template-columns: repeat(12, 1fr);
-  border: 3px solid magenta;
-`;
-
-export const ImageGrid = styled.div`
-  position: relative;
-  width: 100%;
-  padding-top: 75%;
-  border: 3px solid cyan;
-  grid-column: 1 / span 10;
-
-  @media (min-width: 768px) {
-    grid-column: 1 / span 9;
-  }
-
-  @media only screen and (min-width: 992px) {
-    grid-column: 1 / span 8;
-  }
-
-  @media only screen and (min-width: 1200px) {
-    grid-column: 1 / span 7;
-  }
-`;
-
-export const StyledImage = styled(Image)`
-  position: absolute;
-  opacity: 0.25;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Use 'contain' if you want the entire image to be visible */
-`;
 
 export const Row = styled.div`
   width: 100%;

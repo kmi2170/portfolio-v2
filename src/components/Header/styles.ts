@@ -1,30 +1,12 @@
+import Image from "next/image";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
   position: relative;
-  left: 50%;
-  transform: translate(-50%, 0);
-  text-align: center;
   margin-top: 5rem;
   margin-bottom: 2rem;
 
-  width: 350;
-
-  @media (min-width: 600px) {
-    width: 600px;
-  }
-  @media (min-width: 600px) {
-    width: 600px;
-  }
-  @media (min-width: 900px) {
-    width: 900px;
-  }
-  @media (min-width: 1200px) {
-    width: 1200px;
-  }
-  @media (min-width: 1500px) {
-    width: 1500px;
-  }
+  width: 100%;
 `;
 
 export const Profile = styled.div`
@@ -32,60 +14,47 @@ export const Profile = styled.div`
   top: 0;
   right: 0;
   width: 100%;
+  max-width: 1400px;
   height: 100%;
 
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`;
+
+export const ImageContainer = styled.div`
   display: grid;
-  grid-template-rows: repeat(12, 1fr);
+  gap: 0;
+  grid-template-columns: repeat(12, 1fr);
 `;
 
-export const Title = styled.h1`
-  grid-row: 1 / span 1;
+export const ImageGrid = styled.div`
+  position: relative;
   width: 100%;
-  text-align: left;
-  font-family: "Alex Brush";
-  font-size: 2.5rem;
-  font-weight: 600;
+  padding-top: 75%;
+  grid-column: 1 / span 10;
 
-  span {
-    color: ${({ theme }) => theme.colors.blue};
+  @media (min-width: 768px) {
+    grid-column: 1 / span 9;
+  }
+
+  @media only screen and (min-width: 992px) {
+    grid-column: 1 / span 8;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    grid-column: 1 / span 7;
   }
 `;
 
-export const MySelf = styled.h2`
-  grid-row: 3 / span 1;
+export const StyledImage = styled(Image)`
+  position: absolute;
+  opacity: 0.25;
+  top: 0;
+  left: 0;
   width: 100%;
-  text-align: center;
-  font-weight: 600;
-  /* color: #555 */
-
-  span {
-    font-size: 1.2em;
-    color: ${({ theme }) => theme.colors.blue};
-  }
-`;
-
-export const Role = styled.h2`
-  grid-row: 5 / span 1;
-  width: 100%;
-  text-align: right;
-  font-weight: 600;
-  /* color: #555; */
-
-  span:first-child {
-    font-size: 1.2em;
-    color: ${({ theme }) => theme.colors.blue};
-  }
-
-  span:nth-child(2) {
-    font-size: 1.2em;
-    color: ${({ theme }) => theme.colors.green};
-  }
-`;
-
-export const Welcome = styled.h2`
-  width: 100%;
-  grid-row: 12 / span 1;
-  text-align: center;
-  color: ${({ theme }) => theme.colors.red};
-  /* color: #555; */
+  height: 100%;
+  object-fit: cover; /* Use 'contain' if you want the entire image to be visible */
 `;

@@ -1,13 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Wrapper, Profile, Title, Welcome, Role, MySelf } from "./styles";
 import {
+  Wrapper,
+  Profile,
   ImageContainer,
   ImageGrid,
   StyledImage,
-} from "../common/responsiveStyles";
+} from "./styles";
+import { Text } from "../common";
+import { theme } from "../../styles/globalStyles";
 
 const Header = () => {
+  const blue = theme.colors.blue;
+  const green = theme.colors.green;
+  const red = theme.colors.red;
+
   return (
     <Wrapper>
       <motion.div
@@ -22,32 +29,31 @@ const Header = () => {
               src="/images/mountain_silhouette.png"
               alt="background city and mountain"
               fill
-              // style={{
-              //   objectFit: "cover",
-              // }}
             />
           </ImageGrid>
         </ImageContainer>
       </motion.div>
 
       <motion.div
-        whileInView={{ x: [-0, 0], opacity: [0.5, 1] }}
+        whileInView={{ opacity: [0.5, 1] }}
         transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
       >
         <Profile>
-          <Title>
+          <Text as="h1" fontFamily="Alex Brush" fontSize={2.5} secondary={blue}>
             <span>KH&apos;s</span>&nbsp; Portfolio
-          </Title>
+          </Text>
 
-          <MySelf>
+          <Text secondary={blue} align="center">
             I&apos;m <span>Kemmei</span> Hamada
-          </MySelf>
+          </Text>
 
-          <Role>
+          <Text secondary={blue} tertiary={green} align="right">
             Freelance <span>Programmer</span> / <span>Web Developer</span>
-          </Role>
+          </Text>
 
-          <Welcome>Welcome to My Portfolio</Welcome>
+          <Text secondary={red} align="center">
+            <span>Welcome to My Portfolio</span>
+          </Text>
         </Profile>
       </motion.div>
     </Wrapper>
