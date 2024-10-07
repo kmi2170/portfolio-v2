@@ -1,23 +1,25 @@
 import styled from "styled-components";
+import { theme } from "../../styles/globalStyles";
 
 const Tag = styled.div<{
   isSelected?: boolean;
-  fontSize?: string;
+  fontSize?: number;
+  clickable?: boolean;
 }>`
   padding: 0.4rem 0.5rem 0.2rem 0.5rem;
   border-radius: 10px;
-  font-size: ${({ fontSize = "1rem" }) => fontSize};
+  border: 2px solid ${() => theme.colors.darkPurple};
+  font-size: ${({ fontSize = 1 }) => fontSize + "rem"};
   font-weight: 600;
 
-  /* &:hover {
-    cursor: pointer;
-  } */
+  &:hover {
+    cursor: ${({ clickable = false }) => (clickable ? "pointer" : "default")};
+  }
 
-  color: ${({ isSelected = false }) => (isSelected ? "white" : "#4b365f")};
+  color: ${({ isSelected = false }) =>
+    isSelected ? "white" : theme.colors.darkPurple};
   background-color: ${({ isSelected = false }) =>
-    isSelected ? "#4b365f" : "white"};
-  border: 2px solid
-    ${({ isSelected = false }) => (isSelected ? "none" : "#4b365f")};
+    isSelected ? theme.colors.darkPurple : "white"};
 `;
 
 export default Tag;

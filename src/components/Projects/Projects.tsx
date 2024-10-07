@@ -48,6 +48,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
         <Tag
           key={"all"}
           isSelected={"all" === selectedTag}
+          clickable={true}
           onClick={() => setSelectedTag("all")}
         >
           All
@@ -56,6 +57,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
           <Tag
             key={tag}
             isSelected={tag === selectedTag}
+            clickable={true}
             onClick={() => setSelectedTag(tag)}
           >
             {tag}
