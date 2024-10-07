@@ -43,6 +43,7 @@ const Header = () => {
             as="h1"
             fontFamily="Alex Brush"
             fontSize={2.5}
+            fontWeight={600}
             secondary={blue}
             paddingLeft={1}
           >
