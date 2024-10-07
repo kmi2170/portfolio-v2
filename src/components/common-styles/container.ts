@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import Pad from "./pad";
-import ComponentWrapper from "./component-wrapper";
 
 const justifySchemas = {
   center: "center",
@@ -30,8 +28,8 @@ const Container = styled.div<{
   display: flex;
   flex-wrap: ${({ wrap = true }) => (wrap ? "wrap" : "nowrap")};
   flex-direction: ${({ direction = "row" }) => direction};
-  justify-content: ${({ justify }) => justify};
-  align-items: ${({ align }) => align};
+  justify-content: ${({ justify }) => justify && justifySchemas[justify]};
+  align-items: ${({ align }) => align && alignSchemas[align]};
   gap: ${({ gap }) => gap + "rem"};
   max-width: ${({ maxWidth }) => maxWidth + "px"};
 `;
