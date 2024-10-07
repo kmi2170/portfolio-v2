@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div``;
 
@@ -12,13 +12,11 @@ export const Button = styled.button`
     cursor: pointer;
   }
 
-  div {
-    width: 30px;
-    height: 30px;
-    overflow: hidden;
-    border-radius: 50%;
-    background-color: lightgreen;
-  }
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: lightgreen;
 
   img {
     width: 100%;
