@@ -11,7 +11,7 @@ const devtool_colors = {
   main: theme.colors.blue,
   ui: theme.colors.red,
   backend: theme.colors.green,
-  others: theme.colors.darkgray,
+  others: theme.colors.darkGray,
 };
 type DevtoolColors = keyof typeof devtool_colors;
 
