@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Pad from "./pad";
+import ComponentWrapper from "./component-wrapper";
 
 const justifySchemas = {
   center: "center",
@@ -18,12 +19,13 @@ const alignSchemas = {
 type JustifyType = keyof typeof justifySchemas;
 type AlignType = keyof typeof alignSchemas;
 
-const Container = styled(Pad)<{
+const Container = styled.div<{
   justify?: JustifyType;
   align?: AlignType;
   direction?: "row" | "column";
   gap?: number;
   wrap?: boolean;
+  maxWidth?: number;
 }>`
   display: flex;
   flex-wrap: ${({ wrap = true }) => (wrap ? "wrap" : "nowrap")};
@@ -31,6 +33,7 @@ const Container = styled(Pad)<{
   justify-content: ${({ justify }) => justify};
   align-items: ${({ align }) => align};
   gap: ${({ gap }) => gap + "rem"};
+  max-width: ${({ maxWidth }) => maxWidth + "px"};
 `;
 
 export default Container;
