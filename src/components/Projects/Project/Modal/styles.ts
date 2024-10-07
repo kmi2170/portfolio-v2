@@ -21,8 +21,8 @@ export const Wrapper = styled.div`
 export const Close = styled.span`
   width: 100%;
   text-align: right;
-  margin-top: 15px;
-  margin-right: 15px;
+  margin-top: 1rem;
+  padding-right: 1rem;
 
   svg {
     width: 50px;
@@ -37,8 +37,6 @@ export const Close = styled.span`
 
 export const ProjectImg = styled.div`
   width: 50%;
-  /* height: 200px; */
-  /* object-fit: cover; */
   cursor: pointer;
   position: relative;
 
@@ -47,15 +45,17 @@ export const ProjectImg = styled.div`
   }
 `;
 
-export const Description = styled.div`
-  width: 90%;
-  font-size: 1rem;
-  text-align: center;
-`;
+// export const Description = styled.div`
+//   width: 50%;
+//   font-size: 1rem;
+//   text-align: center;
+//   max-width: 900px;
+// `;
 
 export const Features = styled.ul`
   width: 90%;
-  font-size: 0.85rem;
+  /* max-width: 900px; */
+  font-size: 1rem;
 
   li {
     list-style: none;
@@ -63,17 +63,13 @@ export const Features = styled.ul`
     display: flex;
     align-items: center;
     margin-bottom: 0.25rem;
-  }
-
-  svg {
-    color: ${({ theme }) => theme.colors.blue};
-    margin-left: 0.5rem;
   }
 `;
 
 export const Details = styled.ul`
   width: 90%;
   font-size: 0.85rem;
+  /* max-width: 900px; */
 
   li {
     list-style: none;
@@ -82,14 +78,4 @@ export const Details = styled.ul`
     align-items: center;
     margin-bottom: 0.25rem;
   }
-
-  svg {
-    color: ${({ theme }) => theme.colors.green};
-    margin-right: 0.5rem;
-    font-size: 1rem;
-  }
-`;
-
-export const SubTitle = styled.h4`
-  font-size: 1rem;
 `;

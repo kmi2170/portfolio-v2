@@ -3,9 +3,16 @@ import { motion } from "framer-motion";
 import { DataProject, Lang } from "../../../../lib/types";
 import Carousel from "./Carousel/Carousel";
 import { Wrapper, Close, ProjectImg, Features, Details } from "./styles";
-import { AppIcon, CloseIcon, GithubIcon } from "../../../../assets/icons";
+import { CloseIcon } from "../../../../assets/icons";
 import { theme } from "../../../../styles/globalStyles";
-import { Dot, Tag, Tags, Text } from "../../../common-styles";
+import {
+  ComponentWrapper,
+  Container,
+  Dot,
+  Tag,
+  Tags,
+  Text,
+} from "../../../common-styles";
 import Links from "../../../templates/Links";
 
 interface ModalContentProps {
@@ -16,17 +23,32 @@ interface ModalContentProps {
 
 const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
   return (
-    <motion.div
+    <Container
+      as={motion.section}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: [0, 1] }}
       transition={{ duration: 1.0, ease: "easeInOut" }}
+      direction="column"
+      justify="center"
+      align="center"
     >
-      <Wrapper>
-        <Close onClick={closeModal}>
-          <CloseIcon />
-        </Close>
+      <Close onClick={closeModal}>
+        <CloseIcon />
+      </Close>
 
-        <Text align="center" marginTop={1} marginBottom={2}>
+      <Container
+        direction="column"
+        justify="center"
+        align="center"
+        maxWidth={900}
+      >
+        <Text
+          as="h2"
+          fontSize={1.25}
+          align="center"
+          marginTop={1}
+          marginBottom={2}
+        >
           {project?.name[lang]}
         </Text>
 
@@ -36,17 +58,23 @@ const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
 
         <Links project={project} />
 
-        <Tags marginTop={2} marginBottom={2}>
+        <Tags marginTop={2} marginBottom={3}>
           {project?.tags.map((tag, i) => (
             <Tag key={tag}>{tag}</Tag>
           ))}
         </Tags>
 
-        <Text as="div" fontSize={1} marginBottom={1}>
+        <Text as="p" align="center" fontSize={1} marginBottom={1}>
           {project.description[lang]}
         </Text>
 
-        <Text as="h3" fontSize={1.25}>
+        <Text
+          as="h3"
+          fontSize={1.25}
+          align="center"
+          marginTop={1.5}
+          marginBottom={0.5}
+        >
           Features
         </Text>
 
@@ -65,7 +93,13 @@ const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
 
         {project?.details[lang].length > 0 && (
           <>
-            <Text as="h3" fontSize={1.25}>
+            <Text
+              as="h3"
+              fontSize={1.25}
+              align="center"
+              marginTop={1.5}
+              marginBottom={0.5}
+            >
               Details
             </Text>
 
@@ -83,8 +117,8 @@ const ModalContent = ({ project, closeModal, lang }: ModalContentProps) => {
             </Details>
           </>
         )}
-      </Wrapper>
-    </motion.div>
+      </Container>
+    </Container>
   );
 };
 
