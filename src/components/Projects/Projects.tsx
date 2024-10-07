@@ -29,7 +29,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
       : projects.filter((project) => project.tags.includes(selectedTag));
 
   return (
-    <ComponentWrapper id="projects">
+    <ComponentWrapper id="projects" padding={1.5}>
       <Text as="h2" fontSize={1.5} secondary={blue}>
         My <span>React/Next.js</span> Projects
       </Text>
