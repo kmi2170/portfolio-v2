@@ -12,7 +12,7 @@ const LangButtons = ({ setLang }: LangButtonsProps) => {
   const blue = theme.colors.blue;
 
   return (
-    <Container direction="row" gap={1.5}>
+    <Container direction="row" gap={1.25}>
       <Button onClick={() => setLang("jp")}>
         <Text fontSize={1.25} fontWeight={600} primary={blue}>
           JP

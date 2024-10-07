@@ -4,8 +4,10 @@ import { motion } from "framer-motion";
 
 import LangButtons from "./LangButtons/LangButtons";
 import { Lang } from "../../lib/types";
-import { Wrapper, Title, Ul, Li, Menu, SideBar, UlMenu } from "./styles";
+import { NavWrapper, Ul, Li, Menu, SideBar, UlMenu } from "./styles";
 import { CloseIcon, MenuIcon2 } from "../../assets/icons";
+import { Text } from "../common-styles";
+import { theme } from "../../styles/globalStyles";
 
 export const navItems = ["projects", "about", "devtools"];
 
@@ -15,28 +17,41 @@ interface NavbarProps {
 
 const Navbar = ({ setLang }: NavbarProps) => {
   const [toggle, setToggle] = useState<boolean>(false);
+  const blue = theme.colors.blue;
 
   return (
     <>
-      <Wrapper>
-        <Title>
-          <Link href="#home">
+      <NavWrapper justify="between" align="center">
+        <Link href="#home">
+          <Text
+            as="h2"
+            fontSize={1.75}
+            secondary={blue}
+            fontFamily="Alex Brush"
+            fontWeight={600}
+            paddingLeft={1}
+          >
             <span>KH&apos;s</span>Portfolio
-          </Link>
-        </Title>
-        <Ul>
+          </Text>
+        </Link>
+
+        <Ul justify="even" align="center">
           {navItems.map((item) => (
             <Li key={`link-${item}`}>
-              <Link href={`#${item}`}>{item}</Link>
+              <Link href={`#${item}`}>
+                <Text as="h2" fontSize={1} fontWeight={600}>
+                  {item.toUpperCase()}
+                </Text>
+              </Link>
             </Li>
           ))}
           <LangButtons setLang={setLang} />
         </Ul>
 
-        <Menu onClick={() => setToggle(true)}>
+        <Menu align="center" onClick={() => setToggle(true)}>
           <MenuIcon2 />
         </Menu>
-      </Wrapper>
+      </NavWrapper>
 
       {toggle && (
         <SideBar>
@@ -48,10 +63,14 @@ const Navbar = ({ setLang }: NavbarProps) => {
             <div onClick={() => setToggle(false)}>
               <CloseIcon size={40} />
             </div>
-            <UlMenu>
+            <UlMenu as="ul" direction="column" justify="around" gap={3}>
               {navItems.map((item) => (
                 <Li key={`link-menu-${item}`}>
-                  <Link href={`#${item}`}>{item}</Link>
+                  <Link href={`#${item}`}>
+                    <Text as="h2" fontSize={1} fontWeight={600}>
+                      {item.toUpperCase()}
+                    </Text>
+                  </Link>
                 </Li>
               ))}
               <LangButtons setLang={setLang} />
