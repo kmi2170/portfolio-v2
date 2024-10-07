@@ -42,7 +42,7 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const Main = styled.div`
+const Main = styled.main`
   max-width: 1500px;
   /* background-color: ${theme.colors.purple}; */
 `;
