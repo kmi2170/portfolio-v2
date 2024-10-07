@@ -59,7 +59,8 @@ export const theme = {
     green: "#00ff00",
     red: "#ff00ff",
     grey: "#d3d3d3",
-    darkgray: "#A9A9A9",
+    darkGray: "#A9A9A9",
     purple: "rgba(233, 213, 255, 0.8)",
+    darkPurple: "#4b365f",
   },
 };
