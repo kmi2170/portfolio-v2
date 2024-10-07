@@ -18,19 +18,15 @@ interface ProjectProps {
 const customModalStyle = {
   content: {
     top: "10vh",
-    left: "5vw",
-    // top: '50%',
-    // left: '50%',
-    right: "auto",
-    bottom: "auto",
-    // transform: 'translate(-50% -50%)',
+    left: "50%",
+    transform: "translate(-50%, 0)",
     backgroundColor: "white",
     padding: 0,
     border: "none",
     boxShadow: "0 0 10px white",
-    // width: '85vw',
-    // height: '90vh',
-    // overflow: 'auto',
+    width: "95vw",
+    maxWidth: "1500px",
+    overflow: "auto",
   },
   overlay: {
     backgroundColor: "rgba(10, 11, 13, 0.75)",
@@ -92,7 +88,7 @@ const Project = ({ project, lang }: ProjectProps) => {
 
         <Tags marginTop={1}>
           {project?.tags.map((tag, i) => (
-            <Tag key={tag} fontSize="0.75rem">
+            <Tag key={tag} fontSize={0.75}>
               {tag}
             </Tag>
           ))}
