@@ -1,25 +1,12 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div``;
-
 export const Button = styled.button`
+  padding: 0.125rem 0.25rem;
   background-color: transparent;
-  padding: 0;
-  margin-right: 20px;
+  border: 3px solid ${({ theme }) => theme.colors.blue};
+  border-radius: 10px;
 
-  border: none;
   &:hover {
     cursor: pointer;
-  }
-
-  width: 30px;
-  height: 30px;
-  overflow: hidden;
-  border-radius: 50%;
-  background-color: lightgreen;
-
-  img {
-    width: 100%;
-    height: 100%;
   }
 `;

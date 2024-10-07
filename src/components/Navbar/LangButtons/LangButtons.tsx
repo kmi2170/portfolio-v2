@@ -1,22 +1,32 @@
-import Image from "next/image";
+// import Image from "next/image";
 import { Lang } from "../../../lib/types";
-import { Wrapper, Button } from "./styles";
+import { Button } from "./styles";
+import { Container, Text } from "../../common-styles";
+import { theme } from "../../../styles/globalStyles";
 
 interface LangButtonsProps {
   setLang: React.Dispatch<React.SetStateAction<Lang>>;
 }
 
 const LangButtons = ({ setLang }: LangButtonsProps) => {
+  const blue = theme.colors.blue;
+
   return (
-    <Wrapper>
+    <Container direction="row" gap={1.5}>
       <Button onClick={() => setLang("jp")}>
-        <Image src="/images/jp.png" width={50} height={50} alt="jp" />
+        <Text fontSize={1.25} fontWeight={600} primary={blue}>
+          JP
+        </Text>
+        {/* <Image src="/images/jp.png" width={50} height={50} alt="jp" /> */}
       </Button>
 
       <Button onClick={() => setLang("en")}>
-        <Image src="/images/us.png" width={50} height={50} alt="us" />
+        <Text fontSize={1.25} fontWeight={600} primary={blue}>
+          EN
+        </Text>
+        {/* <Image src="/images/us.png" width={50} height={50} alt="us" /> */}
       </Button>
-    </Wrapper>
+    </Container>
   );
 };
 
