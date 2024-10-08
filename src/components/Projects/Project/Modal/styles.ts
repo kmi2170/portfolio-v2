@@ -11,36 +11,31 @@ export const ModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 `;
 
-export const ModalWrapper = styled.dialog`
-  position: absolute;
-  top: 10vh;
-  left: 50%;
-  transform: translate(-50%, 0);
+// export const ModalWrapper = styled(Container).attrs({ as: "dialog" })`
+export const ModalWrapper = styled(Container)`
+  position: relative;
   background-color: white;
-  z-index: 10;
 
   border: none;
   border-radius: 5px;
 
   box-shadow: 0 0 5px rgba(108, 122, 137, 0.8);
-  padding: 0.5rem 0.25rem 2.5rem 0.25rem;
+  padding: 1rem 1.5rem 2.5rem 1.5rem;
   width: 95vw;
   max-width: 1200px;
-  height: auto;
-  overflow: auto;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  height: auto;
+  max-height: 95vh;
+  overflow: auto;
 `;
 
 export const Close = styled.span`
   width: 100%;
   text-align: right;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 
   svg {
     width: 50px;
@@ -63,28 +58,14 @@ export const ProjectImg = styled.div`
   }
 `;
 
-export const Features = styled.ul`
-  /* width: 90%; */
-  font-size: 1rem;
-
-  li {
-    list-style: none;
-    overflow-wrap: normal;
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.25rem;
-  }
+export const Ul = styled(Container).attrs({ as: "ul" })`
+  width: 90%;
+  list-style: none;
 `;
 
-export const Details = styled.ul`
-  /* width: 90%; */
-  font-size: 0.85rem;
-
-  li {
-    list-style: none;
-    overflow-wrap: normal;
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.25rem;
-  }
+export const Li = styled.li`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0.25rem;
 `;

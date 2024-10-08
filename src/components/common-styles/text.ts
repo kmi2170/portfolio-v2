@@ -20,8 +20,6 @@ const Text = styled.div<{
   font-weight: ${({ fontWeight = 1 }) => fontWeight};
   text-align: ${({ align }) => align};
 
-  /* width: 100%; */
-
   margin-top: ${({ marginTop = 0 }) => marginTop + "rem"};
   margin-bottom: ${({ marginBottom = 0 }) => marginBottom + "rem"};
   padding-left: ${({ paddingLeft = 0 }) => paddingLeft + "rem"};

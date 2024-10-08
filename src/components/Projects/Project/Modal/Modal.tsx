@@ -5,10 +5,10 @@ import Carousel from "./Carousel/Carousel";
 import {
   Close,
   ProjectImg,
-  Features,
-  Details,
   ModalWrapper,
   ModalOverlay,
+  Li,
+  Ul,
 } from "./styles";
 import { CloseIcon } from "../../../../assets/icons";
 import { theme } from "../../../../styles/globalStyles";
@@ -24,11 +24,9 @@ type ModalContentProps = {
 const Modal = ({ project, closeModal, lang }: ModalContentProps) => {
   return (
     <>
-      <ModalOverlay onClick={closeModal} />
-
-      <ModalWrapper>
-        <Container
-          as={motion.section}
+      <ModalOverlay onClick={closeModal}>
+        <ModalWrapper
+          as={motion.dialog}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: [0, 1] }}
           transition={{ duration: 1.0, ease: "easeInOut" }}
@@ -40,99 +38,94 @@ const Modal = ({ project, closeModal, lang }: ModalContentProps) => {
             <CloseIcon />
           </Close>
 
-          <Container
-            direction="column"
-            justify="center"
+          <Text
+            as="h2"
+            fontSize={1.25}
+            fontWeight={600}
             align="center"
-            maxWidth={900}
+            marginTop={1}
+            marginBottom={2}
           >
-            <Text
-              as="h2"
-              fontSize={1.25}
-              align="center"
-              marginTop={1}
-              marginBottom={2}
-            >
-              {project?.name[lang]}
-            </Text>
+            {project?.name[lang]}
+          </Text>
 
-            <ProjectImg>
-              <Carousel imageUrls={project?.imageUrls} />
-            </ProjectImg>
+          <ProjectImg>
+            <Carousel imageUrls={project?.imageUrls} />
+          </ProjectImg>
 
-            <Links project={project} />
+          <Links project={project} />
 
-            <Tags marginTop={2} marginBottom={3}>
-              {project?.tags.map((tag, i) => (
-                <Tag key={tag}>{tag}</Tag>
-              ))}
-            </Tags>
+          <Tags marginTop={2} marginBottom={3}>
+            {project?.tags.map((tag, i) => (
+              <Tag key={tag}>{tag}</Tag>
+            ))}
+          </Tags>
 
-            <Text as="p" align="center" fontSize={1} marginBottom={1}>
-              {project.description[lang]}
-            </Text>
+          <Text as="p" align="center" fontSize={1} marginBottom={1}>
+            {project.description[lang]}
+          </Text>
 
-            <Text
-              as="h3"
-              fontSize={1.25}
-              align="center"
-              marginTop={1.5}
-              marginBottom={0.5}
-            >
-              Features
-            </Text>
+          {project?.features[lang] && (
+            <>
+              <Text
+                as="h3"
+                fontSize={1.25}
+                fontWeight={600}
+                align="center"
+                marginTop={1.5}
+                marginBottom={0.5}
+              >
+                Features
+              </Text>
 
-            <Features>
-              {project?.features[lang].map((feature, i) => (
-                <li key={i}>
-                  <Dot
-                    color={theme.colors.blue}
-                    size="1.5rem"
-                    marginRight="0.5rem"
-                  />
-                  <Text as="p" fontSize={1} align="left" marginBottom={0.25}>
-                    {feature}
-                  </Text>
-                </li>
-              ))}
-            </Features>
+              <Ul direction="column" justify="center" align="start">
+                {project?.features[lang].map((feature, i) => (
+                  <Li key={i}>
+                    <Dot
+                      color={theme.colors.blue}
+                      size="1.5rem"
+                      marginRight="0.5rem"
+                    />
+                    <Text as="p" fontSize={1} align="left" marginBottom={0.25}>
+                      {feature}
+                    </Text>
+                  </Li>
+                ))}
+              </Ul>
+            </>
+          )}
 
-            {project?.details[lang].length > 0 && (
-              <>
-                <Text
-                  as="h3"
-                  fontSize={1.25}
-                  align="center"
-                  marginTop={1.5}
-                  marginBottom={0.5}
-                >
-                  Details
-                </Text>
+          {project?.details[lang].length > 0 && (
+            <>
+              <Text
+                as="h3"
+                fontSize={1.25}
+                fontWeight={600}
+                align="center"
+                marginTop={1.5}
+                marginBottom={0.5}
+              >
+                Details
+              </Text>
 
-                <Details>
-                  {project?.details[lang].map((detail, i) => (
-                    <li key={i}>
-                      <Dot
-                        color={theme.colors.green}
-                        size="1.5rem"
-                        marginRight="0.5rem"
-                      />
-                      <Text
-                        as="p"
-                        fontSize={1}
-                        align="left"
-                        marginBottom={0.25}
-                      >
-                        {detail}
-                      </Text>
-                    </li>
-                  ))}
-                </Details>
-              </>
-            )}
-          </Container>
-        </Container>
-      </ModalWrapper>
+              <Ul direction="column" justify="center" align="start">
+                {project?.details[lang].map((detail, i) => (
+                  <Li key={i}>
+                    <Dot
+                      color={theme.colors.green}
+                      size="1.5rem"
+                      marginRight="0.5rem"
+                    />
+                    <Text as="p" fontSize={1} align="left" marginBottom={0.25}>
+                      {detail}
+                    </Text>
+                  </Li>
+                ))}
+              </Ul>
+            </>
+          )}
+        </ModalWrapper>
+      </ModalOverlay>
     </>
   );
 };
