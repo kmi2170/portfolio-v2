@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../../styles/globalStyles";
 
-const Tag = styled.div<{
+const Tag = styled.li<{
   isSelected?: boolean;
   fontSize?: number;
   clickable?: boolean;

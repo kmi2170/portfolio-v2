@@ -30,6 +30,7 @@ const Navbar = ({ setLang }: NavbarProps) => {
             fontFamily="Alex Brush"
             fontWeight={600}
             paddingLeft={1}
+            marginTop={0.25}
           >
             <span>KH&apos;s</span>Portfolio
           </Text>

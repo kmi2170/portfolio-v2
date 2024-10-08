@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Pad from "./pad";
 
 const justifySchemas = {
   center: "center",
@@ -17,7 +18,7 @@ const alignSchemas = {
 type JustifyType = keyof typeof justifySchemas;
 type AlignType = keyof typeof alignSchemas;
 
-const Container = styled.div<{
+const Container = styled(Pad)<{
   justify?: JustifyType;
   align?: AlignType;
   direction?: "row" | "column";

@@ -1,10 +1,9 @@
 import styled from "styled-components";
+import Pad from "./pad";
 
-const ComponentWrapper = styled.section<{
-  padding?: number;
+const ComponentWrapper = styled(Pad).attrs({ as: "section" })<{
   maxWidth?: number;
 }>`
-  padding: ${({ padding = 0 }) => padding + "rem"};
   max-width: ${({ maxWidth = 1400 }) => maxWidth + "px"};
 `;
 

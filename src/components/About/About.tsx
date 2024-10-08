@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 import { MotionWrapper } from "../../wrapper";
 import { Lang } from "../../lib/types";
@@ -35,9 +34,11 @@ const About = (props: AboutProps) => {
       <Text as="h2" fontSize={1.5} secondary={red}>
         About <span>Myself</span>
       </Text>
-      <Text as="p" fontSize={1.25} marginTop={1} marginBottom={2}>
-        {text ? text : "Temporary Unavailable"}
-      </Text>
+      <Pad padding={1.5}>
+        <Text as="p" fontSize={1.25} marginTop={1} marginBottom={2}>
+          {text ? text : "Temporary Unavailable"}
+        </Text>
+      </Pad>
     </ComponentWrapper>
   );
 };

@@ -63,7 +63,7 @@ const Devtools = () => {
         justify="start"
         align="start"
         gap={5}
-        padding={1}
+        padding={1.5}
       >
         {devtools?.map((items, i) => {
           const keys = Object.keys(items);

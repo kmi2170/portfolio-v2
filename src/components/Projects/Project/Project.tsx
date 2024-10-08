@@ -5,7 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 
 import { DataProject, Lang } from "../../../lib/types";
 import ModalContent from "./Modal/ModalContent";
-import { Wrapper } from "./styles";
+import { ProjectWrapper } from "./styles";
 import { Tags, Tag, Text, Container } from "../../common-styles";
 import Links from "../../templates/Links";
 
@@ -45,7 +45,7 @@ const Project = ({ project, lang }: ProjectProps) => {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <Wrapper>
+    <ProjectWrapper>
       <Container
         direction="column"
         align="center"
@@ -104,7 +104,7 @@ const Project = ({ project, lang }: ProjectProps) => {
       >
         <ModalContent project={project} closeModal={closeModal} lang={lang} />
       </Modal>
-    </Wrapper>
+    </ProjectWrapper>
   );
 };
 

@@ -5,7 +5,7 @@ export const NavWrapper = styled(Container).attrs({ as: "nav" })`
   position: fixed;
   z-index: 2;
   width: 100vw;
-  height: 4rem;
+  height: 3.5rem;
 
   background-color: rgba(173, 216, 230, 0.5);
   box-shadow: 0 4px 5px rgba(168, 168, 168, 0.5);

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Tags = styled.div<{
+const Tags = styled.ul<{
   marginTop?: number;
   marginBottom?: number;
 }>`
@@ -12,6 +12,8 @@ const Tags = styled.div<{
   justify-content: center;
   align-items: center;
   gap: 5px;
+
+  list-style: none;
 `;
 
 export default Tags;
