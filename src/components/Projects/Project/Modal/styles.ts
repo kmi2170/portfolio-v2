@@ -14,7 +14,6 @@ export const ModalOverlay = styled.div`
   z-index: 10;
 `;
 
-// export const ModalWrapper = styled(Container).attrs({ as: "dialog" })`
 export const ModalWrapper = styled(Container)`
   position: relative;
   background-color: white;
@@ -29,7 +28,7 @@ export const ModalWrapper = styled(Container)`
 
   height: auto;
   max-height: 95vh;
-  overflow: auto;
+  overflow-y: auto;
 `;
 
 export const Close = styled.span`

@@ -33,6 +33,7 @@ const Modal = ({ project, closeModal, lang }: ModalContentProps) => {
           direction="column"
           justify="center"
           align="center"
+          wrap={false}
         >
           <Close onClick={closeModal}>
             <CloseIcon />
