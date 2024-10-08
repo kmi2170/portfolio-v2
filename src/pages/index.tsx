@@ -34,6 +34,7 @@ const Home: NextPage = () => {
 export default Home;
 
 const Wrapper = styled.div`
+  position: relative;
   min-height: 100vh;
   overflow: auto;
 

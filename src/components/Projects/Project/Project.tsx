@@ -1,37 +1,16 @@
 import { useState } from "react";
 import Image from "next/image";
-import Modal from "react-modal";
 import { motion, useAnimation } from "framer-motion";
 
 import { DataProject, Lang } from "../../../lib/types";
-import ModalContent from "./Modal/ModalContent";
+import Modal from "./Modal/Modal";
 import { ProjectWrapper } from "./styles";
 import { Tags, Tag, Text, Container } from "../../common-styles";
 import Links from "../../templates/Links";
 
-Modal.setAppElement("#__next");
-interface ProjectProps {
+type ProjectProps = {
   project: DataProject;
   lang: Lang;
-}
-
-const customModalStyle = {
-  content: {
-    top: "10vh",
-    left: "50%",
-    transform: "translate(-50%, 0)",
-    backgroundColor: "white",
-    padding: 0,
-    border: "none",
-    boxShadow: "0 0 10px white",
-    width: "95vw",
-    maxWidth: "1500px",
-    overflow: "auto",
-  },
-  overlay: {
-    backgroundColor: "rgba(10, 11, 13, 0.75)",
-    zIndex: 30,
-  },
 };
 
 const Project = ({ project, lang }: ProjectProps) => {
@@ -97,13 +76,9 @@ const Project = ({ project, lang }: ProjectProps) => {
 
       <Links project={project} marginTop={1.5} marginBottom={1} />
 
-      <Modal
-        isOpen={isModalOpen}
-        onRequestClose={closeModal}
-        style={customModalStyle}
-      >
-        <ModalContent project={project} closeModal={closeModal} lang={lang} />
-      </Modal>
+      {isModalOpen && (
+        <Modal project={project} closeModal={closeModal} lang={lang} />
+      )}
     </ProjectWrapper>
   );
 };

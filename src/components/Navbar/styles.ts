@@ -49,7 +49,7 @@ export const Menu = styled(Container)`
   }
 `;
 
-export const SideBar = styled(Container).attrs({ as: "aside" })`
+export const SidebarWrapper = styled(Container).attrs({ as: "aside" })`
   height: 100vh;
   position: fixed;
   top: 0;

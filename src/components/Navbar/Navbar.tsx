@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import LangButtons from "./LangButtons/LangButtons";
 import { Lang } from "../../lib/types";
-import { NavWrapper, Ul, Li, Menu, SideBar, UlMenu } from "./styles";
+import { NavWrapper, Ul, Li, Menu, SidebarWrapper, UlMenu } from "./styles";
 import { CloseIcon, MenuIcon2 } from "../../assets/icons";
 import { Text } from "../common-styles";
 import { theme } from "../../styles/globalStyles";
@@ -55,7 +55,7 @@ const Navbar = ({ setLang }: NavbarProps) => {
       </NavWrapper>
 
       {toggle && (
-        <SideBar>
+        <SidebarWrapper>
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: "50vw" }}
@@ -77,7 +77,7 @@ const Navbar = ({ setLang }: NavbarProps) => {
               <LangButtons setLang={setLang} />
             </UlMenu>
           </motion.div>
-        </SideBar>
+        </SidebarWrapper>
       )}
     </>
   );
