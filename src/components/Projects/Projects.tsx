@@ -30,7 +30,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
 
   return (
     <ComponentWrapper id="projects" padding={1.5}>
-      <Text as="h2" fontSize={1.5} secondary={blue}>
+      <Text as="h2" fontSize={1.5} fontWeight={600} secondary={blue}>
         My <span>React/Next.js</span> Projects
       </Text>
 

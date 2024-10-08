@@ -32,7 +32,6 @@ const Container = styled(Pad)<{
   justify-content: ${({ justify }) => justify && justifySchemas[justify]};
   align-items: ${({ align }) => align && alignSchemas[align]};
   gap: ${({ gap }) => gap + "rem"};
-  width: 100%;
   max-width: ${({ maxWidth }) => maxWidth + "px"};
 `;
 

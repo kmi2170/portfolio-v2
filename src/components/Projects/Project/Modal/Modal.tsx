@@ -90,7 +90,9 @@ const Modal = ({ project, closeModal, lang }: ModalContentProps) => {
                     size="1.5rem"
                     marginRight="0.5rem"
                   />
-                  {feature}
+                  <Text as="p" fontSize={1} align="left" marginBottom={0.25}>
+                    {feature}
+                  </Text>
                 </li>
               ))}
             </Features>
@@ -115,7 +117,14 @@ const Modal = ({ project, closeModal, lang }: ModalContentProps) => {
                         size="1.5rem"
                         marginRight="0.5rem"
                       />
-                      {detail}
+                      <Text
+                        as="p"
+                        fontSize={1}
+                        align="left"
+                        marginBottom={0.25}
+                      >
+                        {detail}
+                      </Text>
                     </li>
                   ))}
                 </Details>

@@ -31,7 +31,7 @@ const About = (props: AboutProps) => {
 
   return (
     <ComponentWrapper id="about" padding={1.5}>
-      <Text as="h2" fontSize={1.5} secondary={red}>
+      <Text as="h2" fontSize={1.5} fontWeight={600} secondary={red}>
         About <span>Myself</span>
       </Text>
       <Pad padding={1.5}>

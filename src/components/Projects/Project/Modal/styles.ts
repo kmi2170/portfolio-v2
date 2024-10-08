@@ -27,7 +27,7 @@ export const ModalWrapper = styled.dialog`
   box-shadow: 0 0 5px rgba(108, 122, 137, 0.8);
   padding: 0.5rem 0.25rem 2.5rem 0.25rem;
   width: 95vw;
-  max-width: 1500px;
+  max-width: 1200px;
   height: auto;
   overflow: auto;
 
@@ -64,7 +64,7 @@ export const ProjectImg = styled.div`
 `;
 
 export const Features = styled.ul`
-  width: 90%;
+  /* width: 90%; */
   font-size: 1rem;
 
   li {
@@ -77,7 +77,7 @@ export const Features = styled.ul`
 `;
 
 export const Details = styled.ul`
-  width: 90%;
+  /* width: 90%; */
   font-size: 0.85rem;
 
   li {

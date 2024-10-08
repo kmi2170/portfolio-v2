@@ -54,7 +54,7 @@ const Devtools = () => {
 
   return (
     <ComponentWrapper id="devtools" padding={1.5}>
-      <Text as="h2" fontSize={1.5} secondary={green}>
+      <Text as="h2" fontSize={1.5} fontWeight={600} secondary={green}>
         Dev <span>Tools</span>
       </Text>
 
