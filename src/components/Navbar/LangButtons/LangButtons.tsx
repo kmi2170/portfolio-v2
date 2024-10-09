@@ -13,14 +13,14 @@ const LangButtons = ({ setLang }: LangButtonsProps) => {
 
   return (
     <Container direction="row" gap={1}>
-      <Button onClick={() => setLang("jp")}>
+      <Button onClick={() => setLang("jp")} color={blue}>
         <Text fontSize={1} fontWeight={600} primary={blue}>
           JP
         </Text>
         {/* <Image src="/images/jp.png" width={50} height={50} alt="jp" /> */}
       </Button>
 
-      <Button onClick={() => setLang("en")}>
+      <Button onClick={() => setLang("en")} color={blue}>
         <Text fontSize={1} fontWeight={600} primary={blue}>
           EN
         </Text>

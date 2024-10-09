@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import { AppIcon, GithubIcon } from "../../assets/icons";
 import { DataProject } from "../../lib/types";
+import { theme } from "../../styles/globalStyles";
 
 type LinksProps = {
   project: DataProject;
@@ -12,8 +13,14 @@ type LinksProps = {
 const Links = (props: LinksProps) => {
   const { project, marginTop, marginBottom } = props;
 
+  const blue = theme.colors.blue;
+
   return (
-    <Wrapper marginTop={marginTop} marginBottom={marginBottom}>
+    <LinksWrapper
+      marginTop={marginTop}
+      marginBottom={marginBottom}
+      color={blue}
+    >
       {project?.url ? (
         <a href={project?.url} target="_blank" rel="noopener noreferrer">
           <AppIcon />
@@ -26,22 +33,23 @@ const Links = (props: LinksProps) => {
         <GithubIcon />
         Code
       </a>
-    </Wrapper>
+    </LinksWrapper>
   );
 };
 
 export default Links;
 
-const Wrapper = styled.div<{
+const LinksWrapper = styled.div<{
   marginTop?: number;
   marginBottom?: number;
+  color?: string;
 }>`
   width: 100%;
   margin-top: ${({ marginTop = 0 }) => marginTop + "rem"};
   margin-bottom: ${({ marginBottom = 0 }) => marginBottom + "rem"};
   font-size: 1rem;
 
-  color: ${({ theme }) => theme.colors.blue};
+  color: ${({ color }) => color};
 
   display: flex;
   flex-direction: row;

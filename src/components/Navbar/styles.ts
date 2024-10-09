@@ -30,7 +30,9 @@ export const Li = styled.li`
   }
 `;
 
-export const Menu = styled(Container)`
+export const Menu = styled(Container)<{
+  svgColor?: string;
+}>`
   width: 40px;
   height: 40px;
 
@@ -43,13 +45,15 @@ export const Menu = styled(Container)`
   }
 
   svg {
-    color: ${({ theme }) => theme.colors.blue};
+    color: ${({ svgColor }) => svgColor};
     width: 70%;
     height: 70%;
   }
 `;
 
-export const SidebarWrapper = styled(Container).attrs({ as: "aside" })`
+export const SidebarWrapper = styled(Container).attrs({ as: "aside" })<{
+  svgColor?: string;
+}>`
   height: 100vh;
   position: fixed;
   top: 0;
@@ -65,7 +69,7 @@ export const SidebarWrapper = styled(Container).attrs({ as: "aside" })`
   box-shadow: -4px 0 5px rgba(168, 168, 168, 0.5);
 
   svg {
-    color: ${({ theme }) => theme.colors.blue};
+    color: ${({ svgColor }) => svgColor};
     &:hover {
       cursor: pointer;
     }

@@ -7,6 +7,7 @@ import Modal from "./Modal/Modal";
 import { ProjectWrapper } from "./styles";
 import { Tags, Tag, Text, Container } from "../../common-styles";
 import Links from "../../templates/Links";
+import { theme } from "../../../styles/globalStyles";
 
 type ProjectProps = {
   project: DataProject;
@@ -23,8 +24,11 @@ const Project = ({ project, lang }: ProjectProps) => {
 
   const closeModal = () => setIsModalOpen(false);
 
+  const darkGray = theme.colors.darkGray;
+  const blue = theme.colors.blue;
+
   return (
-    <ProjectWrapper>
+    <ProjectWrapper color={darkGray} colorOnHover={blue}>
       <Container
         direction="column"
         align="center"

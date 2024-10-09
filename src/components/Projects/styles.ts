@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
-export const Git = styled.div`
+export const Git = styled.div<{
+  color?: string;
+}>`
   font-size: 1.75rem;
   margin: 0.75rem;
   margin-left: 2rem;
-  color: ${({ theme }) => theme.colors.blue};
+  color: ${({ color }) => color};
 `;

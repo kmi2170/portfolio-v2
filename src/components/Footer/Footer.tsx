@@ -1,25 +1,22 @@
 import styled from "styled-components";
+import { Text } from "../common-styles";
 
 const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <Wrapper>
-      <p>
+    <FooterWrapper>
+      <Text as="p">
         &copy;{year} <span>Kemmei</span>
-      </p>
-    </Wrapper>
+      </Text>
+    </FooterWrapper>
   );
 };
 
 export default Footer;
 
-const Wrapper = styled.div`
+const FooterWrapper = styled.div`
   margin-top: 4rem;
   padding-bottom: 2rem;
   text-align: center;
-
-  span {
-    color: ${({ theme }) => theme.colors.blue};
-  }
 `;

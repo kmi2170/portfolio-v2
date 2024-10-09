@@ -1,7 +1,14 @@
 import { createGlobalStyle } from "styled-components";
-import { Rubik, Josefin_Sans } from "next/font/google";
+import { Rubik, Josefin_Sans, Alex_Brush } from "next/font/google";
 
 export const rubik = Rubik({
+  subsets: ["latin"],
+  style: "normal",
+  weight: ["400"],
+  display: "swap",
+});
+
+export const alexBrush = Alex_Brush({
   subsets: ["latin"],
   style: "normal",
   weight: ["400"],
@@ -62,5 +69,8 @@ export const theme = {
     darkGray: "#A9A9A9",
     purple: "rgba(233, 213, 255, 0.8)",
     darkPurple: "#4b365f",
+  },
+  fontFamily: {
+    alexBrush: alexBrush.style.fontFamily,
   },
 };

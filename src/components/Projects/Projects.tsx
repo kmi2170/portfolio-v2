@@ -34,7 +34,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
         My <span>React/Next.js</span> Projects
       </Text>
 
-      <Git>
+      <Git color={blue}>
         <a
           href="https://github.com/kmi2170"
           target="_blank"

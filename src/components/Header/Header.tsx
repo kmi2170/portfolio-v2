@@ -14,6 +14,7 @@ const Header = () => {
   const blue = theme.colors.blue;
   const green = theme.colors.green;
   const red = theme.colors.red;
+  const alexBush = theme.fontFamily.alexBrush;
 
   return (
     <Wrapper>
@@ -41,7 +42,7 @@ const Header = () => {
         <Profile>
           <Text
             as="h1"
-            fontFamily="Alex Brush"
+            fontFamily={alexBush}
             fontSize={2.5}
             fontWeight={600}
             secondary={blue}

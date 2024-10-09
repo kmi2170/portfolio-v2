@@ -18,6 +18,7 @@ interface NavbarProps {
 const Navbar = ({ setLang }: NavbarProps) => {
   const [toggle, setToggle] = useState<boolean>(false);
   const blue = theme.colors.blue;
+  const alexBush = theme.fontFamily.alexBrush;
 
   return (
     <>
@@ -27,7 +28,8 @@ const Navbar = ({ setLang }: NavbarProps) => {
             as="h2"
             fontSize={1.75}
             secondary={blue}
-            fontFamily="Alex Brush"
+            fontFamily={alexBush}
+            // fontFamily="Alex Brush"
             fontWeight={600}
             paddingLeft={1}
             marginTop={0.25}
@@ -49,13 +51,13 @@ const Navbar = ({ setLang }: NavbarProps) => {
           <LangButtons setLang={setLang} />
         </Ul>
 
-        <Menu align="center" onClick={() => setToggle(true)}>
+        <Menu align="center" onClick={() => setToggle(true)} svgColor={blue}>
           <MenuIcon2 />
         </Menu>
       </NavWrapper>
 
       {toggle && (
-        <SidebarWrapper>
+        <SidebarWrapper svgColor={blue}>
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: "50vw" }}
