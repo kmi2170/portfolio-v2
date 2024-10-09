@@ -17,7 +17,6 @@ export const ModalOverlay = styled.div`
 export const ModalWrapper = styled(Container)`
   position: relative;
   background-color: white;
-  z-index: 20;
 
   border: none;
   border-radius: 5px;
@@ -25,11 +24,15 @@ export const ModalWrapper = styled(Container)`
   box-shadow: 0 0 5px rgba(108, 122, 137, 0.8);
   padding: 1rem 1.5rem 2.5rem 1.5rem;
   width: 95vw;
+  max-height: 95vh;
   max-width: 1200px;
 
   height: auto;
-  max-height: 95vh;
   overflow-y: auto;
+`;
+
+export const ModalContentWrapper = styled(Container)`
+  width: 100%;
 `;
 
 export const Close = styled.div<{

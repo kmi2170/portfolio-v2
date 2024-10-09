@@ -15,7 +15,7 @@ const responsive = {
 
 const ImageWrapper = styled.div`
   position: relative;
-  width: 100%;
+  /* width: 100%; */
   padding-top: 75%;
 
   @media screen and (max-width: 600px) {
