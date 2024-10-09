@@ -14,7 +14,7 @@ import {
   NavContentWrapper,
 } from "./styles";
 import { CloseIcon, MenuIcon2 } from "../../assets/icons";
-import { Text } from "../common-styles";
+import { Container, Text } from "../common-styles";
 import { theme } from "../../styles/globalStyles";
 
 export const navItems = ["projects", "about", "devtools"];
@@ -57,7 +57,9 @@ const Navbar = ({ setLang }: NavbarProps) => {
                 </Link>
               </Li>
             ))}
-            <LangButtons setLang={setLang} />
+            <Li key="lang-buttons">
+              <LangButtons setLang={setLang} />
+            </Li>
           </Ul>
 
           <Menu align="center" onClick={() => setToggle(true)} svgColor={blue}>

@@ -7,7 +7,7 @@ export const NavWrapper = styled(Container).attrs({ as: "nav" })`
   width: 100vw;
   height: 3.5rem;
 
-  background-color: rgba(173, 216, 230, 0.5);
+  background-color: rgba(173, 216, 230, 0.25);
   box-shadow: 0 4px 5px rgba(168, 168, 168, 0.5);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -15,7 +15,7 @@ export const NavWrapper = styled(Container).attrs({ as: "nav" })`
 
 export const NavContentWrapper = styled(Container)`
   width: 100%;
-  max-width: 1200px;
+  max-width: 1500px;
 `;
 
 export const Ul = styled(Container).attrs({ as: "ul" })`
