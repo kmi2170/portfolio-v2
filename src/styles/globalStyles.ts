@@ -33,7 +33,6 @@ export const GlobalStyle = createGlobalStyle`
 
   :root {
     font-family: ${josefin.style.fontFamily}, sans-serif;
-    /* font-family: ${rubik.style.fontFamily}, sans-serif; */
 
     font-size: 14px;
 
@@ -63,7 +62,10 @@ export const GlobalStyle = createGlobalStyle`
 export const theme = {
   colors: {
     blue: "#3399ff",
-    green: "#00ff00",
+    // green: "#009900",
+    green: "#00cc00",
+    // green: "#00ee00",
+    // green: "#00ff00",
     red: "#ff00ff",
     grey: "#d3d3d3",
     darkGray: "#A9A9A9",
@@ -72,5 +74,6 @@ export const theme = {
   },
   fontFamily: {
     alexBrush: alexBrush.style.fontFamily,
+    rubik: rubik.style.fontFamily,
   },
 };
