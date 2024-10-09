@@ -47,9 +47,11 @@ export const ImageGrid = styled.div`
   }
 `;
 
-export const StyledImage = styled(Image)`
+export const StyledImage = styled(Image)<{
+  opacity?: number;
+}>`
   position: absolute;
-  opacity: 0.25;
+  opacity: ${({ opacity = 1 }) => opacity};
   top: 0;
   left: 0;
   width: 100%;

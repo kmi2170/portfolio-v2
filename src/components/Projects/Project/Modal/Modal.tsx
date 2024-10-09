@@ -12,7 +12,7 @@ import {
 } from "./styles";
 import { CloseIcon } from "../../../../assets/icons";
 import { theme } from "../../../../styles/globalStyles";
-import { Container, Dot, Tag, Tags, Text } from "../../../common-styles";
+import { Dot, Tag, Tags, Text } from "../../../common-styles";
 import Links from "../../../templates/Links";
 
 type ModalContentProps = {
@@ -22,9 +22,11 @@ type ModalContentProps = {
 };
 
 const Modal = ({ project, closeModal, lang }: ModalContentProps) => {
+  const svgColor = theme.colors.blue;
+
   return (
     <>
-      <ModalOverlay onClick={closeModal}>
+      <ModalOverlay>
         <ModalWrapper
           as={motion.dialog}
           initial={{ opacity: 0 }}
@@ -35,7 +37,7 @@ const Modal = ({ project, closeModal, lang }: ModalContentProps) => {
           align="center"
           wrap={false}
         >
-          <Close onClick={closeModal}>
+          <Close onClick={closeModal} svgColor={svgColor}>
             <CloseIcon />
           </Close>
 

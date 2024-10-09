@@ -27,6 +27,7 @@ const Header = () => {
             <StyledImage
               // src="/images/portfolio_top_bg_image_1.png"
               // src="/images/seattle2.jpg"
+              opacity={0.25}
               src="/images/mountain_silhouette.png"
               alt="background city and mountain"
               fill

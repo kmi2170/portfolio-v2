@@ -1,5 +1,8 @@
+import Image from "next/image";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import { StyledImage } from "../../../../Header/styles";
+import styled from "styled-components";
 
 const responsive = {
   0: {
@@ -10,9 +13,21 @@ const responsive = {
   },
 };
 
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  padding-top: 75%;
+
+  @media screen and (max-width: 600px) {
+    width: 80vw;
+  }
+`;
+
 const Carousel = ({ imageUrls }: { imageUrls: string[] }) => {
   const items = imageUrls?.map((imageUrl, i) => (
-    <img key={`image-${i}`} src={imageUrl} alt={imageUrl} />
+    <ImageWrapper key={`image-${i}`}>
+      <StyledImage src={imageUrl} alt={imageUrl} fill />
+    </ImageWrapper>
   ));
 
   return (
@@ -23,7 +38,7 @@ const Carousel = ({ imageUrls }: { imageUrls: string[] }) => {
       animationDuration={1500}
       disableDotsControls
       // disableButtonsControls
-      responsive={responsive}
+      // responsive={responsive}
       autoPlay
       items={items}
     />

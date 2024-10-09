@@ -17,6 +17,7 @@ export const ModalOverlay = styled.div`
 export const ModalWrapper = styled(Container)`
   position: relative;
   background-color: white;
+  z-index: 20;
 
   border: none;
   border-radius: 5px;
@@ -31,7 +32,9 @@ export const ModalWrapper = styled(Container)`
   overflow-y: auto;
 `;
 
-export const Close = styled.span`
+export const Close = styled.div<{
+  svgColor?: string;
+}>`
   width: 100%;
   text-align: right;
   margin-top: 0.5rem;
@@ -39,7 +42,7 @@ export const Close = styled.span`
   svg {
     width: 50px;
     height: 50px;
-    color: ${({ theme }) => theme.colors.blue};
+    color: ${({ svgColor }) => svgColor};
 
     &:hover {
       cursor: pointer;
@@ -48,12 +51,12 @@ export const Close = styled.span`
 `;
 
 export const ProjectImg = styled.div`
-  width: 50%;
+  width: 75%;
   cursor: pointer;
   position: relative;
 
-  img {
-    width: 100%;
+  @media screen and (max-width: 600px) {
+    width: 90%;
   }
 `;
 
