@@ -39,6 +39,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
           href="https://github.com/kmi2170"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="github link"
         >
           <GithubIcon size={50} />
         </a>
@@ -77,7 +78,7 @@ const Projects = ({ projects, lang }: ProjectsProps) => {
         ))}
       </Container>
 
-      <Text as="h4" fontSize={1.25} align="center" marginTop={2}>
+      <Text as="p" fontSize={1.25} align="center" marginTop={2}>
         This app is built with
       </Text>
 
