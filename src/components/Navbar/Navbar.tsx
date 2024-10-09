@@ -4,7 +4,15 @@ import { motion } from "framer-motion";
 
 import LangButtons from "./LangButtons/LangButtons";
 import { Lang } from "../../lib/types";
-import { NavWrapper, Ul, Li, Menu, SidebarWrapper, UlMenu } from "./styles";
+import {
+  NavWrapper,
+  Ul,
+  Li,
+  Menu,
+  SidebarWrapper,
+  UlMenu,
+  NavContentWrapper,
+} from "./styles";
 import { CloseIcon, MenuIcon2 } from "../../assets/icons";
 import { Text } from "../common-styles";
 import { theme } from "../../styles/globalStyles";
@@ -22,38 +30,40 @@ const Navbar = ({ setLang }: NavbarProps) => {
 
   return (
     <>
-      <NavWrapper justify="between" align="center">
-        <Link href="#home">
-          <Text
-            as="h2"
-            fontSize={1.75}
-            secondary={blue}
-            fontFamily={alexBush}
-            // fontFamily="Alex Brush"
-            fontWeight={600}
-            paddingLeft={1}
-            marginTop={0.25}
-          >
-            <span>KH&apos;s</span>Portfolio
-          </Text>
-        </Link>
+      <NavWrapper justify="center" align="center">
+        <NavContentWrapper justify="between" align="center">
+          <Link href="#home">
+            <Text
+              as="h2"
+              fontSize={1.75}
+              secondary={blue}
+              fontFamily={alexBush}
+              // fontFamily="Alex Brush"
+              fontWeight={600}
+              paddingLeft={1}
+              marginTop={0.25}
+            >
+              <span>KH&apos;s</span>Portfolio
+            </Text>
+          </Link>
 
-        <Ul justify="even" align="center">
-          {navItems.map((item) => (
-            <Li key={`link-${item}`}>
-              <Link href={`#${item}`}>
-                <Text as="h2" fontSize={1} fontWeight={600}>
-                  {item.toUpperCase()}
-                </Text>
-              </Link>
-            </Li>
-          ))}
-          <LangButtons setLang={setLang} />
-        </Ul>
+          <Ul justify="even" align="center">
+            {navItems.map((item) => (
+              <Li key={`link-${item}`}>
+                <Link href={`#${item}`}>
+                  <Text as="h2" fontSize={1} fontWeight={600}>
+                    {item.toUpperCase()}
+                  </Text>
+                </Link>
+              </Li>
+            ))}
+            <LangButtons setLang={setLang} />
+          </Ul>
 
-        <Menu align="center" onClick={() => setToggle(true)} svgColor={blue}>
-          <MenuIcon2 />
-        </Menu>
+          <Menu align="center" onClick={() => setToggle(true)} svgColor={blue}>
+            <MenuIcon2 />
+          </Menu>
+        </NavContentWrapper>
       </NavWrapper>
 
       {toggle && (

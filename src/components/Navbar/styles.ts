@@ -13,6 +13,11 @@ export const NavWrapper = styled(Container).attrs({ as: "nav" })`
   -webkit-backdrop-filter: blur(4px);
 `;
 
+export const NavContentWrapper = styled(Container)`
+  width: 100%;
+  max-width: 1200px;
+`;
+
 export const Ul = styled(Container).attrs({ as: "ul" })`
   flex: 1;
   list-style: none;
