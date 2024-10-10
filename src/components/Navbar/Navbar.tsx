@@ -14,7 +14,7 @@ import {
   NavContentWrapper,
 } from "./styles";
 import { CloseIcon, MenuIcon2 } from "../../assets/icons";
-import { Container, Text } from "../common-styles";
+import { Text } from "../common-styles";
 import { theme } from "../../styles/globalStyles";
 
 export const navItems = ["projects", "about", "devtools"];
@@ -26,6 +26,7 @@ interface NavbarProps {
 const Navbar = ({ setLang }: NavbarProps) => {
   const [toggle, setToggle] = useState<boolean>(false);
   const blue = theme.colors.blue;
+  const lightBlue = theme.colors.lightBlue;
   const alexBush = theme.fontFamily.alexBrush;
 
   return (
@@ -36,14 +37,15 @@ const Navbar = ({ setLang }: NavbarProps) => {
             <Text
               as="h2"
               fontSize={1.75}
-              secondary={blue}
+              primary="white"
+              secondary={lightBlue}
               fontFamily={alexBush}
               // fontFamily="Alex Brush"
               fontWeight={600}
               paddingLeft={1}
               marginTop={0.25}
             >
-              <span>KH&apos;s</span>Portfolio
+              <span>KH&apos;s</span> Portfolio
             </Text>
           </Link>
 
@@ -51,7 +53,7 @@ const Navbar = ({ setLang }: NavbarProps) => {
             {navItems.map((item) => (
               <Li key={`link-${item}`}>
                 <Link href={`#${item}`}>
-                  <Text as="h2" fontSize={1} fontWeight={600}>
+                  <Text as="h2" primary="white" fontSize={1} fontWeight={600}>
                     {item.toUpperCase()}
                   </Text>
                 </Link>
@@ -62,7 +64,11 @@ const Navbar = ({ setLang }: NavbarProps) => {
             </Li>
           </Ul>
 
-          <Menu align="center" onClick={() => setToggle(true)} svgColor={blue}>
+          <Menu
+            align="center"
+            onClick={() => setToggle(true)}
+            svgColor={lightBlue}
+          >
             <MenuIcon2 />
           </Menu>
         </NavContentWrapper>

@@ -61,12 +61,17 @@ export const GlobalStyle = createGlobalStyle`
 
 export const theme = {
   colors: {
-    blue: "#3399ff",
+    // blue: "#3399ff",
+    blue: "#0073e6",
+    lightBlue: "#00bfff",
+    // lightBlue: "#00b7eb",
     // green: "#009900",
     green: "#00cc00",
     // green: "#00ee00",
     // green: "#00ff00",
     red: "#ff00ff",
+    // darkOrange: "#FF8C00",
+    darkOrange: "#fe5a1d",
     grey: "#d3d3d3",
     darkGray: "#A9A9A9",
     purple: "rgba(233, 213, 255, 0.8)",

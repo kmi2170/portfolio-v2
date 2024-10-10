@@ -14,6 +14,7 @@ const Header = () => {
   const blue = theme.colors.blue;
   const green = theme.colors.green;
   const red = theme.colors.red;
+  const darkOrange = theme.colors.darkOrange;
   const alexBush = theme.fontFamily.alexBrush;
 
   return (
@@ -67,7 +68,7 @@ const Header = () => {
             fontSize={1.5}
             fontWeight={600}
             secondary={blue}
-            tertiary={green}
+            tertiary={darkOrange}
             align="right"
             paddingRight={1.5}
           >

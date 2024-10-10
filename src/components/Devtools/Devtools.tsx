@@ -50,11 +50,11 @@ const letterVariants: Variants = {
 };
 
 const Devtools = () => {
-  const green = theme.colors.green;
+  const darkOrange = theme.colors.darkOrange;
 
   return (
     <ComponentWrapper id="devtools" padding={1.5}>
-      <Text as="h2" fontSize={1.5} fontWeight={600} secondary={green}>
+      <Text as="h2" fontSize={1.5} fontWeight={600} secondary={darkOrange}>
         Dev <span>Tools</span>
       </Text>
 

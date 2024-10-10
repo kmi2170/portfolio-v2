@@ -9,22 +9,20 @@ interface LangButtonsProps {
 }
 
 const LangButtons = ({ setLang }: LangButtonsProps) => {
-  const blue = theme.colors.blue;
+  const lightBlue = theme.colors.lightBlue;
 
   return (
     <Container direction="row" gap={1}>
-      <Button onClick={() => setLang("jp")} color={blue}>
-        <Text fontSize={1} fontWeight={600} primary={blue}>
+      <Button onClick={() => setLang("jp")} color={lightBlue}>
+        <Text fontSize={1} fontWeight={600} primary={lightBlue}>
           JP
         </Text>
-        {/* <Image src="/images/jp.png" width={50} height={50} alt="jp" /> */}
       </Button>
 
-      <Button onClick={() => setLang("en")} color={blue}>
-        <Text fontSize={1} fontWeight={600} primary={blue}>
+      <Button onClick={() => setLang("en")} color={lightBlue}>
+        <Text fontSize={1} fontWeight={600} primary={lightBlue}>
           EN
         </Text>
-        {/* <Image src="/images/us.png" width={50} height={50} alt="us" /> */}
       </Button>
     </Container>
   );
