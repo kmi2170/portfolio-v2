@@ -25,6 +25,7 @@ interface NavbarProps {
 
 const Navbar = ({ setLang }: NavbarProps) => {
   const [toggle, setToggle] = useState<boolean>(false);
+  const lightCyan = theme.colors.lightCyan;
   const blue = theme.colors.blue;
   const lightBlue = theme.colors.lightBlue;
   const alexBush = theme.fontFamily.alexBrush;
@@ -38,7 +39,7 @@ const Navbar = ({ setLang }: NavbarProps) => {
               as="h2"
               fontSize={1.75}
               primary="white"
-              secondary={lightBlue}
+              secondary={lightCyan}
               fontFamily={alexBush}
               // fontFamily="Alex Brush"
               fontWeight={600}
