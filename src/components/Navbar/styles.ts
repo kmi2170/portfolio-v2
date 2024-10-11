@@ -8,7 +8,10 @@ export const NavWrapper = styled(Container).attrs({ as: "nav" })`
   height: 3.5rem;
 
   /* background-color: rgba(173, 216, 230, 0.25); */
-  background-color: black;
+  /* background-color: black; */
+  /* background-color: rgba(44, 22, 8, 0.99); */
+  /* background-color: #4b365f; */
+  background-color: rgba(75, 54, 95, 0.99);
   /* background-color: rgba(59, 60, 54, 0.95); */
 
   box-shadow: 0 4px 5px rgba(168, 168, 168, 0.5);
