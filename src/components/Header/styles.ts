@@ -10,7 +10,8 @@ export const HeaderWrapper = styled.div`
   /* background-color: lightblue; */
   /* background-color: darkblue; */
   /* background-color: rgba(59, 60, 54, 0.89); */
-  background-color: rgba(135, 206, 250, 0.29);
+  /* background-color: rgba(135, 206, 250, 0.29); */
+  background: linear-gradient(#87cefa, #87cefa, pink 45%, white 75%);
   /* background-color: blue; */
 
   /* background: radial-gradient(
