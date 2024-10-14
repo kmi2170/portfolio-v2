@@ -65,6 +65,7 @@ const Header = () => {
               fontWeight={600}
               // primary="white"
               secondary={blue}
+              marginTop={0.75}
               paddingLeft={2}
             >
               <span>KH&apos;s</span>&nbsp; Portfolio
@@ -108,6 +109,7 @@ const Header = () => {
               secondary={red}
               // secondary="rgba(59, 60, 54, 0.99)"
               align="center"
+              marginTop={-0.75}
             >
               <span>Welcome to My Portfolio</span>
             </Text>

@@ -7,19 +7,18 @@ export const HeaderWrapper = styled.div`
   margin-bottom: 2rem;
   padding-bottom: 4rem;
 
-  /* background-color: lightblue; */
-  /* background-color: darkblue; */
   /* background-color: rgba(59, 60, 54, 0.89); */
   /* background-color: rgba(135, 206, 250, 0.29); */
-  background: linear-gradient(#87cefa, #87cefa, pink 45%, white 75%);
-  /* background-color: blue; */
-
-  /* background: radial-gradient(
-    ellipse 70% 50% at center in hsl longer hue,
-    grey 50%,
-    black 100%
-  ); */
-  /* background: radial-gradient(circle, lightpink, lightblue); */
+  background: linear-gradient(
+    white 0%,
+    #87cefa,
+    #87cefa,
+    #87cefa,
+    lightblue,
+    pink 55%,
+    gold,
+    white 95%
+  );
 
   width: 100%;
 `;
