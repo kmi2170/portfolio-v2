@@ -47,6 +47,7 @@ const Header = () => {
               style={{
                 objectFit: "contain",
               }}
+              priority
             />
             <StyledImage
               opacity={0.99}
@@ -57,6 +58,7 @@ const Header = () => {
               style={{
                 objectFit: "contain",
               }}
+              priority
             />
           </ImageGridLeft>
         </ImageContainer>
