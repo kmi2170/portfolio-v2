@@ -39,7 +39,8 @@ const Navbar = ({ setLang }: NavbarProps) => {
               as="h2"
               fontSize={1.75}
               primary="white"
-              secondary={lightCyan}
+              // secondary={lightCyan}
+              secondary={blue}
               fontFamily={alexBush}
               // fontFamily="Alex Brush"
               fontWeight={600}
@@ -61,7 +62,7 @@ const Navbar = ({ setLang }: NavbarProps) => {
               </Li>
             ))}
             <Li key="lang-buttons">
-              <LangButtons setLang={setLang} />
+              <LangButtons setLang={setLang} color="white" />
             </Li>
           </Ul>
 
@@ -95,7 +96,7 @@ const Navbar = ({ setLang }: NavbarProps) => {
                   </Link>
                 </Li>
               ))}
-              <LangButtons setLang={setLang} />
+              <LangButtons setLang={setLang} color={blue} />
             </UlMenu>
           </motion.div>
         </SidebarWrapper>

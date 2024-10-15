@@ -41,7 +41,17 @@ const Header = () => {
             <StyledImage
               opacity={0.99}
               // src="/images/mountain_silhouette.png"
-              src="/images/top/town_mono_4.png"
+              src="/images/top/mountain_snow.png"
+              alt="background city and mountain"
+              fill
+              style={{
+                objectFit: "contain",
+              }}
+            />
+            <StyledImage
+              opacity={0.99}
+              // src="/images/mountain_silhouette.png"
+              src="/images/top/town.png"
               alt="background city and mountain"
               fill
               style={{
@@ -63,9 +73,8 @@ const Header = () => {
               fontFamily={alexBush}
               fontSize={2.5}
               fontWeight={600}
-              // primary="white"
+              primary="white"
               secondary={blue}
-              marginTop={0.75}
               paddingLeft={2}
             >
               <span>KH&apos;s</span>&nbsp; Portfolio
@@ -77,7 +86,7 @@ const Header = () => {
               as="h2"
               fontSize={1.75}
               fontWeight={600}
-              // primary="white"
+              primary="white"
               secondary={blue}
               align="right"
               paddingRight={5}
@@ -92,7 +101,7 @@ const Header = () => {
               fontSize={1.75}
               fontWeight={600}
               // primary="white"
-              secondary={blue}
+              secondary={green}
               tertiary={darkOrange}
               align="right"
               paddingRight={1.5}
@@ -109,7 +118,7 @@ const Header = () => {
               secondary={red}
               // secondary="rgba(59, 60, 54, 0.99)"
               align="center"
-              marginTop={-0.75}
+              marginTop={0.75}
             >
               <span>Welcome to My Portfolio</span>
             </Text>
