@@ -14,8 +14,8 @@ export const NavWrapper = styled(Container).attrs({ as: "nav" })`
   /* background-color: rgba(75, 54, 95, 0.99); */
   /* background-color: rgba(59, 60, 54, 0.95); */
   /* background-color: rgba(60, 62, 54, 0.95); */
-  background-color: rgba(0, 0, 0, 0.8);
-
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  background-color: rgba(0, 49, 83, 0.95);
   box-shadow: 0 4px 5px rgba(168, 168, 168, 0.5);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);

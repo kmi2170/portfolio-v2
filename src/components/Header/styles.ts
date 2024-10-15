@@ -5,20 +5,37 @@ export const HeaderWrapper = styled.div`
   position: relative;
   margin-top: 5rem;
   margin-bottom: 2rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
 
   /* background-color: rgba(59, 60, 54, 0.89); */
   /* background-color: rgba(135, 206, 250, 0.29); */
   background: linear-gradient(
-    white 0%,
-    #87cefa,
-    #87cefa,
-    #87cefa,
-    lightblue,
-    pink 55%,
-    gold,
-    white 95%
+    rgba(0, 49, 83, 0.99),
+    rgba(0, 33, 71, 0.95),
+    rgba(0, 51, 102, 0.99),
+    rgba(0, 51, 102, 0.9),
+    rgba(0, 49, 83, 0.9),
+    rgba(0, 49, 83, 0.9),
+    rgba(0, 49, 83, 0.9),
+    rgba(0, 51, 102, 0.9),
+    rgba(0, 51, 102, 0.99),
+    rgba(0, 33, 71, 0.95),
+    rgba(0, 49, 83, 0.99)
   );
+
+  /* background: linear-gradient(
+    white,
+    #002147,
+    #002147,
+    #87cefa,
+    lightBlue,
+    orange,
+    #4c2882,
+    #002147,
+    #002147,
+    #003366,
+    white
+  ); */
 
   width: 100%;
 `;
