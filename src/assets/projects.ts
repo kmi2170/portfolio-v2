@@ -59,12 +59,12 @@ export const projects = [
       en: [
         "Advice Slip JSON API",
         "Material UI",
-        "Redux Toolkit for state manegement",
+        "Tanstack Query for data fetching and state management",
       ],
       jp: [
         "APIコール：　Advice Slip JSON API (アドバイス)",
         "UIライブラリ：　Material UI",
-        "ステート管理：　Redux Toolkit",
+        "ステート管理：　Tanstack Query",
       ],
     },
     details: {
@@ -77,7 +77,7 @@ export const projects = [
         "アプリ起動時に、ランダムに選択された背景画像を表示",
       ],
     },
-    tags: ["Next.js", "TypeScript", "Material UI", "Redux Toolkit"],
+    tags: ["Next.js", "TypeScript", "Material UI", "Tanstack Query"],
     url: "https://advice-quote.vercel.app",
     imageUrls: [
       "/images/advice-quote.png",

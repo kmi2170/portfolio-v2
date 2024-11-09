@@ -38,7 +38,8 @@ const Modal = ({ project, closeModal, lang }: ModalContentProps) => {
             direction="column"
             justify="center"
             align="center"
-            wrap={false}
+            wrap="nowrap"
+            // wrap={false}
           >
             <Close onClick={closeModal} svgColor={svgColor}>
               <CloseIcon />

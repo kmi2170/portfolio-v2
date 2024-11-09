@@ -23,11 +23,12 @@ const Container = styled(Pad)<{
   align?: AlignType;
   direction?: "row" | "column";
   gap?: number;
-  wrap?: boolean;
+  wrap?: string;
+  // wrap?: boolean;
   maxWidth?: number;
 }>`
   display: flex;
-  flex-wrap: ${({ wrap = true }) => (wrap ? "wrap" : "nowrap")};
+  flex-wrap: ${({ wrap }) => (wrap === "nowrap" ? "nowrap" : "wrap")};
   flex-direction: ${({ direction = "row" }) => direction};
   justify-content: ${({ justify }) => justify && justifySchemas[justify]};
   align-items: ${({ align }) => align && alignSchemas[align]};

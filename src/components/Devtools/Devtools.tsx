@@ -84,7 +84,8 @@ const Devtools = () => {
                     justify="start"
                     align="start"
                     gap={0.25}
-                    wrap={false}
+                    wrap="nowrap"
+                    // wrap={false}
                   >
                     <Dot
                       as={motion.div}
