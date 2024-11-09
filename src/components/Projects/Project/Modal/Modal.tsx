@@ -39,7 +39,6 @@ const Modal = ({ project, closeModal, lang }: ModalContentProps) => {
             justify="center"
             align="center"
             wrap="nowrap"
-            // wrap={false}
           >
             <Close onClick={closeModal} svgColor={svgColor}>
               <CloseIcon />

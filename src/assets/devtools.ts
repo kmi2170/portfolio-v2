@@ -1,5 +1,14 @@
 export const devtools = [
-  { main: ["React.js", "Next.js", "Redux.js", "TypeScript", "Python"] },
+  {
+    main: [
+      "React.js",
+      "Next.js",
+      "Redux.js",
+      "TanStack Query",
+      "TypeScript",
+      "Python",
+    ],
+  },
   { ui: ["Material UI", "Tailwind CSS", "Styled-components", "Figma"] },
   {
     backend: [
