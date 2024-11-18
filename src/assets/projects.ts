@@ -210,8 +210,8 @@ export const projects = [
       ],
     },
     tags: ["Next.js", "TypeScript", "Material UI", "Leaflet"],
-    // url: "https://travel-app-tau.vercel.app",
-    url: "",
+    url: "https://travel-app-tau.vercel.app",
+    // url: "",
     imageUrls: [
       "/images/travel-app_searchlocation.png",
       "/images/travel-app_viewdetails.png",
