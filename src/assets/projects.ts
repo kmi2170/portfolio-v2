@@ -115,7 +115,7 @@ export const projects = [
       ],
     },
     tags: ["Next.js", "TypeScript", "Material UI", "Redux Toolkit"],
-    url: "https://news-picker.vercel.app",
+    // url: "https://news-picker.vercel.app",
     imageUrls: [
       "/images/news-picker_jp.png",
       "/images/news-picker_jp_expand.png",
@@ -209,7 +209,7 @@ export const projects = [
       ],
     },
     tags: ["Next.js", "TypeScript", "Material UI", "Leaflet"],
-    url: "https://travel-app-tau.vercel.app",
+    // url: "https://travel-app-tau.vercel.app",
     imageUrls: [
       "/images/travel-app_searchlocation.png",
       "/images/travel-app_viewdetails.png",

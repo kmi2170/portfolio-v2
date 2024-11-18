@@ -27,7 +27,9 @@ const Links = (props: LinksProps) => {
           App
         </a>
       ) : (
-        <div></div>
+        <LinkDisabled>
+          <AppIcon /> App
+        </LinkDisabled>
       )}
       <a href={project?.repo} target="_blank" rel="noopener noreferrer">
         <GithubIcon />
@@ -63,4 +65,8 @@ const LinksWrapper = styled.div<{
       margin-bottom: 0.25rem;
     }
   }
+`;
+
+const LinkDisabled = styled.span<{}>`
+  color: lightgrey;
 `;
