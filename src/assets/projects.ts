@@ -25,7 +25,8 @@ export const projects = [
     },
     details: {
       en: [
-        "On Map, cirecles show earthquake events, with its radius and color varied according to the magnitude, and hovering cursor over the circles triggers a pop-up window that shows some detailed information",
+        "On Map, cirecles show earthquake events, with its radius and color varied according to the magnitude",
+        "Hovering cursor over the circles triggers a pop-up window that shows some detailed information",
         "The table is sortable by magnitude or time, in ascending or descending order",
         "By clicking each event in the table, the map view shifts and zooms in to the epicenter, with animation effect.",
       ],
@@ -69,12 +70,14 @@ export const projects = [
     },
     details: {
       en: [
+　　　　　"Select Advice, Quote, Fortune Cookie by buttons",
         'Get more advice by clicking "Get Another" Button ',
         "Randomly chosen background image on app start-up",
       ],
       jp: [
-        '"Get Another"ボタンを押して、次のアドバイスを表示',
-        "アプリ起動時に、ランダムに選択された背景画像を表示",
+　　　　　"ボタンでアドバイス、著名人の名言、フォーチュン・クッキーを選択",
+        '"Get Another"ボタンで、次のアドバイス（名言、フォーチュン・クッキー）を表示',
+          "アプリ起動時に、ランダムに選択された背景画像を表示",
       ],
     },
     tags: ["Next.js", "TypeScript", "Material UI", "TanStack Query"],
@@ -152,18 +155,18 @@ export const projects = [
     },
     details: {
       en: [
-        "Current weather, Minutely rain forecast for 60 minutes, 7 days forecast, and houryly forecast for 48 hours",
-        "By default, look up a place to show weather from your IP address",
-        "Search locations anywhere you want",
+        "Current weather, Minutely rain forecast for the next 60 minutes, 7 days forecast, and houryly forecast for the next 48 hours",
+        "On the firt launch of the app, display the weather of a place identified by your IP address",
+        "Search locations anywhere and displayed the weather",
         "Choose units between imperial and metric",
-        "Auto save the last searched/displayed place and units (cookie must be enabled)",
+        "Auto save the last displayed place and units (cookie must be enabled)",
       ],
       jp: [
-        "現在の天気、一分毎６０分までの降水予報、７日間の予報、１時間毎４８時間までの予報",
-        "デフォルトではIPアドレスから特定した場所の天気情報を表示",
+        "現在の天気、一分毎６０分までの降水予報、７日間の予報、１時間毎４８時間後までの予報、地図上で気温・降水量を可視化",
+        "初回アプリ起動時に、IPアドレスから特定した場所の天気情報を表示",
         "任意の場所の天気情報を検索・表示",
-        "メートル法とインペリアル（帝国）単位を切替可能",
-        "最後に検索した場所と選択した単位が自動セーブされる（クッキー必要）",
+        "単位（メートル法とインペリアル単位）切替可",
+        "最後に表示した場所と単位が自動セーブされる（クッキー必要）",
       ],
     },
     tags: [
@@ -256,8 +259,8 @@ export const projects = [
     id: 6,
     name: { en: "Crypto Tracker", jp: "暗号通貨情報" },
     description: {
-      en: "Cryptocurrency price list ranked by market cap and historical chart of and the prices",
-      jp: "暗号通貨の価格リスト（マーケット・キャップによるランキング）と各暗号通貨の価格変動をチャート表示",
+      en: "Cryptocurrency price list　and historical chart of the price",
+      jp: "暗号通貨のリストと価格変動のチャート表示",
     },
     features: {
       en: [
@@ -275,16 +278,18 @@ export const projects = [
     },
     details: {
       en: [
-        "History chart of the cryptocurrency prices (24 hours, 30 days, 3 months, 1 year)",
-        "Prices are in USD, Euro and JPY (Japanese Yen)",
-        "Register your favarite cryptocurrencies in Watchlist (Login necessary)",
-        "Two Login methods: Google account or email&password",
+        "15 trend cryptocurrencies displayed in carousel",
+        "Cryptocurrency list ranked by market cap",
+        "By clicking currency name, move to single currency information page. where dispays the historical chart of the prices (24 hours, 30 days, 3 months, 1 year)",
+        "Prices are selected from USD, Euro and JPY (Japanese Yen)",
+        "Register your favarite cryptocurrencies in Watchlist (saved in Local Storage)",
       ],
       jp: [
-        "各通貨の直近２４時間、３０日、３ヶ月、１年間の価格変動をグラフ表示",
-        "価格表示は米ドル、ユーロ、日本円",
-        "お気に入りの暗号通貨をウォッチリストに登録（ログイン認証必要）",
-        "２つのログイン認証方法： グーグルアカウント、メール＆パスワード",
+　　　　　"１５のトレンド通貨をカルーセルで表示",
+         "通貨リスト（マーケット・キャップによるランキング）",
+         "通貨名クリックで、各通貨の個別情報ページに遷移。　直近２４時間、３０日、３ヶ月、１年間の価格変動をグラフ表示",
+        "価格表示は米ドル、ユーロ、日本円から選択",
+        "お気に入りの暗号通貨をウォッチリストに登録（ローカルストレージに保存）",
       ],
     },
     tags: [
