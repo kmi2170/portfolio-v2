@@ -3,24 +3,24 @@ export const projects = [
     id: 1,
     name: {
       en: "Earthquake Tracker",
-      jp: "地震情報追跡アプリ",
+      jp: "地震情報アプリ",
     },
     description: {
-      en: "An App to display earthquake event information (up tp 30 days old) on Map and Table",
-      jp: "地震情報（最大過去３０日）を地図と表で表示するアプリ",
+      en: "Display earthquake events (any period of time) on Map and Table",
+      jp: "地震情報（任意の期間）を地図と表で表示",
     },
     features: {
       en: [
         "API call: USGS (U.S. Geological Survey)",
-        "React Query: fetching the earth quake data and the state manegement",
-        "UI library: Material UI",
+        "Data fetching and state management: Tanstack Query",
+        "UI Library: Material UI",
         "Map: Leaflet",
       ],
       jp: [
-        "APIコール：　米国地質調査所(USGS)",
-        "データ・フェッチング&ステート管理：　React Query",
-        "UIライブラリ：　Material UI",
-        "地図：Leaflet",
+        "APIコール: USGS (U.S. Geological Survey)",
+        "データフェッチング、ステート管理: Tanstack Query",
+        "UIライブラリ: Material UI",
+        "地図: Leaflet",
       ],
     },
     details: {
@@ -30,13 +30,13 @@ export const projects = [
         "By clicking each event in the table, the map view shifts and zooms in to the epicenter, with animation effect.",
       ],
       jp: [
-        "マップ上で地震イベントは円で表示され、地震マグニチュードによって半径と色が変わる",
-        "カーソルを円の上にホバーさせると、詳しい情報がポップアップ表示される",
+        "マップ上で地震イベントは円で表示。地震マグニチュードによって半径と色変更",
+        "カーソルを円の上にホバーさせると、該当自身の情報がポップアップ表示",
         "表はマグニチュードまたは日時に関して昇順・降順にソート可能",
         "表の各イベントをクリックすると地図の表示が、その場所へと（アニメーション効果を伴って）移動・ズームインする",
       ],
     },
-    tags: ["Next.js", "TypeScript", "Material UI", "React Query", "Leaflet"],
+    tags: ["Next.js", "TypeScript", "Material UI", "Tanstack Query", "Leaflet"],
     url: "https://earthquake-tracker-ten.vercel.app",
     imageUrls: [
       "/images/eq-tracker.png",
@@ -52,19 +52,19 @@ export const projects = [
       jp: "アドバイス・アプリ",
     },
     description: {
-      en: "A simple Web App that displays a randomly chosen Advice",
-      jp: "ランダムに選ばれたアドバイスを表示する大変シンプルなアプリ",
+      en: "A simple app that displays randomly chosen Advice, Quote, Fortue Cookie",
+      jp: "ランダムに選ばれたアドバイス, 著名人の名言、　フォーチュン・クッキーを表示するシンプルなアプリ",
     },
     features: {
       en: [
-        "Advice Slip JSON API",
-        "Material UI",
-        "TanStack Query for data fetching and state management",
+        "API call: Advice Slip JSON API, Quotes (Rapid API), Fortune Cookie (Rapid API)",
+        "UI library: Material UI",
+        "Date fetching and state management: TanStack Query",
       ],
       jp: [
-        "API：　Advice Slip JSON API (アドバイス)",
+        "APIコール：　Advice Slip JSON API (アドバイス), Quotes (著名人の名言、Rapid API), Fortune Cookie (フォーチュン・クッキー、Rapid API)",
         "UIライブラリ：　Material UI",
-        "ステート管理：　TanStack Query",
+        "データフェッチ、ステート管理：　TanStack Query",
       ],
     },
     details: {
@@ -131,19 +131,23 @@ export const projects = [
     id: 4,
     name: { en: "Weather App", jp: "天気情報アプリ" },
     description: {
-      en: "Weather app, desigined to be simple, lightweight and yet to have suffient information: Current weather, Minutely rain, 7 days forecast, and houryly forecast",
-      jp: "シンプル・軽量で必要十分な天気情報を確認できるアプリ（英語表記のみ）: 現在の天気、１分毎の降水予報、７日間予報、１時間毎の降水量予報",
+      en: "Weather app, desigined to be simple, lightweight and yet to have suffient information",
+      jp: "シンプル・軽量かつ十分な天気情報を確認できるアプリ（英語表記のみ)",
     },
     features: {
       en: [
-        "OpenWeather API, IP-API for looking up your location",
-        "Material UI",
-        "Chart.js for hourly forecast",
+        "API call: OpenWeather API, IP-API (looking up your location)",
+        "Data fetching and state management: Redux Toolkit & RKT Query",
+        "UI library: Material UI",
+        "Chart: Chart.js",
+        "Map: Leaflet.js",
       ],
       jp: [
         "APIコール：　OpenWeather(天気情報), IP-API(IPアドレスから現在地を取得)",
+        "データフェッチング、ステート管理: Redux Toolkit & RKT Query",
         "UIライブラリ：　Material UI",
-        "Chart.js：　１時間毎の予報、１分毎の降水量予報",
+        "チャート： Chart.js",
+        "地図: Leaflet.js",
       ],
     },
     details: {
@@ -162,7 +166,14 @@ export const projects = [
         "最後に検索した場所と選択した単位が自動セーブされる（クッキー必要）",
       ],
     },
-    tags: ["Next.js", "Redux Toolkit", "TypeScript", "Material UI", "Chart.js"],
+    tags: [
+      "Next.js",
+      "Redux Toolkit",
+      "RTK Query",
+      "TypeScript",
+      "Material UI",
+      "Chart.js",
+    ],
     url: "https://my-weather-app-beta.vercel.app",
     imageUrls: [
       "/images/weather-app.png",
@@ -243,24 +254,23 @@ export const projects = [
   /* }, */
   {
     id: 6,
-    name: { en: "Crypto Tracker", jp: "暗号通貨情報トラッカー" },
+    name: { en: "Crypto Tracker", jp: "暗号通貨情報" },
     description: {
       en: "Cryptocurrency price list ranked by market cap and historical chart of and the prices",
       jp: "暗号通貨の価格リスト（マーケット・キャップによるランキング）と各暗号通貨の価格変動をチャート表示",
     },
     features: {
       en: [
-        "CoinGecko API",
-        "Material UI",
-        "Chart.js for the history chart of the cryptocurrency prices",
-        "Firebase for Watchlist of your favorite cryptos",
+        "API call: CoinGecko API",
+        "UI library: Material UI",
+        "Data fetching, state management: Tanstack Query",
+        "Chart: Chart.js",
       ],
       jp: [
-        "APUコール：　CoinGecko",
-        "UIライブライ：　Material UI",
-        "データ・フェッチング&ステート管理：　React Query (SSR対応)",
-        "Chart.js：　各暗号通貨のヒストリカル・チャート",
-        "Firebase：　お気に入りの暗号通貨をウオッチリストに登録",
+        "API コール：　CoinGecko",
+        "UIライブラリ：　Material UI",
+        "データ・フェッチング&ステート管理：  Tanstack Query",
+        "チャート： Chart.js",
       ],
     },
     details: {
@@ -280,10 +290,9 @@ export const projects = [
     tags: [
       "Next.js",
       "TypeScript",
-      "React Query",
+      "Tanstack Query",
       "Material UI",
       "Chart.js",
-      "Firebase",
     ],
     url: "https://crypto-currency-tracker-eight.vercel.app",
     imageUrls: [
